@@ -1,0 +1,4 @@
+[{"mode":"hybrid","shape":"clubtail-fore","preset":"p2s120","wingpass":"v02","nde":0},{"mode":"hybrid","shape":"clubtail-fore","preset":"p2s150","wingpass":"v02","nde":0},{"mode":"hybrid","shape":"clubtail-fore","preset":"objet45","wingpass":"v02","nde":0},{"mode":"closed","shape":"ovate","nde":0},
+ {"mode":"hybrid","shape":"clubtail-hind","preset":"p2s120","wingpass":"v02","nde":0},{"mode":"hybrid","shape":"clubtail-hind","preset":"p2s150","wingpass":"v02","nde":0},{"mode":"hybrid","shape":"clubtail-hind","preset":"objet45","wingpass":"v02","nde":0},{"mode":"closed","shape":"ovate","seed":23,"nde":0},
+ {"mode":"open","shape":"blob","nde":0},{"mode":"closed","shape":"blob","nde":0},{"mode":"hybrid","shape":"blob","nde":0},{"mode":"closed","shape":"blob","view":"ridges","nde":0},
+ {"mode":"open","shape":"disk","nde":0},{"mode":"closed","shape":"disk","nde":0},{"mode":"hybrid","shape":"disk","nde":0},{"mode":"cells","shape":"disk","nde":0}]

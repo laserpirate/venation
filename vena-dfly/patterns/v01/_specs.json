@@ -1,0 +1,6 @@
+{
+ "D1_fore_s07": {"mode": "hybrid", "shape": "clubtail-fore", "veinset": "fab", "mm": 90, "seed": 7, "nsrc": 60, "birth": 40, "kill": 10, "step": 6, "ncell": 16, "lloyd": 4, "grad": 0.3, "costal": 0.2, "nde": 1},
+ "D1_hind_s07": {"mode": "hybrid", "shape": "clubtail-hind", "veinset": "fab", "mm": 90, "seed": 7, "nsrc": 60, "birth": 40, "kill": 10, "step": 6, "ncell": 16, "lloyd": 4, "grad": 0.3, "costal": 0.2, "nde": 1},
+ "D2_fore_s07": {"mode": "cells", "shape": "clubtail-fore", "veinset": "fab", "mm": 90, "seed": 7, "ncell": 16, "lloyd": 4, "grad": 0.3, "costal": 0.2},
+ "D2_hind_s07": {"mode": "cells", "shape": "clubtail-hind", "veinset": "fab", "mm": 90, "seed": 7, "ncell": 16, "lloyd": 4, "grad": 0.3, "costal": 0.2}
+}

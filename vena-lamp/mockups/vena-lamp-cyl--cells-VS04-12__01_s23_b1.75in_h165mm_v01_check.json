@@ -1,0 +1,89 @@
+{
+ "stem": "vena-lamp-cyl--cells-VS04-12__01_s23_b1.75in_h165mm_v01",
+ "id": "vena-lamp-cyl--cells-VS04-12__01",
+ "key": "a06",
+ "seed": 23,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "cyl",
+  "base_in": 1.75,
+  "H": 165
+ },
+ "pattern": {
+  "kind": "surface",
+  "cell_spacing": [
+   7.5,
+   4.2
+  ],
+  "cell_w": [
+   1.7,
+   1.2
+  ]
+ },
+ "note": null,
+ "stats": {
+  "cell_seeds": 416,
+  "vein_samples": 0,
+  "cells": 312,
+  "cells_closed_small": 27,
+  "cells_cut_at_rim": 124,
+  "least_cell_mm": 3.69,
+  "median_cell_mm": 5.89,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 57.6,
+  "window_clear_pct": 67.6,
+  "remesh": 0,
+  "grid": [
+   408,
+   412
+  ],
+  "tris_raw": 574908,
+  "shell_cm2": 211.8,
+  "rib_w_mm": [
+   1.23,
+   1.7
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   50.1,
+   50.1,
+   157.2
+  ],
+  "dims_in": [
+   1.97,
+   1.97,
+   6.19
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   103.0,
+   103.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 12.19,
+  "overhang_faces": 150,
+  "overhang_widest_strip_mm": 0.52,
+  "overhang_largest_patch_mm2": 1.13,
+  "volume_cm3": 33.3,
+  "area_cm2": 479.6,
+  "grams_est": 41.0,
+  "hours_est": 3.6,
+  "cost_usd_est": 1.35,
+  "least_window_mm": 3.69,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 44.95,
+  "collar_mm": 12.7
+ },
+ "tris": 245638,
+ "build_s": 2.9,
+ "built": "2026-11-21 16:19"
+}

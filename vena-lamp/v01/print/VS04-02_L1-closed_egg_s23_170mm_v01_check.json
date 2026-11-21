@@ -1,0 +1,86 @@
+{
+ "stem": "VS04-02_L1-closed_egg_s23_170mm_v01",
+ "id": "L1",
+ "tile": "VS04-02",
+ "seed": 23,
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "surface",
+  "mode": "closed",
+  "spacing": 11.0,
+  "step": 2.0,
+  "kill": 3.0,
+  "roots": 3
+ },
+ "source_study": "VS02-10 closed blob",
+ "stats": {
+  "vein_nodes": 2200,
+  "pruned_nodes": 62,
+  "loop_links": 89,
+  "grid": [
+   691,
+   425
+  ],
+  "holes_open": 86,
+  "cells_kept_closed": 12,
+  "tris_raw": 864268,
+  "web_fail_mm2": 0.6102345734842217,
+  "shell_mm2": 38418.09976953392,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L1 v01 s23",
+  "label_ring_mm": [
+   25.0,
+   33.0
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   87.9,
+   88.0,
+   169.6
+  ],
+  "dims_in": [
+   3.46,
+   3.46,
+   6.68
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   84.0,
+   84.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 133.16,
+  "overhang_faces": 1676,
+  "overhang_widest_strip_mm": 0.78,
+  "overhang_largest_patch_mm2": 2.53,
+  "volume_cm3": 94.8,
+  "area_cm2": 686.0,
+  "grams_est": 90.0,
+  "hours_est": 6.0,
+  "cost_usd_est": 2.97,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 0.6,
+  "web_under_2mm_pct": 0.0,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 255282,
+ "build_s": 8.9,
+ "built": "2026-11-21 01:47"
+}

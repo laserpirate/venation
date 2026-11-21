@@ -1,0 +1,382 @@
+{
+ "png": "_work\\VS02_contact_v02b_0123.png",
+ "render_s": 2.23,
+ "plex_mono_loaded": true,
+ "page_errors": [],
+ "assert_fails": [],
+ "caption_px": [
+  16
+ ],
+ "tiles_equal_to_compare_page": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "captions": [
+  "VS02-01 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nP2S test, 120 mm forewing\nclamped 432/432 veins \u00b7 783/783 walls\ncells 147 (wall cap 46 of 420)",
+  "VS02-02 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nP2S final, 150 mm forewing\nclamped 432/432 veins \u00b7 973/973 walls\ncells 202 (wall cap 71 of 420)",
+  "VS02-03 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nObjet moving parts, 45 mm forewing\nclamped 432/432 veins \u00b7 618/618 walls\ncells 98 (wall cap 25 of 420)",
+  "VS02-04 \u00b7 closed \u00b7 ovate \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/5262 veins\nclosed cells 94",
+  "VS02-05 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 seed 07\nP2S test, 120 mm forewing\nclamped 440/440 veins \u00b7 946/946 walls\ncells 187 (wall cap 57 of 420)",
+  "VS02-06 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 seed 07\nP2S final, 150 mm forewing\nclamped 440/440 veins \u00b7 1142/1142 walls\ncells 259 (wall cap 90 of 420)",
+  "VS02-07 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 seed 07\nObjet moving parts, 45 mm forewing\nclamped 440/440 veins \u00b7 790/790 walls\ncells 134 (wall cap 32 of 420)",
+  "VS02-08 \u00b7 closed \u00b7 ovate \u00b7 seed 23\nScreen, no minimums \u00b7 120 mm\nclamped 0/4744 veins\nclosed cells 94",
+  "VS02-09 \u00b7 open \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/5921 veins",
+  "VS02-10 \u00b7 closed \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/6005 veins\nclosed cells 109",
+  "VS02-11 \u00b7 hybrid \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/5921 veins \u00b7 0/1437 walls\ncells 420",
+  "VS02-12 \u00b7 closed \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/6005 veins\nview ridges: 2641 centerline chains + 155 loop links at 0.8 px, cells layer off",
+  "VS02-13 \u00b7 open \u00b7 disk \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/6134 veins",
+  "VS02-14 \u00b7 closed \u00b7 disk \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/6192 veins\nclosed cells 123",
+  "VS02-15 \u00b7 hybrid \u00b7 disk \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/6134 veins \u00b7 0/1437 walls\ncells 420",
+  "VS02-16 \u00b7 cells \u00b7 disk \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/0 veins \u00b7 0/1437 walls\ncells 420"
+ ],
+ "stats": [
+  {
+   "i": 0,
+   "sid": "VS02-01",
+   "chains": 0,
+   "stat": [
+    "VS02-01 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set full \u00b7 seed 7",
+    "P2S test, 120 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 147 (wall rule: 46 seeds fit, 420 asked)",
+    "clamped: fixed 432/432, grown 0/0, links 0/0, walls 783/783",
+    "0.1364 mm/px",
+    "11 ms"
+   ],
+   "loops": 0,
+   "cells": 147,
+   "ponds": 0,
+   "clamped": 432,
+   "segs": 432,
+   "ms": 11
+  },
+  {
+   "i": 1,
+   "sid": "VS02-02",
+   "chains": 0,
+   "stat": [
+    "VS02-02 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set full \u00b7 seed 7",
+    "P2S final, 150 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 202 (wall rule: 71 seeds fit, 420 asked)",
+    "clamped: fixed 432/432, grown 0/0, links 0/0, walls 973/973",
+    "0.1705 mm/px",
+    "10 ms"
+   ],
+   "loops": 0,
+   "cells": 202,
+   "ponds": 0,
+   "clamped": 432,
+   "segs": 432,
+   "ms": 10
+  },
+  {
+   "i": 2,
+   "sid": "VS02-03",
+   "chains": 0,
+   "stat": [
+    "VS02-03 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set full \u00b7 seed 7",
+    "Objet moving parts, 45 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 98 (wall rule: 25 seeds fit, 420 asked)",
+    "clamped: fixed 432/432, grown 0/0, links 0/0, walls 618/618",
+    "0.0511 mm/px",
+    "6 ms"
+   ],
+   "loops": 0,
+   "cells": 98,
+   "ponds": 0,
+   "clamped": 432,
+   "segs": 432,
+   "ms": 6
+  },
+  {
+   "i": 3,
+   "sid": "VS02-04",
+   "chains": 1650,
+   "stat": [
+    "VS02-04 \u00b7 closed \u00b7 ovate \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 5105",
+    "loops 158",
+    "closed cells 94",
+    "clamped: fixed 0/0, grown 0/5104, links 0/158, walls 0/0",
+    "0.1364 mm/px",
+    "318 ms"
+   ],
+   "loops": 158,
+   "cells": 0,
+   "ponds": 94,
+   "clamped": 0,
+   "segs": 5262,
+   "ms": 318
+  },
+  {
+   "i": 4,
+   "sid": "VS02-05",
+   "chains": 0,
+   "stat": [
+    "VS02-05 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 vein set full \u00b7 seed 7",
+    "P2S test, 120 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 187 (wall rule: 57 seeds fit, 420 asked)",
+    "clamped: fixed 440/440, grown 0/0, links 0/0, walls 946/946",
+    "0.1364 mm/px",
+    "10 ms"
+   ],
+   "loops": 0,
+   "cells": 187,
+   "ponds": 0,
+   "clamped": 440,
+   "segs": 440,
+   "ms": 10
+  },
+  {
+   "i": 5,
+   "sid": "VS02-06",
+   "chains": 0,
+   "stat": [
+    "VS02-06 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 vein set full \u00b7 seed 7",
+    "P2S final, 150 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 259 (wall rule: 90 seeds fit, 420 asked)",
+    "clamped: fixed 440/440, grown 0/0, links 0/0, walls 1142/1142",
+    "0.1705 mm/px",
+    "10 ms"
+   ],
+   "loops": 0,
+   "cells": 259,
+   "ponds": 0,
+   "clamped": 440,
+   "segs": 440,
+   "ms": 10
+  },
+  {
+   "i": 6,
+   "sid": "VS02-07",
+   "chains": 0,
+   "stat": [
+    "VS02-07 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 vein set full \u00b7 seed 7",
+    "Objet moving parts, 45 mm forewing",
+    "vein nodes 0",
+    "loops 0",
+    "cells 134 (wall rule: 32 seeds fit, 420 asked)",
+    "clamped: fixed 440/440, grown 0/0, links 0/0, walls 790/790",
+    "0.0511 mm/px",
+    "6 ms"
+   ],
+   "loops": 0,
+   "cells": 134,
+   "ponds": 0,
+   "clamped": 440,
+   "segs": 440,
+   "ms": 6
+  },
+  {
+   "i": 7,
+   "sid": "VS02-08",
+   "chains": 957,
+   "stat": [
+    "VS02-08 \u00b7 closed \u00b7 ovate \u00b7 seed 23",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 4593",
+    "loops 152",
+    "closed cells 94",
+    "clamped: fixed 0/0, grown 0/4592, links 0/152, walls 0/0",
+    "0.1364 mm/px",
+    "253 ms"
+   ],
+   "loops": 152,
+   "cells": 0,
+   "ponds": 94,
+   "clamped": 0,
+   "segs": 4744,
+   "ms": 253
+  },
+  {
+   "i": 8,
+   "sid": "VS02-09",
+   "chains": 4071,
+   "stat": [
+    "VS02-09 \u00b7 open \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 5922",
+    "loops 0",
+    "clamped: fixed 0/0, grown 0/5921, links 0/0, walls 0/0",
+    "0.1364 mm/px",
+    "90 ms"
+   ],
+   "loops": 0,
+   "cells": 0,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 5921,
+   "ms": 90
+  },
+  {
+   "i": 9,
+   "sid": "VS02-10",
+   "chains": 2641,
+   "stat": [
+    "VS02-10 \u00b7 closed \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 5851",
+    "loops 155",
+    "closed cells 109",
+    "clamped: fixed 0/0, grown 0/5850, links 0/155, walls 0/0",
+    "0.1364 mm/px",
+    "378 ms"
+   ],
+   "loops": 155,
+   "cells": 0,
+   "ponds": 109,
+   "clamped": 0,
+   "segs": 6005,
+   "ms": 378
+  },
+  {
+   "i": 10,
+   "sid": "VS02-11",
+   "chains": 4071,
+   "stat": [
+    "VS02-11 \u00b7 hybrid \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 5922",
+    "loops 0",
+    "cells 420",
+    "clamped: fixed 0/0, grown 0/5921, links 0/0, walls 0/1437",
+    "0.1364 mm/px",
+    "130 ms"
+   ],
+   "loops": 0,
+   "cells": 420,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 5921,
+   "ms": 130
+  },
+  {
+   "i": 11,
+   "sid": "VS02-12",
+   "chains": 2641,
+   "stat": [
+    "VS02-12 \u00b7 closed \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 5851",
+    "loops 155",
+    "closed cells 109",
+    "clamped: fixed 0/0, grown 0/5850, links 0/155, walls 0/0",
+    "0.1364 mm/px",
+    "331 ms"
+   ],
+   "loops": 155,
+   "cells": 0,
+   "ponds": 109,
+   "clamped": 0,
+   "segs": 6005,
+   "ms": 331
+  },
+  {
+   "i": 12,
+   "sid": "VS02-13",
+   "chains": 4303,
+   "stat": [
+    "VS02-13 \u00b7 open \u00b7 disk \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 6135",
+    "loops 0",
+    "clamped: fixed 0/0, grown 0/6134, links 0/0, walls 0/0",
+    "0.1364 mm/px",
+    "99 ms"
+   ],
+   "loops": 0,
+   "cells": 0,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 6134,
+   "ms": 99
+  },
+  {
+   "i": 13,
+   "sid": "VS02-14",
+   "chains": 2482,
+   "stat": [
+    "VS02-14 \u00b7 closed \u00b7 disk \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 6024",
+    "loops 169",
+    "closed cells 123",
+    "clamped: fixed 0/0, grown 0/6023, links 0/169, walls 0/0",
+    "0.1364 mm/px",
+    "364 ms"
+   ],
+   "loops": 169,
+   "cells": 0,
+   "ponds": 123,
+   "clamped": 0,
+   "segs": 6192,
+   "ms": 364
+  },
+  {
+   "i": 14,
+   "sid": "VS02-15",
+   "chains": 4303,
+   "stat": [
+    "VS02-15 \u00b7 hybrid \u00b7 disk \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 6135",
+    "loops 0",
+    "cells 420",
+    "clamped: fixed 0/0, grown 0/6134, links 0/0, walls 0/1437",
+    "0.1364 mm/px",
+    "148 ms"
+   ],
+   "loops": 0,
+   "cells": 420,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 6134,
+   "ms": 148
+  },
+  {
+   "i": 15,
+   "sid": "VS02-16",
+   "chains": 0,
+   "stat": [
+    "VS02-16 \u00b7 cells \u00b7 disk \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 0",
+    "loops 0",
+    "cells 420",
+    "clamped: fixed 0/0, grown 0/0, links 0/0, walls 0/1437",
+    "0.1364 mm/px",
+    "20 ms"
+   ],
+   "loops": 0,
+   "cells": 420,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 0,
+   "ms": 20
+  }
+ ]
+}

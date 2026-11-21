@@ -1,0 +1,6 @@
+{"id": "L4", "mode_field": "L4-hybrid", "shape_field": "cylinder", "size_mm": 150, "source_study": "VS02-15 hybrid disk",
+ "note": "Hybrid disk study unrolled on a cylinder: disk radius becomes height, disk bearing becomes bearing, the centre sits in the foot. Foot ring 10 mm wide, so the clear hole is 80 mm.",
+ "form": {"type": "cyl", "args": {"H": 150, "W": 100}},
+ "source": {"kind": "polar", "pattern": "L4_disk"},
+ "page_specs": {"L4_disk": {"mode": "hybrid", "shape": "disk", "nsrc": 200, "birth": 22, "kill": 8, "step": 5, "ncell": 420, "nde": 1}},
+ "seeds": [7, 23]}

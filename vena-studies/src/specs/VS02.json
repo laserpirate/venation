@@ -1,0 +1,4 @@
+[{"mode":"hybrid","shape":"clubtail-fore","preset":"p2s120"},{"mode":"hybrid","shape":"clubtail-fore","preset":"p2s150"},{"mode":"hybrid","shape":"clubtail-fore","preset":"objet45"},{"mode":"closed","shape":"ovate"},
+ {"mode":"hybrid","shape":"clubtail-hind","preset":"p2s120"},{"mode":"hybrid","shape":"clubtail-hind","preset":"p2s150"},{"mode":"hybrid","shape":"clubtail-hind","preset":"objet45"},{"mode":"closed","shape":"ovate","seed":23},
+ {"mode":"open","shape":"blob"},{"mode":"closed","shape":"blob"},{"mode":"hybrid","shape":"blob"},{"mode":"closed","shape":"blob","view":"ridges"},
+ {"mode":"open","shape":"disk"},{"mode":"closed","shape":"disk"},{"mode":"hybrid","shape":"disk"},{"mode":"cells","shape":"disk"}]

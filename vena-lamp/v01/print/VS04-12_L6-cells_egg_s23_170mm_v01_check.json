@@ -1,0 +1,89 @@
+{
+ "stem": "VS04-12_L6-cells_egg_s23_170mm_v01",
+ "id": "L6",
+ "tile": "VS04-12",
+ "seed": 23,
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "polar",
+  "pattern": "L6_disk"
+ },
+ "source_study": "VS02-16 cells disk",
+ "stats": {
+  "page": [
+   "VS00-00 \u00b7 cells \u00b7 disk \u00b7 seed 23",
+   "Screen, no minimums \u00b7 120 mm",
+   "vein nodes 0",
+   "loops 0",
+   "cells 420",
+   "clamped: fixed 0/0, grown 0/0, links 0/0, walls 0/1437",
+   "0.1364 mm/px",
+   "22 ms"
+  ],
+  "grid": [
+   691,
+   425
+  ],
+  "holes_open": 313,
+  "cells_kept_closed": 147,
+  "tris_raw": 906220,
+  "web_fail_mm2": 0.1534526318874878,
+  "shell_mm2": 38418.83019692151,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L6 v01 s23",
+  "label_ring_mm": [
+   25.0,
+   33.0
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   85.0,
+   85.0,
+   169.9
+  ],
+  "dims_in": [
+   3.34,
+   3.35,
+   6.69
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   85.5,
+   85.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 202.56,
+  "overhang_faces": 2801,
+  "overhang_widest_strip_mm": 0.69,
+  "overhang_largest_patch_mm2": 2.53,
+  "volume_cm3": 76.1,
+  "area_cm2": 669.7,
+  "grams_est": 85.0,
+  "hours_est": 5.8,
+  "cost_usd_est": 2.81,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 0.2,
+  "web_under_2mm_pct": 0.0,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 222506,
+ "build_s": 6.7,
+ "built": "2026-11-21 01:47"
+}

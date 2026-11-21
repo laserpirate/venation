@@ -1,0 +1,39 @@
+{
+ "id": "L2",
+ "mode_field": "L2-closed",
+ "shape_field": "egg-6-ovate",
+ "size_mm": 170,
+ "source_study": "VS02-04 closed ovate",
+ "note": "Six ovate leaf panels wrapped on the egg, each mapped by UV onto a 60 degree sector plus 6 mm overlap, panels alternately outside (1.2 mm proud). Veins grown in 2D on the page, coarser than VS02-04 so cells clear the 3 mm hole rule.",
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "panels",
+  "count": 6,
+  "overlap": 6.0,
+  "patterns": [
+   "L2_ovate"
+  ]
+ },
+ "page_specs": {
+  "L2_ovate": {
+   "mode": "closed",
+   "shape": "ovate",
+   "nsrc": 45,
+   "birth": 70,
+   "kill": 14,
+   "step": 8,
+   "ana": 20,
+   "nde": 1
+  }
+ },
+ "seeds": [
+  7,
+  23
+ ]
+}

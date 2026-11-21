@@ -1,0 +1,23 @@
+{
+ "stem": "vena-land-terr--wing-VS03-04__01_s07_t100mm_r20mm_v01",
+ "id": "vena-land-terr--wing-VS03-04__01",
+ "typology": "terraces",
+ "pattern": "wing",
+ "source_study": "VS03-04",
+ "tile_mm": 100.0,
+ "grid_mm": 0.25,
+ "relief_mm": [
+  2.0,
+  20.0
+ ],
+ "contours": 23,
+ "stats": {
+  "cells": 533,
+  "vein_samples": 31560,
+  "primary_share": 0.081
+ },
+ "slope_p50": 0.0,
+ "slope_p99": 28.0,
+ "note": "pattern study: no scale, no vertical exaggeration set",
+ "built": "2026-11-21 17:29"
+}

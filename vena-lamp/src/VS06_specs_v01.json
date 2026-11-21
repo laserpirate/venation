@@ -1,0 +1,874 @@
+{
+ "a01": {
+  "id": "vena-lamp-egg--cells-VS04-12__01",
+  "sheet": "VS06a",
+  "tile": 1,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    10.3,
+    5.8
+   ],
+   "cell_w": [
+    2.2,
+    1.3
+   ]
+  },
+  "seed": 23,
+  "note": "density 1x",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a02": {
+  "id": "vena-lamp-egg--cells-VS04-12__02",
+  "sheet": "VS06a",
+  "tile": 2,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    7.8,
+    4.4
+   ],
+   "cell_w": [
+    1.9,
+    1.2
+   ]
+  },
+  "seed": 23,
+  "note": "density 2x",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a03": {
+  "id": "vena-lamp-egg--cells-VS04-12__03",
+  "sheet": "VS06a",
+  "tile": 3,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    6.6,
+    3.75
+   ],
+   "cell_w": [
+    1.7,
+    1.2
+   ]
+  },
+  "seed": 23,
+  "note": "density 3x",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a04": {
+  "id": "vena-lamp-egg--closed-VS04-01__01",
+  "sheet": "VS06a",
+  "tile": 4,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    5.4,
+    4.2
+   ],
+   "rim_px": 4,
+   "roots": 4,
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.2
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "veins grown on the surface from four roots at the foot",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a05": {
+  "id": "vena-lamp-cyl--hybrid-VS04-07__01",
+  "sheet": "VS06a",
+  "tile": 5,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    13.0,
+    10.0
+   ],
+   "roots": 3,
+   "cell_spacing": [
+    6.5,
+    4.2
+   ],
+   "cell_w": [
+    1.5,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.8,
+     4.2
+    ],
+    "rim": [
+     1.5,
+     2.6
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "regrown on the cylinder from three roots at the foot, cells fill",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a06": {
+  "id": "vena-lamp-cyl--cells-VS04-12__01",
+  "sheet": "VS06a",
+  "tile": 6,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 1.75,
+   "H": 165
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    7.5,
+    4.2
+   ],
+   "cell_w": [
+    1.7,
+    1.2
+   ]
+  },
+  "seed": 23,
+  "note": null,
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a07": {
+  "id": "vena-lamp-egg--cells-VS04-12__04",
+  "sheet": "VS06a",
+  "tile": 7,
+  "tech": "T2",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    13.0,
+    5.3
+   ],
+   "cell_w": [
+    4.0,
+    1.6
+   ],
+   "tear": 10
+  },
+  "seed": 23,
+  "note": "foot coarse, rim fine",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a08": {
+  "id": "vena-lamp-cyl--closed-VS04-01__01",
+  "sheet": "VS06a",
+  "tile": 8,
+  "tech": "T2",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.0,
+   "H": 180
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    19.0,
+    8.0
+   ],
+   "roots": 3,
+   "vein_w": {
+    "foot": [
+     3.5,
+     4.5
+    ],
+    "rim": [
+     1.6,
+     1.6
+    ]
+   },
+   "tear": 10
+  },
+  "seed": 7,
+  "note": "foot coarse, rim fine",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a09": {
+  "id": "vena-lamp-egg--closed-VS04-01__02",
+  "sheet": "VS06a",
+  "tile": 9,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 6.0,
+   "H": 220,
+   "W": 176,
+   "zc": 80,
+   "rtop": 50,
+   "foot_wall": 3.0
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    6.5,
+    5.0
+   ],
+   "rim_px": 5,
+   "roots": 6,
+   "vein_w": {
+    "foot": [
+     1.4,
+     5.0
+    ],
+    "rim": [
+     1.2,
+     2.4
+    ]
+   },
+   "tear": 22
+  },
+  "seed": 7,
+  "note": "6 in base, 1.25 to 1",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a10": {
+  "id": "vena-lamp-cyl--cells-VS04-12__02",
+  "sheet": "VS06a",
+  "tile": 10,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 6.0,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    11.0,
+    5.5
+   ],
+   "cell_w": [
+    2.2,
+    1.3
+   ],
+   "tear": 20
+  },
+  "seed": 23,
+  "note": "6 in base, 1.27 to 1",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "a11": {
+  "id": "vena-lamp-free--closed-tilt-VS04-01__01",
+  "sheet": "VS06a",
+  "tile": 11,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.25,
+   "H": 215,
+   "W": 118,
+   "zc": 80,
+   "rtop": 34
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    5.6,
+    4.4
+   ],
+   "rim_px": 4,
+   "roots": 3,
+   "tilt": 46,
+   "tear": 12,
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.6
+    ],
+    "rim": [
+     1.2,
+     2.0
+    ]
+   }
+  },
+  "seed": 11,
+  "note": "free",
+  "window_mm": 0.85,
+  "free": "free: a wider egg cut on a slant, so the rim shows the inside of the far wall as the Hyphae photos do."
+ },
+ "a12": {
+  "id": "vena-lamp-free--hybrid-fine-VS04-12__01",
+  "sheet": "VS06a",
+  "tile": 12,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 228,
+   "W": 100,
+   "zc": 95,
+   "rtop": 22
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    16.0,
+    11.0
+   ],
+   "roots": 5,
+   "cell_spacing": [
+    5.2,
+    3.6
+   ],
+   "cell_w": [
+    1.3,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     2.0,
+     4.6
+    ],
+    "rim": [
+     1.6,
+     2.8
+    ]
+   },
+   "tear": 18
+  },
+  "seed": 5,
+  "note": "free",
+  "window_mm": 0.85,
+  "free": "free: the tallest egg (9 in), five trunks over the finest cells the window rule allows, to test hierarchy against density."
+ },
+ "b01": {
+  "id": "vena-lamp-egg--wing-wrap1-VS03-04__01",
+  "sheet": "VS06b",
+  "tile": 1,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 1,
+   "patterns": [
+    "L3_fore_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "wing wrap, 1 panel, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b02": {
+  "id": "vena-lamp-egg--wing-wrap3-VS03-04__01",
+  "sheet": "VS06b",
+  "tile": 2,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 3,
+   "patterns": [
+    "L3_fore_s07",
+    "L3_hind_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "wing wrap, 3 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b03": {
+  "id": "vena-lamp-egg--wing-wrap6-VS03-04__01",
+  "sheet": "VS06b",
+  "tile": 3,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 6,
+   "patterns": [
+    "L3_fore_s07",
+    "L3_hind_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "wing wrap, 6 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b04": {
+  "id": "vena-lamp-egg--wing-wrap8-VS03-04__01",
+  "sheet": "VS06b",
+  "tile": 4,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 8,
+   "patterns": [
+    "L3_fore_s07",
+    "L3_hind_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "wing wrap, 8 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b05": {
+  "id": "vena-lamp-cyl--leaf-wrap1-VS02-04__01",
+  "sheet": "VS06b",
+  "tile": 5,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 1,
+   "patterns": [
+    "L2_ovate_s07"
+   ],
+   "fixed": "midrib",
+   "secondary_gap": 18.0,
+   "vein_spacing": [
+    6.0,
+    5.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.4
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "leaf wrap, 1 panel, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b06": {
+  "id": "vena-lamp-cyl--leaf-wrap3-VS02-04__01",
+  "sheet": "VS06b",
+  "tile": 6,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 3,
+   "patterns": [
+    "L2_ovate_s07"
+   ],
+   "fixed": "midrib",
+   "secondary_gap": 18.0,
+   "vein_spacing": [
+    6.0,
+    5.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.4
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "leaf wrap, 3 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b07": {
+  "id": "vena-lamp-cyl--leaf-wrap6-VS02-04__01",
+  "sheet": "VS06b",
+  "tile": 7,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 6,
+   "patterns": [
+    "L2_ovate_s07"
+   ],
+   "fixed": "midrib",
+   "secondary_gap": 18.0,
+   "vein_spacing": [
+    6.0,
+    5.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.4
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "leaf wrap, 6 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b08": {
+  "id": "vena-lamp-cyl--leaf-wrap8-VS02-04__01",
+  "sheet": "VS06b",
+  "tile": 8,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 8,
+   "patterns": [
+    "L2_ovate_s07"
+   ],
+   "fixed": "midrib",
+   "secondary_gap": 18.0,
+   "vein_spacing": [
+    6.0,
+    5.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.4
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "leaf wrap, 8 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b09": {
+  "id": "vena-lamp-egg--wing-wrap1-VS03-04__02",
+  "sheet": "VS06b",
+  "tile": 9,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 1,
+   "patterns": [
+    "L3_fore_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   },
+   "stored": true
+  },
+  "seed": 7,
+  "note": "warped, not regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b10": {
+  "id": "vena-lamp-egg--leaf-wrap3-VS02-04__01",
+  "sheet": "VS06b",
+  "tile": 10,
+  "tech": "T1",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 200,
+   "W": 100
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 3,
+   "patterns": [
+    "L2_ovate_s07"
+   ],
+   "fixed": "midrib",
+   "secondary_gap": 18.0,
+   "vein_spacing": [
+    6.0,
+    5.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.3,
+     4.4
+    ],
+    "rim": [
+     1.2,
+     2.2
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "leaf on egg, 3 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "b11": {
+  "id": "vena-lamp-cyl--wing-wrap6-VS03-04__01",
+  "sheet": "VS06b",
+  "tile": 11,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "panels",
+   "count": 6,
+   "patterns": [
+    "L3_fore_s07",
+    "L3_hind_s07"
+   ],
+   "fixed": "named",
+   "vein_spacing": [
+    13.0,
+    11.0
+   ],
+   "kill_k": 0.6,
+   "cell_spacing": [
+    5.6,
+    4.4
+   ],
+   "cell_w": [
+    1.4,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.6,
+     3.6
+    ],
+    "rim": [
+     1.4,
+     2.4
+    ]
+   }
+  },
+  "seed": 7,
+  "note": "wing on cylinder, 6 panels, regrown",
+  "window_mm": 0.85,
+  "free": null
+ }
+}

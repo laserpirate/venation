@@ -1,0 +1,12 @@
+{
+ "png": "VS05_contact_dfly-v01_0155.png",
+ "tiles": 4,
+ "plex_mono_loaded": true,
+ "assert_fails": [],
+ "captions": [
+  "VS05-01 \u00b7 D1 \u00b7 top view\nhybrid fab wings (named ribs, grown veins, cells)\nE1 Clubtail print body at 3x (factor 1.0345 on the source)\n168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)\n39 g \u00b7 2.0 h estimated, not sliced\nopen cells: fore 3, hind 3 per wing \u00b7 kept closed 28, 38\nFAIL: wings pass, body keeps the E1 overhang (1894 mm2)",
+  "VS05-02 \u00b7 D1 \u00b7 three-quarter view\nhybrid fab wings (named ribs, grown veins, cells)\nE1 Clubtail print body at 3x (factor 1.0345 on the source)\n168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)\n39 g \u00b7 2.0 h estimated, not sliced\nopen cells: fore 3, hind 3 per wing \u00b7 kept closed 28, 38\nFAIL: wings pass, body keeps the E1 overhang (1894 mm2)",
+  "VS05-03 \u00b7 D2 \u00b7 top view\ncells fab wings (the Stage 1 picks VS03-04, VS03-08)\nE1 Clubtail print body at 3x (factor 1.0345 on the source)\n168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)\n38 g \u00b7 2.0 h estimated, not sliced\nopen cells: fore 4, hind 10 per wing \u00b7 kept closed 26, 22\nFAIL: wings pass, body keeps the E1 overhang (1894 mm2)",
+  "VS05-04 \u00b7 D2 \u00b7 three-quarter view\ncells fab wings (the Stage 1 picks VS03-04, VS03-08)\nE1 Clubtail print body at 3x (factor 1.0345 on the source)\n168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)\n38 g \u00b7 2.0 h estimated, not sliced\nopen cells: fore 4, hind 10 per wing \u00b7 kept closed 26, 22\nFAIL: wings pass, body keeps the E1 overhang (1894 mm2)"
+ ]
+}

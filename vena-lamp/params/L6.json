@@ -1,0 +1,6 @@
+{"id": "L6", "mode_field": "L6-cells", "shape_field": "egg", "size_mm": 170, "source_study": "VS02-16 cells disk",
+ "note": "Control: cells only, no veins. The cell seeds of the disk study are unrolled on the egg (radius to height) and the cells are re-cut on the surface.",
+ "form": {"type": "egg", "args": {"H": 170, "W": 85}},
+ "source": {"kind": "polar", "pattern": "L6_disk"},
+ "page_specs": {"L6_disk": {"mode": "cells", "shape": "disk", "ncell": 420}},
+ "seeds": [7, 23]}

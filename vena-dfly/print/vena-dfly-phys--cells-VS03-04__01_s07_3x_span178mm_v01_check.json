@@ -1,0 +1,172 @@
+{
+ "stem": "vena-dfly-phys--cells-VS03-04__01_s07_3x_span178mm_v01",
+ "id": "vena-dfly-phys--cells-VS03-04__01",
+ "stats": {
+  "grid": [
+   698,
+   737,
+   91
+  ],
+  "pitch_mm": [
+   0.25,
+   0.28
+  ],
+  "tris_raw": 1072480,
+  "dropped_fragments_mm3": [
+   1.419,
+   0.967,
+   0.114,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068
+  ],
+  "dropped_fragments": 92,
+  "decimated": "manifold simplify 0.02 mm",
+  "scale": 3.0,
+  "factor_on_source": 1.03448,
+  "wings": {
+   "fore": {
+    "kind": "fore",
+    "named_segments": 221,
+    "grown_segments": 0,
+    "grown_dropped": 0,
+    "grown_threshold": 0.0,
+    "windows": 12,
+    "fields_filled": 0,
+    "windows_over_8mm": 1,
+    "named_kept": [
+     "RS",
+     "triangle",
+     "pterostigma",
+     "nodus"
+    ],
+    "named_dropped": [
+     "C",
+     "R1",
+     "MA",
+     "A1",
+     "CuA"
+    ],
+    "cell_walls_kept": 7,
+    "cell_walls_tried": 52,
+    "rib_share": 0.549,
+    "area_mm2": 1422.5,
+    "least_window_mm": 1.59,
+    "stat": [
+     "VS00-00 \u00b7 cells \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+     "Screen, no minimums \u00b7 90 mm",
+     "vein nodes 878",
+     "loops 0",
+     "cells 52",
+     "clamped: fixed 0/869, grown 0/0, links 0/0, walls 0/900",
+     "dead ends: pruned 0, extended 0, snapped 0",
+     "named vein ends extended 6",
+     "under 2 mm at 3x: 869/869 segments",
+     "0.1023 mm/px",
+     "8 ms"
+    ]
+   },
+   "hind": {
+    "kind": "hind",
+    "named_segments": 365,
+    "grown_segments": 0,
+    "grown_dropped": 0,
+    "grown_threshold": 0.0,
+    "windows": 19,
+    "fields_filled": 2,
+    "windows_over_8mm": 0,
+    "named_kept": [
+     "RS",
+     "MA",
+     "triangle",
+     "pterostigma",
+     "nodus"
+    ],
+    "named_dropped": [
+     "C",
+     "R1",
+     "A1",
+     "CuA"
+    ],
+    "cell_walls_kept": 14,
+    "cell_walls_tried": 60,
+    "rib_share": 0.59,
+    "area_mm2": 1834.5,
+    "least_window_mm": 1.88,
+    "stat": [
+     "VS00-00 \u00b7 cells \u00b7 clubtail-hind \u00b7 vein set fab \u00b7 seed 7",
+     "Screen, no minimums \u00b7 90 mm",
+     "vein nodes 926",
+     "loops 0",
+     "cells 59",
+     "clamped: fixed 0/917, grown 0/0, links 0/0, walls 0/1040",
+     "dead ends: pruned 0, extended 0, snapped 0",
+     "named vein ends extended 5",
+     "under 2 mm at 3x: 917/917 segments",
+     "0.1023 mm/px",
+     "8 ms"
+    ]
+   }
+  },
+  "body_volume_source_cm3": 43.25,
+  "body_volume_added_cm3": 2.68,
+  "web_columns_started": 5391,
+  "eye_facets": 209,
+  "eye_sphere_inside_body_share": [
+   0.994,
+   0.997
+  ],
+  "label": "vena-dfly-phys--cells-VS03-04__01 v01",
+  "label_on_bed_contact_share": 0.74,
+  "tris": 365064
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   168.5,
+   178.4,
+   24.4
+  ],
+  "dims_in": [
+   6.63,
+   7.03,
+   0.96
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   43.8,
+   38.8
+  ],
+  "height_ok": true,
+  "overhang_mm2": 72.52,
+  "overhang_faces": 2977,
+  "overhang_widest_strip_mm": 0.54,
+  "overhang_largest_patch_mm2": 1.05,
+  "volume_cm3": 34.3,
+  "area_cm2": 276.9,
+  "grams_est": 36.0,
+  "hours_est": 1.9,
+  "cost_usd_est": 1.19,
+  "min_wall_design_mm": {
+   "membrane": 0.4,
+   "rib": 2.0,
+   "rim": 2.0,
+   "web_under_legs": 0.75
+  },
+  "fine_below_lab_minimum": "membrane 0.4 mm, webs 0.75 mm",
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75). The 2 mm wall is not part of it: membrane and webs are fine by design."
+ },
+ "patterns": [
+  "cells_fore_s07.pattern.json",
+  "cells_hind_s07.pattern.json"
+ ],
+ "build_s": 12.5,
+ "built": "2026-11-21 17:26"
+}

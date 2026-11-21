@@ -1,0 +1,114 @@
+{
+ "stem": "vena-lamp-cyl--wing-wrap6-VS03-04__01_s07_b2.25in_h200mm_v01",
+ "id": "vena-lamp-cyl--wing-wrap6-VS03-04__01",
+ "key": "b11",
+ "seed": 7,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "cyl",
+  "base_in": 2.25,
+  "H": 200
+ },
+ "pattern": {
+  "kind": "panels",
+  "count": 6,
+  "patterns": [
+   "L3_fore_s07",
+   "L3_hind_s07"
+  ],
+  "fixed": "named",
+  "vein_spacing": [
+   13.0,
+   11.0
+  ],
+  "kill_k": 0.6,
+  "cell_spacing": [
+   5.6,
+   4.4
+  ],
+  "cell_w": [
+   1.4,
+   1.2
+  ],
+  "vein_w": {
+   "foot": [
+    1.6,
+    3.6
+   ],
+   "rim": [
+    1.4,
+    2.4
+   ]
+  }
+ },
+ "note": "wing on cylinder, 6 panels, regrown",
+ "stats": {
+  "vein_nodes": 5433,
+  "tip_links": 16,
+  "tips_pruned": 0,
+  "panels": 6,
+  "cell_seeds": 218,
+  "vein_samples": 18017,
+  "cells": 355,
+  "cells_closed_small": 233,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 1.5,
+  "median_cell_mm": 4.82,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 42.0,
+  "window_clear_pct": 65.4,
+  "remesh": 0,
+  "grid": [
+   508,
+   500
+  ],
+  "tris_raw": 890512,
+  "shell_cm2": 335.2,
+  "rib_w_mm": [
+   1.21,
+   3.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   66.6,
+   65.0,
+   198.8
+  ],
+  "dims_in": [
+   2.62,
+   2.56,
+   7.83
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   94.7,
+   95.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 0.81,
+  "overhang_faces": 11,
+  "overhang_widest_strip_mm": 0.1,
+  "overhang_largest_patch_mm2": 0.23,
+  "volume_cm3": 67.7,
+  "area_cm2": 787.9,
+  "grams_est": 84.0,
+  "hours_est": 6.0,
+  "cost_usd_est": 2.77,
+  "least_window_mm": 1.5,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 57.65,
+  "collar_mm": 12.7
+ },
+ "tris": 337892,
+ "build_s": 5.7,
+ "built": "2026-11-21 16:20"
+}

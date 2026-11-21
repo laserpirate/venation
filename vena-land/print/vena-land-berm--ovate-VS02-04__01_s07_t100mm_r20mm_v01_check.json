@@ -1,0 +1,43 @@
+{
+ "stem": "vena-land-berm--ovate-VS02-04__01_s07_t100mm_r20mm_v01",
+ "id": "vena-land-berm--ovate-VS02-04__01",
+ "typology": "berm",
+ "base_mm": 3.0,
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   100.0,
+   100.0,
+   23.0
+  ],
+  "dims_in": [
+   3.94,
+   3.94,
+   0.91
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   78.0,
+   78.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 0.0,
+  "overhang_faces": 0,
+  "overhang_widest_strip_mm": 0.0,
+  "overhang_largest_patch_mm2": 0.0,
+  "volume_cm3": 77.3,
+  "area_cm2": 278.2,
+  "grams_est": 63.0,
+  "hours_est": 3.1,
+  "cost_usd_est": 2.08,
+  "manifold_status": "Error.NoError",
+  "label": "vena-land-berm--ovate-VS02-04__01 v01",
+  "features_under_2mm_pct": 0.01,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (the label letters are the only down faces). Features under 2 mm are reported, not failed."
+ },
+ "tris": 99738,
+ "built": "2026-11-21 17:31"
+}

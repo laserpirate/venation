@@ -1,0 +1,5 @@
+{"id": "L1", "mode_field": "L1-closed", "shape_field": "egg", "size_mm": 170, "source_study": "VS02-10 closed blob",
+ "note": "Reference form. Closed venation grown on the egg itself: sources on the surface, each growth step projected back to it. Same rule as VS02-10, not the same drawing.",
+ "form": {"type": "egg", "args": {"H": 170, "W": 85}},
+ "source": {"kind": "surface", "mode": "closed", "spacing": 11.0, "step": 2.0, "kill": 3.0, "roots": 3},
+ "seeds": [7, 23]}

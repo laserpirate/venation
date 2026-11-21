@@ -1,0 +1,14 @@
+{
+ "png": "VS07_contact_vena-dfly-phys-v01_1730.png",
+ "tiles": 6,
+ "plex_mono_loaded": true,
+ "assert_fails": [],
+ "captions": [
+  "vena-dfly-phys--open-VS03-01__01\nVS07-01 \u00b7 top \u00b7 forewings VS03-01, hindwings VS03-05 (open)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nwings: membrane 0.4 mm closed, ribs 2.0 to 3.6 mm wide, 1.2 to 3.0 mm tall \u00b7 fine, below lab minimum\nribs cover 55 and 55 percent of fore and hind wing \u00b7 windows 1 and 1 \u00b7 none opened\n36 g \u00b7 1.9 h estimated, not sliced\nPASS",
+  "vena-dfly-phys--open-VS03-01__01\nVS07-02 \u00b7 three-quarter \u00b7 forewings VS03-01, hindwings VS03-05 (open)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nbody: 45 degree chamfers and 0.75 mm webs under the legs, 2.7 cm3 added to 43.2 \u00b7 down-facing 72 mm2, widest strip 0.54 mm\neyes: 209 hexagonal facets, 1.6 mm pitch, 0.3 mm relief\n36 g \u00b7 1.9 h estimated, not sliced\nPASS",
+  "vena-dfly-phys--open-VS03-01__01\nVS07-03 \u00b7 left wings back-lit \u00b7 forewings VS03-01, hindwings VS03-05 (open)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nveins thinned to fit: 333 of 2014 and 515 of 2733 grown segments kept\nrender material is a stand-in, not a measured filament\n36 g \u00b7 1.9 h estimated, not sliced\nPASS",
+  "vena-dfly-phys--cells-VS03-04__01\nVS07-04 \u00b7 top \u00b7 forewings VS03-04, hindwings VS03-08 (cells fab)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nwings: membrane 0.4 mm closed, ribs 2.0 to 3.6 mm wide, 1.2 to 3.0 mm tall \u00b7 fine, below lab minimum\nribs cover 55 and 59 percent of fore and hind wing \u00b7 windows 12 and 19 \u00b7 none opened\n36 g \u00b7 1.9 h estimated, not sliced\nPASS",
+  "vena-dfly-phys--cells-VS03-04__01\nVS07-05 \u00b7 three-quarter \u00b7 forewings VS03-04, hindwings VS03-08 (cells fab)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nbody: 45 degree chamfers and 0.75 mm webs under the legs, 2.7 cm3 added to 43.2 \u00b7 down-facing 73 mm2, widest strip 0.54 mm\neyes: 209 hexagonal facets, 1.6 mm pitch, 0.3 mm relief\n36 g \u00b7 1.9 h estimated, not sliced\nPASS",
+  "vena-dfly-phys--cells-VS03-04__01\nVS07-06 \u00b7 left wings back-lit \u00b7 forewings VS03-04, hindwings VS03-08 (cells fab)\nE1 Clubtail body at 3x \u00b7 168 x 178 x 24 mm (6.63 x 7.02 x 0.96 in)\nnamed veins kept: fore RS; hind RS, MA \u00b7 cells kept 7 of 52 and 14 of 60\nrender material is a stand-in, not a measured filament\n36 g \u00b7 1.9 h estimated, not sliced\nPASS"
+ ]
+}

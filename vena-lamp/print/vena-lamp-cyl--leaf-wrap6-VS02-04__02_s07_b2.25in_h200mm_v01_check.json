@@ -1,0 +1,94 @@
+{
+ "stem": "vena-lamp-cyl--leaf-wrap6-VS02-04__02_s07_b2.25in_h200mm_v01",
+ "id": "vena-lamp-cyl--leaf-wrap6-VS02-04__02",
+ "key": "c03",
+ "sheet": "VS06c",
+ "tile": 3,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "cyl",
+  "base_in": 2.25,
+  "H": 200
+ },
+ "foot": {
+  "internal_diameter_mm": 57.65,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "vein_nodes": 2595,
+  "tip_links": 262,
+  "tips_pruned": 49,
+  "panels": 6,
+  "cut_deg": 38,
+  "cut_z_mm": [
+   141.9,
+   190.1
+  ],
+  "cell_seeds": 0,
+  "vein_samples": 16235,
+  "cells": 269,
+  "cells_closed_small": 100,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 1.51,
+  "median_cell_mm": 5.09,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": 0.0,
+  "window_area_pct": 58.7,
+  "window_clear_pct": 73.9,
+  "remesh": 0,
+  "grid": [
+   508,
+   500
+  ],
+  "tris_raw": 848184,
+  "shell_cm2": 321.5,
+  "rib_w_mm": [
+   1.21,
+   4.39
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "label": {
+  "label": "vena-lamp-cyl--leaf-wrap6-VS02-04__02 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 54.23
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   65.7,
+   66.0,
+   190.0
+  ],
+  "dims_in": [
+   2.59,
+   2.6,
+   7.48
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   95.2,
+   95.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 44.95,
+  "overhang_faces": 655,
+  "overhang_widest_strip_mm": 0.61,
+  "overhang_largest_patch_mm2": 0.94,
+  "volume_cm3": 54.4,
+  "area_cm2": 733.8,
+  "grams_est": 67.0,
+  "hours_est": 5.2,
+  "cost_usd_est": 2.21,
+  "least_window_mm": 1.51,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm",
+  "pass": true
+ },
+ "tris": 293604,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

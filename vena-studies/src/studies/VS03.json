@@ -1,0 +1,196 @@
+[
+ {
+  "id": "VS03-01",
+  "img": "VS03-01.png",
+  "lines": [
+   "VS03-01 \u00b7 open \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/2014 veins",
+   "dead ends: pruned 1796 \u00b7 extended 50 \u00b7 snapped 141",
+   "under 2 mm at 3x: 2014/2014 segments"
+  ]
+ },
+ {
+  "id": "VS03-02",
+  "img": "VS03-02.png",
+  "lines": [
+   "VS03-02 \u00b7 closed \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/2765 veins",
+   "closed cells 115",
+   "dead ends: pruned 8 \u00b7 extended 26 \u00b7 snapped 26 \u00b7 named ends 6",
+   "under 2 mm at 3x: 2765/2765 segments"
+  ]
+ },
+ {
+  "id": "VS03-03",
+  "img": "VS03-03.png",
+  "lines": [
+   "VS03-03 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/2970 veins \u00b7 0/2617 walls",
+   "cells 624",
+   "dead ends: pruned 0 \u00b7 extended 136 \u00b7 snapped 61 \u00b7 named ends 6",
+   "under 2 mm at 3x: 2970/2970 segments"
+  ]
+ },
+ {
+  "id": "VS03-04",
+  "img": "VS03-04.png",
+  "lines": [
+   "VS03-04 \u00b7 cells \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/869 veins \u00b7 0/2566 walls",
+   "cells 606",
+   "dead ends: pruned 0 \u00b7 extended 0 \u00b7 snapped 0 \u00b7 named ends 6",
+   "under 2 mm at 3x: 869/869 segments"
+  ]
+ },
+ {
+  "id": "VS03-05",
+  "img": "VS03-05.png",
+  "lines": [
+   "VS03-05 \u00b7 open \u00b7 clubtail-hind \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/2734 veins",
+   "dead ends: pruned 2744 \u00b7 extended 78 \u00b7 snapped 237",
+   "under 2 mm at 3x: 2734/2734 segments"
+  ]
+ },
+ {
+  "id": "VS03-06",
+  "img": "VS03-06.png",
+  "lines": [
+   "VS03-06 \u00b7 closed \u00b7 clubtail-hind \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/3899 veins",
+   "closed cells 161",
+   "dead ends: pruned 41 \u00b7 extended 33 \u00b7 snapped 98 \u00b7 named ends 5",
+   "under 2 mm at 3x: 3899/3899 segments"
+  ]
+ },
+ {
+  "id": "VS03-07",
+  "img": "VS03-07.png",
+  "lines": [
+   "VS03-07 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/5618 veins \u00b7 0/2662 walls",
+   "cells 621",
+   "dead ends: pruned 2 \u00b7 extended 184 \u00b7 snapped 955 \u00b7 named ends 5",
+   "under 2 mm at 3x: 5618/5618 segments"
+  ]
+ },
+ {
+  "id": "VS03-08",
+  "img": "VS03-08.png",
+  "lines": [
+   "VS03-08 \u00b7 cells \u00b7 clubtail-hind \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "clamped 0/917 veins \u00b7 0/2636 walls",
+   "cells 613",
+   "dead ends: pruned 0 \u00b7 extended 0 \u00b7 snapped 0 \u00b7 named ends 5",
+   "under 2 mm at 3x: 917/917 segments"
+  ]
+ },
+ {
+  "id": "VS03-09",
+  "img": "VS03-09.png",
+  "lines": [
+   "VS03-09 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "bias: costal 0.3 \u00b7 tip 0",
+   "clamped 0/2959 veins \u00b7 0/2617 walls",
+   "cells 624",
+   "dead ends: pruned 0 \u00b7 extended 137 \u00b7 snapped 59 \u00b7 named ends 6",
+   "under 2 mm at 3x: 2959/2959 segments"
+  ]
+ },
+ {
+  "id": "VS03-10",
+  "img": "VS03-10.png",
+  "lines": [
+   "VS03-10 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "bias: costal 0.6 \u00b7 tip 0",
+   "clamped 0/2980 veins \u00b7 0/2617 walls",
+   "cells 624",
+   "dead ends: pruned 1 \u00b7 extended 138 \u00b7 snapped 57 \u00b7 named ends 6",
+   "under 2 mm at 3x: 2980/2980 segments"
+  ]
+ },
+ {
+  "id": "VS03-11",
+  "img": "VS03-11.png",
+  "lines": [
+   "VS03-11 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "bias: costal 0 \u00b7 tip 0.3",
+   "clamped 0/2926 veins \u00b7 0/2617 walls",
+   "cells 624",
+   "dead ends: pruned 1 \u00b7 extended 137 \u00b7 snapped 59 \u00b7 named ends 6",
+   "under 2 mm at 3x: 2926/2926 segments"
+  ]
+ },
+ {
+  "id": "VS03-12",
+  "img": "VS03-12.png",
+  "lines": [
+   "VS03-12 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm \u00b7 vein set fab",
+   "bias: costal 0 \u00b7 tip 0.6",
+   "clamped 0/3297 veins \u00b7 0/2617 walls",
+   "cells 624",
+   "dead ends: pruned 29 \u00b7 extended 132 \u00b7 snapped 267 \u00b7 named ends 6",
+   "under 2 mm at 3x: 3297/3297 segments"
+  ]
+ },
+ {
+  "id": "VS03-13",
+  "img": "VS03-13.png",
+  "lines": [
+   "VS03-13 \u00b7 closed \u00b7 ovate \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/4406 veins",
+   "closed cells 107",
+   "dead ends: pruned 1045 \u00b7 extended 30 \u00b7 snapped 8",
+   "rule off: 5262 segments \u00b7 3.8 % of ink px differ"
+  ]
+ },
+ {
+  "id": "VS03-14",
+  "img": "VS03-14.png",
+  "lines": [
+   "VS03-14 \u00b7 closed \u00b7 blob \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/4407 veins",
+   "closed cells 120",
+   "dead ends: pruned 1902 \u00b7 extended 23 \u00b7 snapped 166",
+   "rule off: 6005 segments \u00b7 3.4 % of ink px differ"
+  ]
+ },
+ {
+  "id": "VS03-15",
+  "img": "VS03-15.png",
+  "lines": [
+   "VS03-15 \u00b7 hybrid \u00b7 blob \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/3629 veins \u00b7 0/1437 walls",
+   "cells 420",
+   "dead ends: pruned 3431 \u00b7 extended 105 \u00b7 snapped 295",
+   "rule off: 5921 segments \u00b7 30.9 % of ink px differ"
+  ]
+ },
+ {
+  "id": "VS03-16",
+  "img": "VS03-16.png",
+  "lines": [
+   "VS03-16 \u00b7 closed \u00b7 disk \u00b7 seed 07",
+   "Screen, no minimums \u00b7 120 mm",
+   "clamped 0/4488 veins",
+   "closed cells 140",
+   "dead ends: pruned 1884 \u00b7 extended 28 \u00b7 snapped 4",
+   "rule off: 6192 segments \u00b7 3.4 % of ink px differ"
+  ]
+ }
+]

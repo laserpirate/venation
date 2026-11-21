@@ -1,0 +1,99 @@
+{
+ "stem": "vena-lamp-egg--cells-winopen-VS04-12__01_s23_b2.00in_h190mm_v01",
+ "id": "vena-lamp-egg--cells-winopen-VS04-12__01",
+ "key": "c05",
+ "seed": 23,
+ "tech": "T1T2",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 190,
+  "W": 95
+ },
+ "pattern": {
+  "kind": "surface",
+  "cell_spacing": [
+   8.2,
+   5.6
+  ],
+  "cell_w": [
+   2.4,
+   1.6
+  ],
+  "tear": 10
+ },
+ "note": "window below, open above \u00b7 VS06a-02 lineage",
+ "stats": {
+  "cell_seeds": 591,
+  "vein_samples": 0,
+  "cells": 496,
+  "cells_closed_small": 34,
+  "cells_cut_at_rim": 124,
+  "least_cell_mm": 3.96,
+  "median_cell_mm": 6.8,
+  "holes_open": 330,
+  "windows_kept": 166,
+  "split_z_mm": 73.1,
+  "split_band_mm": 12.0,
+  "above_split_kept_closed": 0,
+  "least_hole_mm": 4.54,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 55.2,
+  "window_clear_pct": 24.2,
+  "remesh": 0,
+  "grid": [
+   770,
+   475
+  ],
+  "tris_raw": 1201200,
+  "shell_cm2": 430.8,
+  "rib_w_mm": [
+   1.63,
+   2.4
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   96.5,
+   96.6,
+   184.4
+  ],
+  "dims_in": [
+   3.8,
+   3.8,
+   7.26
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   79.7,
+   79.7
+  ],
+  "height_ok": true,
+  "overhang_mm2": 38.26,
+  "overhang_faces": 816,
+  "overhang_widest_strip_mm": 0.55,
+  "overhang_largest_patch_mm2": 0.73,
+  "volume_cm3": 87.9,
+  "area_cm2": 968.3,
+  "grams_est": 109.0,
+  "hours_est": 7.0,
+  "cost_usd_est": 3.6,
+  "least_window_mm": 3.96,
+  "least_hole_mm": 4.54,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm, least hole 2.0 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "tris": 423306,
+ "build_s": 6.0,
+ "built": "2026-11-21 17:17"
+}

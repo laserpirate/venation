@@ -1,0 +1,90 @@
+{
+ "stem": "VS04-07_L4-hybrid_cylinder_s07_150mm_v01",
+ "id": "L4",
+ "tile": "VS04-07",
+ "seed": 7,
+ "form": {
+  "type": "cyl",
+  "args": {
+   "H": 150,
+   "W": 100
+  }
+ },
+ "source": {
+  "kind": "polar",
+  "pattern": "L4_disk"
+ },
+ "source_study": "VS02-15 hybrid disk",
+ "stats": {
+  "page": [
+   "VS00-00 \u00b7 hybrid \u00b7 disk \u00b7 seed 7",
+   "Screen, no minimums \u00b7 120 mm",
+   "vein nodes 1818",
+   "loops 191",
+   "cells 420",
+   "clamped: fixed 0/0, grown 0/1817, links 0/191, walls 0/1437",
+   "dead ends: pruned 2170, extended 60, snapped 158",
+   "0.1364 mm/px",
+   "131 ms"
+  ],
+  "grid": [
+   809,
+   375
+  ],
+  "holes_open": 200,
+  "cells_kept_closed": 340,
+  "tris_raw": 1052586,
+  "web_fail_mm2": 0.3106642920731563,
+  "shell_mm2": 45892.88254650702,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L4 v01 s07",
+  "label_ring_mm": [
+   40.0,
+   50.0
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   103.0,
+   103.0,
+   149.9
+  ],
+  "dims_in": [
+   4.06,
+   4.06,
+   5.9
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   76.5,
+   76.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 121.92,
+  "overhang_faces": 1642,
+  "overhang_widest_strip_mm": 0.75,
+  "overhang_largest_patch_mm2": 2.54,
+  "volume_cm3": 133.0,
+  "area_cm2": 930.4,
+  "grams_est": 123.0,
+  "hours_est": 7.3,
+  "cost_usd_est": 4.06,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 0.3,
+  "web_under_2mm_pct": 0.0,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 252138,
+ "build_s": 7.7,
+ "built": "2026-11-21 01:47"
+}

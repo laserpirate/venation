@@ -1,0 +1,88 @@
+{
+ "stem": "vena-lamp-cyl--hybrid-VS04-07__01_s07_b2.25in_h200mm_v01",
+ "id": "vena-lamp-cyl--hybrid-VS04-07__01",
+ "key": "a05",
+ "sheet": "VS06a",
+ "tile": 5,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "cyl",
+  "base_in": 2.25,
+  "H": 200
+ },
+ "foot": {
+  "internal_diameter_mm": 57.65,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "vein_nodes": 1213,
+  "tip_links": 70,
+  "tips_pruned": 3,
+  "vein_sources": 169,
+  "cell_seeds": 532,
+  "vein_samples": 5355,
+  "cells": 485,
+  "cells_closed_small": 225,
+  "cells_cut_at_rim": 79,
+  "least_cell_mm": 1.57,
+  "median_cell_mm": 5.66,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 55.6,
+  "window_clear_pct": 67.7,
+  "remesh": 0,
+  "grid": [
+   508,
+   500
+  ],
+  "tris_raw": 939508,
+  "shell_cm2": 353.9,
+  "rib_w_mm": [
+   1.21,
+   4.2
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "label": {
+  "label": "vena-lamp-cyl--hybrid-VS04-07__01 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 48.25
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   64.1,
+   63.8,
+   193.6
+  ],
+  "dims_in": [
+   2.52,
+   2.51,
+   7.62
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   96.0,
+   96.1
+  ],
+  "height_ok": true,
+  "overhang_mm2": 43.59,
+  "overhang_faces": 609,
+  "overhang_widest_strip_mm": 0.53,
+  "overhang_largest_patch_mm2": 1.04,
+  "volume_cm3": 58.6,
+  "area_cm2": 794.4,
+  "grams_est": 73.0,
+  "hours_est": 5.5,
+  "cost_usd_est": 2.41,
+  "least_window_mm": 1.57,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm",
+  "pass": true
+ },
+ "tris": 405348,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

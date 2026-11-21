@@ -1,0 +1,146 @@
+{
+ "stem": "vena-dfly-phys--open-VS03-01__01_s07_3x_span178mm_v01",
+ "id": "vena-dfly-phys--open-VS03-01__01",
+ "stats": {
+  "grid": [
+   698,
+   737,
+   91
+  ],
+  "pitch_mm": [
+   0.25,
+   0.28
+  ],
+  "tris_raw": 1072562,
+  "dropped_fragments_mm3": [
+   1.419,
+   0.967,
+   0.114,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068,
+   0.068
+  ],
+  "dropped_fragments": 92,
+  "decimated": "manifold simplify 0.02 mm",
+  "scale": 3.0,
+  "factor_on_source": 1.03448,
+  "wings": {
+   "fore": {
+    "kind": "fore",
+    "named_segments": 0,
+    "grown_segments": 2014,
+    "grown_dropped": 1681,
+    "grown_threshold": 0.55,
+    "windows": 1,
+    "fields_filled": 3,
+    "windows_over_8mm": 1,
+    "named_kept": [],
+    "named_dropped": [],
+    "cell_walls_kept": 0,
+    "cell_walls_tried": 0,
+    "rib_share": 0.55,
+    "area_mm2": 1422.5,
+    "least_window_mm": 9.86,
+    "stat": [
+     "VS00-00 \u00b7 open \u00b7 clubtail-fore \u00b7 vein set full \u00b7 seed 7",
+     "Screen, no minimums \u00b7 90 mm",
+     "vein nodes 1841",
+     "loops 174",
+     "clamped: fixed 0/0, grown 0/1840, links 0/174, walls 0/0",
+     "dead ends: pruned 1796, extended 50, snapped 141",
+     "under 2 mm at 3x: 2014/2014 segments",
+     "0.1023 mm/px",
+     "158 ms"
+    ]
+   },
+   "hind": {
+    "kind": "hind",
+    "named_segments": 0,
+    "grown_segments": 2733,
+    "grown_dropped": 2218,
+    "grown_threshold": 0.65,
+    "windows": 1,
+    "fields_filled": 2,
+    "windows_over_8mm": 1,
+    "named_kept": [],
+    "named_dropped": [],
+    "cell_walls_kept": 0,
+    "cell_walls_tried": 0,
+    "rib_share": 0.548,
+    "area_mm2": 1834.5,
+    "least_window_mm": 11.82,
+    "stat": [
+     "VS00-00 \u00b7 open \u00b7 clubtail-hind \u00b7 vein set full \u00b7 seed 7",
+     "Screen, no minimums \u00b7 90 mm",
+     "vein nodes 2442",
+     "loops 293",
+     "clamped: fixed 0/0, grown 0/2441, links 0/293, walls 0/0",
+     "dead ends: pruned 2744, extended 78, snapped 237",
+     "under 2 mm at 3x: 2734/2734 segments",
+     "0.1023 mm/px",
+     "132 ms"
+    ]
+   }
+  },
+  "body_volume_source_cm3": 43.25,
+  "body_volume_added_cm3": 2.68,
+  "web_columns_started": 5391,
+  "eye_facets": 209,
+  "eye_sphere_inside_body_share": [
+   0.994,
+   0.997
+  ],
+  "label": "vena-dfly-phys--open-VS03-01__01 v01",
+  "label_on_bed_contact_share": 0.73,
+  "tris": 344342
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   168.5,
+   178.4,
+   24.4
+  ],
+  "dims_in": [
+   6.63,
+   7.03,
+   0.96
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   43.8,
+   38.8
+  ],
+  "height_ok": true,
+  "overhang_mm2": 72.18,
+  "overhang_faces": 2956,
+  "overhang_widest_strip_mm": 0.54,
+  "overhang_largest_patch_mm2": 1.05,
+  "volume_cm3": 35.6,
+  "area_cm2": 278.5,
+  "grams_est": 36.0,
+  "hours_est": 1.9,
+  "cost_usd_est": 1.19,
+  "min_wall_design_mm": {
+   "membrane": 0.4,
+   "rib": 2.0,
+   "rim": 2.0,
+   "web_under_legs": 0.75
+  },
+  "fine_below_lab_minimum": "membrane 0.4 mm, webs 0.75 mm",
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75). The 2 mm wall is not part of it: membrane and webs are fine by design."
+ },
+ "patterns": [
+  "open_fore_s07.pattern.json",
+  "open_hind_s07.pattern.json"
+ ],
+ "build_s": 19.6,
+ "built": "2026-11-21 17:26"
+}

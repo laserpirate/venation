@@ -1,0 +1,95 @@
+{
+ "stem": "vena-lamp-egg--wing-wrap6-VS03-04__02_s07_b2.00in_h200mm_v01",
+ "id": "vena-lamp-egg--wing-wrap6-VS03-04__02",
+ "key": "c01",
+ "sheet": "VS06c",
+ "tile": 1,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 200,
+  "W": 100
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "vein_nodes": 5522,
+  "tip_links": 25,
+  "tips_pruned": 0,
+  "panels": 6,
+  "cut_deg": 32,
+  "cut_z_mm": [
+   129.5,
+   178.3
+  ],
+  "cell_seeds": 355,
+  "vein_samples": 17195,
+  "cells": 557,
+  "cells_closed_small": 238,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 1.51,
+  "median_cell_mm": 4.96,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 49.9,
+  "window_clear_pct": 64.1,
+  "remesh": 0,
+  "grid": [
+   809,
+   500
+  ],
+  "tris_raw": 1268668,
+  "shell_cm2": 435.2,
+  "rib_w_mm": [
+   1.22,
+   3.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "label": {
+  "label": "vena-lamp-egg--wing-wrap6-VS03-04__02 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 57.87
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   104.7,
+   103.1,
+   178.4
+  ],
+  "dims_in": [
+   4.12,
+   4.06,
+   7.02
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   75.7,
+   76.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 50.02,
+  "overhang_faces": 741,
+  "overhang_widest_strip_mm": 0.57,
+  "overhang_largest_patch_mm2": 0.95,
+  "volume_cm3": 94.3,
+  "area_cm2": 1045.6,
+  "grams_est": 117.0,
+  "hours_est": 7.3,
+  "cost_usd_est": 3.86,
+  "least_window_mm": 1.51,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm",
+  "pass": true
+ },
+ "tris": 512408,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

@@ -1,0 +1,22 @@
+{
+ "ovate-VS02-04": {
+  "mode": "closed",
+  "shape": "ovate",
+  "nde": 0
+ },
+ "blob-VS02-10": {
+  "mode": "closed",
+  "shape": "blob",
+  "nde": 0
+ },
+ "cells-VS02-16": {
+  "mode": "cells",
+  "shape": "disk",
+  "nde": 0
+ },
+ "wing-VS03-04": {
+  "mode": "cells",
+  "shape": "clubtail-fore",
+  "veinset": "fab"
+ }
+}

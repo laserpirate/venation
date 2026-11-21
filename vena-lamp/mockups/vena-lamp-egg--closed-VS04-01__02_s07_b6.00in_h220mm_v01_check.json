@@ -1,0 +1,106 @@
+{
+ "stem": "vena-lamp-egg--closed-VS04-01__02_s07_b6.00in_h220mm_v01",
+ "id": "vena-lamp-egg--closed-VS04-01__02",
+ "key": "a09",
+ "seed": 7,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 6.0,
+  "H": 220,
+  "W": 176,
+  "zc": 80,
+  "rtop": 50,
+  "foot_wall": 3.0
+ },
+ "pattern": {
+  "kind": "surface",
+  "vein_spacing": [
+   6.5,
+   5.0
+  ],
+  "rim_px": 5,
+  "roots": 6,
+  "vein_w": {
+   "foot": [
+    1.4,
+    5.0
+   ],
+   "rim": [
+    1.2,
+    2.4
+   ]
+  },
+  "tear": 22
+ },
+ "note": "6 in base, 1.25 to 1",
+ "stats": {
+  "vein_nodes": 7857,
+  "tip_links": 753,
+  "tips_pruned": 107,
+  "vein_sources": 1908,
+  "cell_seeds": 0,
+  "vein_samples": 35840,
+  "cells": 550,
+  "cells_closed_small": 58,
+  "cells_cut_at_rim": 36,
+  "least_cell_mm": 1.51,
+  "median_cell_mm": 8.07,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 73.1,
+  "window_clear_pct": 80.6,
+  "remesh": 0,
+  "grid": [
+   1406,
+   550
+  ],
+  "tris_raw": 2849288,
+  "shell_cm2": 1030.5,
+  "rib_w_mm": [
+   1.21,
+   5.0
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   177.1,
+   177.7,
+   212.4
+  ],
+  "dims_in": [
+   6.97,
+   6.99,
+   8.36
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   39.4,
+   39.2
+  ],
+  "height_ok": true,
+  "overhang_mm2": 16.29,
+  "overhang_faces": 203,
+  "overhang_widest_strip_mm": 0.41,
+  "overhang_largest_patch_mm2": 0.8,
+  "volume_cm3": 151.1,
+  "area_cm2": 2340.1,
+  "grams_est": 187.0,
+  "hours_est": 10.9,
+  "cost_usd_est": 6.17,
+  "least_window_mm": 1.51,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 152.9,
+  "collar_mm": 6.35
+ },
+ "tris": 901556,
+ "build_s": 21.5,
+ "built": "2026-11-21 16:19"
+}

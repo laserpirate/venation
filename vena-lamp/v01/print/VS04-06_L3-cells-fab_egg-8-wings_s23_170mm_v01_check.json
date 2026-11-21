@@ -1,0 +1,86 @@
+{
+ "stem": "VS04-06_L3-cells-fab_egg-8-wings_s23_170mm_v01",
+ "id": "L3",
+ "tile": "VS04-06",
+ "seed": 23,
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "panels",
+  "count": 8,
+  "overlap": 6.0,
+  "patterns": [
+   "L3_fore",
+   "L3_hind"
+  ],
+  "cells": true
+ },
+ "source_study": "VS03-04 and VS03-08 (cells fab, the Stage 1 picks)",
+ "stats": {
+  "panels": 8,
+  "grid": [
+   691,
+   425
+  ],
+  "holes_open": 134,
+  "cells_kept_closed": 346,
+  "tris_raw": 998610,
+  "web_fail_mm2": 19.634453352826768,
+  "shell_mm2": 34842.850042949314,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L3 v01 s23",
+  "label_ring_mm": [
+   25.0,
+   33.0
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   90.4,
+   90.4,
+   169.9
+  ],
+  "dims_in": [
+   3.56,
+   3.56,
+   6.69
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   82.8,
+   82.8
+  ],
+  "height_ok": true,
+  "overhang_mm2": 156.06,
+  "overhang_faces": 1480,
+  "overhang_widest_strip_mm": 0.79,
+  "overhang_largest_patch_mm2": 2.53,
+  "volume_cm3": 140.2,
+  "area_cm2": 844.7,
+  "grams_est": 115.0,
+  "hours_est": 7.1,
+  "cost_usd_est": 3.8,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 19.6,
+  "web_under_2mm_pct": 0.06,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 234222,
+ "build_s": 8.9,
+ "built": "2026-11-21 01:47"
+}

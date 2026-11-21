@@ -1,0 +1,115 @@
+{
+ "stem": "vena-lamp-egg--wing-wrap8-VS03-04__01_s07_b2.00in_h200mm_v01",
+ "id": "vena-lamp-egg--wing-wrap8-VS03-04__01",
+ "key": "b04",
+ "seed": 7,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 200,
+  "W": 100
+ },
+ "pattern": {
+  "kind": "panels",
+  "count": 8,
+  "patterns": [
+   "L3_fore_s07",
+   "L3_hind_s07"
+  ],
+  "fixed": "named",
+  "vein_spacing": [
+   13.0,
+   11.0
+  ],
+  "kill_k": 0.6,
+  "cell_spacing": [
+   5.6,
+   4.4
+  ],
+  "cell_w": [
+   1.4,
+   1.2
+  ],
+  "vein_w": {
+   "foot": [
+    1.6,
+    3.6
+   ],
+   "rim": [
+    1.4,
+    2.4
+   ]
+  }
+ },
+ "note": "wing wrap, 8 panels, regrown",
+ "stats": {
+  "vein_nodes": 7241,
+  "tip_links": 18,
+  "tips_pruned": 0,
+  "panels": 8,
+  "cell_seeds": 339,
+  "vein_samples": 24890,
+  "cells": 521,
+  "cells_closed_small": 259,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 1.5,
+  "median_cell_mm": 5.02,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 44.9,
+  "window_clear_pct": 65.4,
+  "remesh": 0,
+  "grid": [
+   809,
+   500
+  ],
+  "tris_raw": 1408408,
+  "shell_cm2": 471.7,
+  "rib_w_mm": [
+   1.21,
+   3.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   104.7,
+   104.7,
+   198.8
+  ],
+  "dims_in": [
+   4.12,
+   4.12,
+   7.83
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   75.6,
+   75.6
+  ],
+  "height_ok": true,
+  "overhang_mm2": 1.12,
+  "overhang_faces": 20,
+  "overhang_widest_strip_mm": 0.18,
+  "overhang_largest_patch_mm2": 0.28,
+  "volume_cm3": 105.3,
+  "area_cm2": 1153.7,
+  "grams_est": 131.0,
+  "hours_est": 8.2,
+  "cost_usd_est": 4.32,
+  "least_window_mm": 1.5,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "tris": 543818,
+ "build_s": 13.6,
+ "built": "2026-11-21 16:20"
+}

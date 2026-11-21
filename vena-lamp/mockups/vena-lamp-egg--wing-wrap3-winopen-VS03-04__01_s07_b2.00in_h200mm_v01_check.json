@@ -1,0 +1,124 @@
+{
+ "stem": "vena-lamp-egg--wing-wrap3-winopen-VS03-04__01_s07_b2.00in_h200mm_v01",
+ "id": "vena-lamp-egg--wing-wrap3-winopen-VS03-04__01",
+ "key": "c07",
+ "seed": 7,
+ "tech": "T1T2",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 200,
+  "W": 100
+ },
+ "pattern": {
+  "kind": "panels",
+  "count": 3,
+  "patterns": [
+   "L3_fore_s07",
+   "L3_hind_s07"
+  ],
+  "fixed": "named",
+  "vein_spacing": [
+   13.0,
+   11.0
+  ],
+  "kill_k": 0.6,
+  "cell_spacing": [
+   6.6,
+   5.6
+  ],
+  "cell_w": [
+   1.8,
+   1.6
+  ],
+  "vein_w": {
+   "foot": [
+    1.8,
+    3.6
+   ],
+   "rim": [
+    1.6,
+    2.4
+   ]
+  },
+  "rim_w": 2.0
+ },
+ "note": "window below, open above \u00b7 VS06b-02 lineage",
+ "stats": {
+  "vein_nodes": 3197,
+  "tip_links": 59,
+  "tips_pruned": 1,
+  "panels": 3,
+  "cell_seeds": 337,
+  "vein_samples": 12921,
+  "cells": 422,
+  "cells_closed_small": 239,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 2.0,
+  "median_cell_mm": 6.41,
+  "holes_open": 288,
+  "windows_kept": 134,
+  "split_z_mm": 76.5,
+  "split_band_mm": 12.0,
+  "above_split_kept_closed": 0,
+  "least_hole_mm": 2.0,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 50.2,
+  "window_clear_pct": 23.4,
+  "remesh": 0.5,
+  "grid": [
+   809,
+   500
+  ],
+  "tris_raw": 1280770,
+  "shell_cm2": 467.1,
+  "rib_w_mm": [
+   1.61,
+   3.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   103.2,
+   104.1,
+   198.8
+  ],
+  "dims_in": [
+   4.06,
+   4.1,
+   7.83
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   76.4,
+   76.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 31.53,
+  "overhang_faces": 497,
+  "overhang_widest_strip_mm": 0.43,
+  "overhang_largest_patch_mm2": 0.75,
+  "volume_cm3": 97.9,
+  "area_cm2": 1036.9,
+  "grams_est": 121.0,
+  "hours_est": 7.7,
+  "cost_usd_est": 3.99,
+  "least_window_mm": 2.0,
+  "least_hole_mm": 2.0,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm, least hole 2.0 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "tris": 454702,
+ "build_s": 9.4,
+ "built": "2026-11-21 17:17"
+}

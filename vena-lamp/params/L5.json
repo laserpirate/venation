@@ -1,0 +1,30 @@
+{
+ "id": "L5",
+ "mode_field": "L5-open",
+ "shape_field": "mound",
+ "size_mm": 160,
+ "source_study": "VS02-10 blob outline, open venation",
+ "note": "The blob outline lofted as a low dome 160 wide and 90 tall, open top. Open veins grown on the surface from five roots at the foot; Voronoi cells on the surface give the holes because open veins enclose nothing. Lamp and landform study at once.",
+ "form": {
+  "type": "mound",
+  "args": {
+   "H": 90,
+   "W": 160,
+   "k": 0.35
+  }
+ },
+ "foot_w": 16,
+ "source": {
+  "kind": "surface",
+  "mode": "open",
+  "spacing": 12.0,
+  "step": 2.0,
+  "kill": 3.0,
+  "roots": 5,
+  "cells": 12.0
+ },
+ "seeds": [
+  7,
+  23
+ ]
+}

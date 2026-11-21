@@ -1,0 +1,85 @@
+{
+ "stem": "vena-lamp-egg--cells-VS04-12__04_s23_b2.00in_h190mm_v01",
+ "id": "vena-lamp-egg--cells-VS04-12__04",
+ "key": "a07",
+ "sheet": "VS06a",
+ "tile": 7,
+ "tech": "T2",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 190,
+  "W": 95
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "cell_seeds": 375,
+  "vein_samples": 0,
+  "cells": 279,
+  "cells_closed_small": 42,
+  "cells_cut_at_rim": 122,
+  "least_cell_mm": 5.3,
+  "median_cell_mm": 8.74,
+  "holes_open": 280,
+  "least_hole_mm": 2.16,
+  "min_skin_mm": 2.0,
+  "remesh": 0.5,
+  "grid": [
+   770,
+   475
+  ],
+  "tris_raw": 1059278,
+  "shell_cm2": 426.1,
+  "rib_w_mm": [
+   1.72,
+   4.0
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "label": {
+  "label": "vena-lamp-egg--cells-VS04-12__04 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 47.61
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   97.5,
+   97.5,
+   181.6
+  ],
+  "dims_in": [
+   3.84,
+   3.84,
+   7.15
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   79.2,
+   79.2
+  ],
+  "height_ok": true,
+  "overhang_mm2": 212.05,
+  "overhang_faces": 2392,
+  "overhang_widest_strip_mm": 0.83,
+  "overhang_largest_patch_mm2": 2.11,
+  "volume_cm3": 94.6,
+  "area_cm2": 882.6,
+  "grams_est": 117.0,
+  "hours_est": 7.3,
+  "cost_usd_est": 3.86,
+  "least_hole_mm": 2.16,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), least hole 2.0 mm",
+  "pass": true
+ },
+ "tris": 344760,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

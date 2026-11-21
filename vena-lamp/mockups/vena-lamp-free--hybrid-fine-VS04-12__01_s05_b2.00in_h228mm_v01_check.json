@@ -1,0 +1,112 @@
+{
+ "stem": "vena-lamp-free--hybrid-fine-VS04-12__01_s05_b2.00in_h228mm_v01",
+ "id": "vena-lamp-free--hybrid-fine-VS04-12__01",
+ "key": "a12",
+ "seed": 5,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 228,
+  "W": 100,
+  "zc": 95,
+  "rtop": 22
+ },
+ "pattern": {
+  "kind": "surface",
+  "vein_spacing": [
+   16.0,
+   11.0
+  ],
+  "roots": 5,
+  "cell_spacing": [
+   5.2,
+   3.6
+  ],
+  "cell_w": [
+   1.3,
+   1.2
+  ],
+  "vein_w": {
+   "foot": [
+    2.0,
+    4.6
+   ],
+   "rim": [
+    1.6,
+    2.8
+   ]
+  },
+  "tear": 18
+ },
+ "note": "free",
+ "stats": {
+  "vein_nodes": 1716,
+  "tip_links": 86,
+  "tips_pruned": 2,
+  "vein_sources": 200,
+  "cell_seeds": 1381,
+  "vein_samples": 7645,
+  "cells": 1323,
+  "cells_closed_small": 234,
+  "cells_cut_at_rim": 89,
+  "least_cell_mm": 1.53,
+  "median_cell_mm": 4.48,
+  "min_skin_mm": 0.85,
+  "window_area_pct": 55.4,
+  "window_clear_pct": 58.2,
+  "remesh": 0,
+  "grid": [
+   809,
+   570
+  ],
+  "tris_raw": 1729980,
+  "shell_cm2": 575.6,
+  "rib_w_mm": [
+   1.2,
+   4.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   101.3,
+   101.8,
+   221.2
+  ],
+  "dims_in": [
+   3.99,
+   4.01,
+   8.71
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   77.3,
+   77.1
+  ],
+  "height_ok": true,
+  "overhang_mm2": 9.34,
+  "overhang_faces": 103,
+  "overhang_widest_strip_mm": 0.27,
+  "overhang_largest_patch_mm2": 0.61,
+  "volume_cm3": 107.5,
+  "area_cm2": 1354.7,
+  "grams_est": 133.0,
+  "hours_est": 8.5,
+  "cost_usd_est": 4.39,
+  "least_window_mm": 1.53,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "tris": 838688,
+ "build_s": 15.4,
+ "built": "2026-11-21 16:19"
+}

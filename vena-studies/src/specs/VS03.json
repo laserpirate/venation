@@ -1,0 +1,4 @@
+[{"mode":"open","shape":"clubtail-fore"},{"mode":"closed","shape":"clubtail-fore","veinset":"fab"},{"mode":"hybrid","shape":"clubtail-fore","veinset":"fab"},{"mode":"cells","shape":"clubtail-fore","veinset":"fab"},
+ {"mode":"open","shape":"clubtail-hind"},{"mode":"closed","shape":"clubtail-hind","veinset":"fab"},{"mode":"hybrid","shape":"clubtail-hind","veinset":"fab"},{"mode":"cells","shape":"clubtail-hind","veinset":"fab"},
+ {"mode":"hybrid","shape":"clubtail-fore","veinset":"fab","costb":0.3},{"mode":"hybrid","shape":"clubtail-fore","veinset":"fab","costb":0.6},{"mode":"hybrid","shape":"clubtail-fore","veinset":"fab","tipb":0.3},{"mode":"hybrid","shape":"clubtail-fore","veinset":"fab","tipb":0.6},
+ {"mode":"closed","shape":"ovate","cmpNde":true},{"mode":"closed","shape":"blob","cmpNde":true},{"mode":"hybrid","shape":"blob","cmpNde":true},{"mode":"closed","shape":"disk","cmpNde":true}]

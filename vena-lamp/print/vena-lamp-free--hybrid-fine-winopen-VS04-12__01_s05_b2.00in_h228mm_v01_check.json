@@ -1,0 +1,99 @@
+{
+ "stem": "vena-lamp-free--hybrid-fine-winopen-VS04-12__01_s05_b2.00in_h228mm_v01",
+ "id": "vena-lamp-free--hybrid-fine-winopen-VS04-12__01",
+ "key": "c06",
+ "sheet": "VS06c",
+ "tile": 6,
+ "tech": "T1T2",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 228,
+  "W": 100,
+  "zc": 95,
+  "rtop": 22
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "vein_nodes": 1716,
+  "tip_links": 87,
+  "tips_pruned": 2,
+  "vein_sources": 202,
+  "cell_seeds": 744,
+  "vein_samples": 7654,
+  "cells": 695,
+  "cells_closed_small": 230,
+  "cells_cut_at_rim": 92,
+  "least_cell_mm": 2.02,
+  "median_cell_mm": 6.09,
+  "holes_open": 470,
+  "windows_kept": 225,
+  "split_z_mm": 85.8,
+  "split_band_mm": 12.0,
+  "above_split_kept_closed": 0,
+  "least_hole_mm": 2.02,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 54.7,
+  "window_clear_pct": 22.8,
+  "remesh": 0.5,
+  "grid": [
+   809,
+   570
+  ],
+  "tris_raw": 1596160,
+  "shell_cm2": 567.4,
+  "rib_w_mm": [
+   1.61,
+   4.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "label": {
+  "label": "vena-lamp-free--hybrid-fine-winopen-VS04-12__01 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 67.25
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   101.5,
+   102.0,
+   220.8
+  ],
+  "dims_in": [
+   3.99,
+   4.01,
+   8.69
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   77.3,
+   77.0
+  ],
+  "height_ok": true,
+  "overhang_mm2": 101.86,
+  "overhang_faces": 1502,
+  "overhang_widest_strip_mm": 0.6,
+  "overhang_largest_patch_mm2": 0.94,
+  "volume_cm3": 112.6,
+  "area_cm2": 1245.9,
+  "grams_est": 140.0,
+  "hours_est": 8.8,
+  "cost_usd_est": 4.62,
+  "least_window_mm": 2.02,
+  "least_hole_mm": 2.02,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm, least hole 2.0 mm",
+  "pass": true
+ },
+ "tris": 611174,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

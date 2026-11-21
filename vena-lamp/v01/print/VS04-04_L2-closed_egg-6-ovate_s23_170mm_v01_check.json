@@ -1,0 +1,84 @@
+{
+ "stem": "VS04-04_L2-closed_egg-6-ovate_s23_170mm_v01",
+ "id": "L2",
+ "tile": "VS04-04",
+ "seed": 23,
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "panels",
+  "count": 6,
+  "overlap": 6.0,
+  "patterns": [
+   "L2_ovate"
+  ]
+ },
+ "source_study": "VS02-04 closed ovate",
+ "stats": {
+  "panels": 6,
+  "grid": [
+   691,
+   425
+  ],
+  "holes_open": 69,
+  "cells_kept_closed": 107,
+  "tris_raw": 806090,
+  "web_fail_mm2": 1.676518137791846,
+  "shell_mm2": 31373.458999853687,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L2 v01 s23",
+  "label_ring_mm": [
+   25.0,
+   33.0
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   90.4,
+   89.2,
+   169.9
+  ],
+  "dims_in": [
+   3.56,
+   3.51,
+   6.69
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   82.8,
+   83.4
+  ],
+  "height_ok": true,
+  "overhang_mm2": 74.34,
+  "overhang_faces": 768,
+  "overhang_widest_strip_mm": 0.88,
+  "overhang_largest_patch_mm2": 3.45,
+  "volume_cm3": 113.8,
+  "area_cm2": 728.7,
+  "grams_est": 98.0,
+  "hours_est": 6.3,
+  "cost_usd_est": 3.23,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 1.7,
+  "web_under_2mm_pct": 0.01,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 244962,
+ "build_s": 7.7,
+ "built": "2026-11-21 01:47"
+}

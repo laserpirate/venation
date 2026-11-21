@@ -1,0 +1,89 @@
+{
+ "stem": "VS04-09_L5-open_mound_s07_160mm_v01",
+ "id": "L5",
+ "tile": "VS04-09",
+ "seed": 7,
+ "form": {
+  "type": "mound",
+  "args": {
+   "H": 90,
+   "W": 160,
+   "k": 0.35
+  }
+ },
+ "source": {
+  "kind": "surface",
+  "mode": "open",
+  "spacing": 12.0,
+  "step": 2.0,
+  "kill": 3.0,
+  "roots": 5,
+  "cells": 12.0
+ },
+ "source_study": "VS02-10 blob outline, open venation",
+ "stats": {
+  "vein_nodes": 900,
+  "pruned_nodes": 992,
+  "loop_links": 0,
+  "remesh": 0.5,
+  "grid": [
+   1476,
+   225
+  ],
+  "holes_open": 139,
+  "cells_kept_closed": 90,
+  "tris_raw": 1011180,
+  "web_fail_mm2": 48.20535200178314,
+  "shell_mm2": 27891.92398347331,
+  "decimated": "manifold simplify 0.03 mm",
+  "label": "L5 v01 s07",
+  "label_ring_mm": [
+   44.9,
+   54.7
+  ],
+  "label_cut": true
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   160.0,
+   122.2,
+   89.2
+  ],
+  "dims_in": [
+   6.3,
+   4.81,
+   3.51
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   48.0,
+   66.9
+  ],
+  "height_ok": true,
+  "overhang_mm2": 142.15,
+  "overhang_faces": 1881,
+  "overhang_widest_strip_mm": 0.75,
+  "overhang_largest_patch_mm2": 3.28,
+  "volume_cm3": 141.6,
+  "area_cm2": 730.0,
+  "grams_est": 103.0,
+  "hours_est": 5.7,
+  "cost_usd_est": 3.4,
+  "min_wall_design_mm": {
+   "shell": 2.0,
+   "vein": 2.0,
+   "cell_wall": 2.4,
+   "web_across_vein": 4.7
+  },
+  "web_under_2mm_mm2": 48.2,
+  "web_under_2mm_pct": 0.17,
+  "pass": true,
+  "plate_3mf": true
+ },
+ "tris": 243236,
+ "build_s": 10.8,
+ "built": "2026-11-21 01:49"
+}

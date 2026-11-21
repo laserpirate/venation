@@ -1,0 +1,81 @@
+{
+ "stem": "VS05-01_D1-hybrid-fab_clubtail-3x_s07_179mm_v01",
+ "id": "D1",
+ "tile": "VS05-01",
+ "stats": {
+  "scale": 3.0,
+  "source_scale": 2.9,
+  "factor_on_source": 1.03448,
+  "rotated_on_plate_deg": 0,
+  "wings": {
+   "fore": {
+    "holes": 3,
+    "cells_kept_closed": 28,
+    "open_share": 0.062,
+    "named_segments": 644,
+    "grown_segments": 126
+   },
+   "hind": {
+    "holes": 3,
+    "cells_kept_closed": 38,
+    "open_share": 0.067,
+    "named_segments": 641,
+    "grown_segments": 199
+   }
+  },
+  "dropped_fragments_mm3": [
+   0.0
+  ],
+  "tris": 73002
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   168.4,
+   178.7,
+   24.3
+  ],
+  "dims_in": [
+   6.63,
+   7.03,
+   0.96
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   43.8,
+   38.7
+  ],
+  "height_ok": true,
+  "overhang_mm2_total": 1894.5,
+  "overhang_mm2_new_wings": 0.0,
+  "overhang_mm2_source_body_at_3x": 2089.5,
+  "volume_cm3": 44.8,
+  "grams_est": 39.0,
+  "hours_est": 2.0,
+  "cost_usd_est": 1.29,
+  "min_wall_design_mm": {
+   "membrane": 2.0,
+   "rib": 3.0,
+   "grown_vein": 2.0,
+   "between_holes": 2.0,
+   "rim": 2.0
+  },
+  "label": "D1 v01 3x",
+  "label_bounds_xy": [
+   24.3,
+   -1.5,
+   46.2,
+   1.5
+  ],
+  "wings_pass": true,
+  "pass": false
+ },
+ "build_s": 1.2,
+ "built": "2026-11-21 01:54",
+ "patterns": [
+  "D1_fore_s07.pattern.json",
+  "D1_hind_s07.pattern.json"
+ ]
+}

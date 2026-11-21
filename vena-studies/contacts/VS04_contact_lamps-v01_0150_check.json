@@ -1,0 +1,20 @@
+{
+ "png": "VS04_contact_lamps-v01_0150.png",
+ "tiles": 12,
+ "plex_mono_loaded": true,
+ "assert_fails": [],
+ "captions": [
+  "VS04-01 \u00b7 L1 \u00b7 seed 07\negg 2:1, veins grown on the surface\nsource: VS02-10 closed blob\n88 x 88 x 168 mm (3.46 x 3.46 x 6.63 in)\n92 g \u00b7 6.1 h estimated, not sliced\nholes 84 \u00b7 cells kept closed 17\nPASS",
+  "VS04-02 \u00b7 L1 \u00b7 seed 23\negg 2:1, veins grown on the surface\nsource: VS02-10 closed blob\n88 x 88 x 170 mm (3.46 x 3.46 x 6.68 in)\n90 g \u00b7 6.0 h estimated, not sliced\nholes 86 \u00b7 cells kept closed 12\nPASS",
+  "VS04-03 \u00b7 L2 \u00b7 seed 07\negg, six ovate leaf panels\nsource: VS02-04 closed ovate\n90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)\n97 g \u00b7 6.3 h estimated, not sliced\nholes 96 \u00b7 cells kept closed 42\nPASS",
+  "VS04-04 \u00b7 L2 \u00b7 seed 23\negg, six ovate leaf panels\nsource: VS02-04 closed ovate\n90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)\n98 g \u00b7 6.3 h estimated, not sliced\nholes 69 \u00b7 cells kept closed 107\nPASS",
+  "VS04-05 \u00b7 L3 \u00b7 seed 07\negg, eight Clubtail wing panels\nsource: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)\n90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)\n115 g \u00b7 7.1 h estimated, not sliced\nholes 125 \u00b7 cells kept closed 317\nPASS",
+  "VS04-06 \u00b7 L3 \u00b7 seed 23\negg, eight Clubtail wing panels\nsource: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)\n90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)\n115 g \u00b7 7.1 h estimated, not sliced\nholes 134 \u00b7 cells kept closed 346\nPASS",
+  "VS04-07 \u00b7 L4 \u00b7 seed 07\ncylinder, disk study unrolled\nsource: VS02-15 hybrid disk\n103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)\n123 g \u00b7 7.3 h estimated, not sliced\nholes 200 \u00b7 cells kept closed 340\nPASS",
+  "VS04-08 \u00b7 L4 \u00b7 seed 23\ncylinder, disk study unrolled\nsource: VS02-15 hybrid disk\n103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)\n122 g \u00b7 7.2 h estimated, not sliced\nholes 204 \u00b7 cells kept closed 298\nPASS",
+  "VS04-09 \u00b7 L5 \u00b7 seed 07\nmound, blob outline lofted\nsource: VS02-10 blob outline, open venation\n160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)\n103 g \u00b7 5.7 h estimated, not sliced\nholes 139 \u00b7 cells kept closed 90\nPASS",
+  "VS04-10 \u00b7 L5 \u00b7 seed 23\nmound, blob outline lofted\nsource: VS02-10 blob outline, open venation\n160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)\n104 g \u00b7 5.7 h estimated, not sliced\nholes 136 \u00b7 cells kept closed 96\nPASS",
+  "VS04-11 \u00b7 L6 \u00b7 seed 07\negg, cells only (control)\nsource: VS02-16 cells disk\n85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)\n86 g \u00b7 5.8 h estimated, not sliced\nholes 317 \u00b7 cells kept closed 135\nPASS",
+  "VS04-12 \u00b7 L6 \u00b7 seed 23\negg, cells only (control)\nsource: VS02-16 cells disk\n85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)\n85 g \u00b7 5.8 h estimated, not sliced\nholes 313 \u00b7 cells kept closed 147\nPASS"
+ ]
+}

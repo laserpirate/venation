@@ -1,0 +1,23 @@
+{
+ "stem": "vena-land-terr--cells-VS02-16__01_s07_t100mm_r20mm_v01",
+ "id": "vena-land-terr--cells-VS02-16__01",
+ "typology": "terraces",
+ "pattern": "cells",
+ "source_study": "VS02-16",
+ "tile_mm": 100.0,
+ "grid_mm": 0.25,
+ "relief_mm": [
+  2.0,
+  20.0
+ ],
+ "contours": 51,
+ "stats": {
+  "cells": 420,
+  "vein_samples": 33510,
+  "primary_share": 0.297
+ },
+ "slope_p50": 0.0,
+ "slope_p99": 22.63,
+ "note": "pattern study: no scale, no vertical exaggeration set",
+ "built": "2026-11-21 17:29"
+}

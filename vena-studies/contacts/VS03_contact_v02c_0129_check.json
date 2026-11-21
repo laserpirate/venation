@@ -1,0 +1,595 @@
+{
+ "png": "_work\\VS03_contact_v02c_0129.png",
+ "render_s": 3.96,
+ "plex_mono_loaded": true,
+ "page_errors": [],
+ "assert_fails": [],
+ "caption_px": [
+  16
+ ],
+ "tiles_equal_to_compare_page": null,
+ "captions": [
+  "VS03-01 \u00b7 open \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/2014 veins\ndead ends: pruned 1796 \u00b7 extended 50 \u00b7 snapped 141\nunder 2 mm at 3x: 2014/2014 segments",
+  "VS03-02 \u00b7 closed \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/2765 veins\nclosed cells 115\ndead ends: pruned 8 \u00b7 extended 26 \u00b7 snapped 26 \u00b7 named ends 6\nunder 2 mm at 3x: 2765/2765 segments",
+  "VS03-03 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/2970 veins \u00b7 0/2617 walls\ncells 624\ndead ends: pruned 0 \u00b7 extended 136 \u00b7 snapped 61 \u00b7 named ends 6\nunder 2 mm at 3x: 2970/2970 segments",
+  "VS03-04 \u00b7 cells \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/869 veins \u00b7 0/2566 walls\ncells 606\ndead ends: pruned 0 \u00b7 extended 0 \u00b7 snapped 0 \u00b7 named ends 6\nunder 2 mm at 3x: 869/869 segments",
+  "VS03-05 \u00b7 open \u00b7 clubtail-hind \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/2734 veins\ndead ends: pruned 2744 \u00b7 extended 78 \u00b7 snapped 237\nunder 2 mm at 3x: 2734/2734 segments",
+  "VS03-06 \u00b7 closed \u00b7 clubtail-hind \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/3899 veins\nclosed cells 161\ndead ends: pruned 41 \u00b7 extended 33 \u00b7 snapped 98 \u00b7 named ends 5\nunder 2 mm at 3x: 3899/3899 segments",
+  "VS03-07 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/5618 veins \u00b7 0/2662 walls\ncells 621\ndead ends: pruned 2 \u00b7 extended 184 \u00b7 snapped 955 \u00b7 named ends 5\nunder 2 mm at 3x: 5618/5618 segments",
+  "VS03-08 \u00b7 cells \u00b7 clubtail-hind \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nclamped 0/917 veins \u00b7 0/2636 walls\ncells 613\ndead ends: pruned 0 \u00b7 extended 0 \u00b7 snapped 0 \u00b7 named ends 5\nunder 2 mm at 3x: 917/917 segments",
+  "VS03-09 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nbias: costal 0.3 \u00b7 tip 0\nclamped 0/2959 veins \u00b7 0/2617 walls\ncells 624\ndead ends: pruned 0 \u00b7 extended 137 \u00b7 snapped 59 \u00b7 named ends 6\nunder 2 mm at 3x: 2959/2959 segments",
+  "VS03-10 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nbias: costal 0.6 \u00b7 tip 0\nclamped 0/2980 veins \u00b7 0/2617 walls\ncells 624\ndead ends: pruned 1 \u00b7 extended 138 \u00b7 snapped 57 \u00b7 named ends 6\nunder 2 mm at 3x: 2980/2980 segments",
+  "VS03-11 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nbias: costal 0 \u00b7 tip 0.3\nclamped 0/2926 veins \u00b7 0/2617 walls\ncells 624\ndead ends: pruned 1 \u00b7 extended 137 \u00b7 snapped 59 \u00b7 named ends 6\nunder 2 mm at 3x: 2926/2926 segments",
+  "VS03-12 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm \u00b7 vein set fab\nbias: costal 0 \u00b7 tip 0.6\nclamped 0/3297 veins \u00b7 0/2617 walls\ncells 624\ndead ends: pruned 29 \u00b7 extended 132 \u00b7 snapped 267 \u00b7 named ends 6\nunder 2 mm at 3x: 3297/3297 segments",
+  "VS03-13 \u00b7 closed \u00b7 ovate \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/4406 veins\nclosed cells 107\ndead ends: pruned 1045 \u00b7 extended 30 \u00b7 snapped 8\nrule off: 5262 segments \u00b7 3.8 % of ink px differ",
+  "VS03-14 \u00b7 closed \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/4407 veins\nclosed cells 120\ndead ends: pruned 1902 \u00b7 extended 23 \u00b7 snapped 166\nrule off: 6005 segments \u00b7 3.4 % of ink px differ",
+  "VS03-15 \u00b7 hybrid \u00b7 blob \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/3629 veins \u00b7 0/1437 walls\ncells 420\ndead ends: pruned 3431 \u00b7 extended 105 \u00b7 snapped 295\nrule off: 5921 segments \u00b7 30.9 % of ink px differ",
+  "VS03-16 \u00b7 closed \u00b7 disk \u00b7 seed 07\nScreen, no minimums \u00b7 120 mm\nclamped 0/4488 veins\nclosed cells 140\ndead ends: pruned 1884 \u00b7 extended 28 \u00b7 snapped 4\nrule off: 6192 segments \u00b7 3.4 % of ink px differ"
+ ],
+ "stats": [
+  {
+   "i": 0,
+   "sid": "VS03-01",
+   "chains": 256,
+   "de": {
+    "pruned": 1796,
+    "extended": 50,
+    "snapped": 141
+   },
+   "u2": [
+    2014,
+    2014
+   ],
+   "fixedExt": 0,
+   "diff": null,
+   "stat": [
+    "VS03-01 \u00b7 open \u00b7 clubtail-fore \u00b7 vein set full \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 1841",
+    "loops 174",
+    "clamped: fixed 0/0, grown 0/1840, links 0/174, walls 0/0",
+    "dead ends: pruned 1796, extended 50, snapped 141",
+    "under 2 mm at 3x: 2014/2014 segments",
+    "0.1364 mm/px",
+    "160 ms"
+   ],
+   "loops": 174,
+   "cells": 0,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2014,
+   "ms": 160
+  },
+  {
+   "i": 1,
+   "sid": "VS03-02",
+   "chains": 272,
+   "de": {
+    "pruned": 8,
+    "extended": 26,
+    "snapped": 26
+   },
+   "u2": [
+    2765,
+    2765
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-02 \u00b7 closed \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2612",
+    "loops 162",
+    "closed cells 115",
+    "clamped: fixed 0/869, grown 0/1734, links 0/162, walls 0/0",
+    "dead ends: pruned 8, extended 26, snapped 26",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 2765/2765 segments",
+    "0.1364 mm/px",
+    "148 ms"
+   ],
+   "loops": 162,
+   "cells": 0,
+   "ponds": 115,
+   "clamped": 0,
+   "segs": 2765,
+   "ms": 148
+  },
+  {
+   "i": 2,
+   "sid": "VS03-03",
+   "chains": 198,
+   "de": {
+    "pruned": 0,
+    "extended": 136,
+    "snapped": 61
+   },
+   "u2": [
+    2970,
+    2970
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-03 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2803",
+    "loops 176",
+    "cells 624",
+    "clamped: fixed 0/869, grown 0/1925, links 0/176, walls 0/2617",
+    "dead ends: pruned 0, extended 136, snapped 61",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 2970/2970 segments",
+    "0.1364 mm/px",
+    "115 ms"
+   ],
+   "loops": 176,
+   "cells": 624,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2970,
+   "ms": 115
+  },
+  {
+   "i": 3,
+   "sid": "VS03-04",
+   "chains": 0,
+   "de": {
+    "pruned": 0,
+    "extended": 0,
+    "snapped": 0
+   },
+   "u2": [
+    869,
+    869
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-04 \u00b7 cells \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 878",
+    "loops 0",
+    "cells 606",
+    "clamped: fixed 0/869, grown 0/0, links 0/0, walls 0/2566",
+    "dead ends: pruned 0, extended 0, snapped 0",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 869/869 segments",
+    "0.1364 mm/px",
+    "31 ms"
+   ],
+   "loops": 0,
+   "cells": 606,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 869,
+   "ms": 31
+  },
+  {
+   "i": 4,
+   "sid": "VS03-05",
+   "chains": 411,
+   "de": {
+    "pruned": 2744,
+    "extended": 78,
+    "snapped": 237
+   },
+   "u2": [
+    2734,
+    2734
+   ],
+   "fixedExt": 0,
+   "diff": null,
+   "stat": [
+    "VS03-05 \u00b7 open \u00b7 clubtail-hind \u00b7 vein set full \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2442",
+    "loops 293",
+    "clamped: fixed 0/0, grown 0/2441, links 0/293, walls 0/0",
+    "dead ends: pruned 2744, extended 78, snapped 237",
+    "under 2 mm at 3x: 2734/2734 segments",
+    "0.1364 mm/px",
+    "128 ms"
+   ],
+   "loops": 293,
+   "cells": 0,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2734,
+   "ms": 128
+  },
+  {
+   "i": 5,
+   "sid": "VS03-06",
+   "chains": 436,
+   "de": {
+    "pruned": 41,
+    "extended": 33,
+    "snapped": 98
+   },
+   "u2": [
+    3899,
+    3899
+   ],
+   "fixedExt": 5,
+   "diff": null,
+   "stat": [
+    "VS03-06 \u00b7 closed \u00b7 clubtail-hind \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 3622",
+    "loops 286",
+    "closed cells 161",
+    "clamped: fixed 0/917, grown 0/2696, links 0/286, walls 0/0",
+    "dead ends: pruned 41, extended 33, snapped 98",
+    "named vein ends extended 5",
+    "under 2 mm at 3x: 3899/3899 segments",
+    "0.1364 mm/px",
+    "167 ms"
+   ],
+   "loops": 286,
+   "cells": 0,
+   "ponds": 161,
+   "clamped": 0,
+   "segs": 3899,
+   "ms": 167
+  },
+  {
+   "i": 6,
+   "sid": "VS03-07",
+   "chains": 1141,
+   "de": {
+    "pruned": 2,
+    "extended": 184,
+    "snapped": 955
+   },
+   "u2": [
+    5618,
+    5618
+   ],
+   "fixedExt": 5,
+   "diff": null,
+   "stat": [
+    "VS03-07 \u00b7 hybrid \u00b7 clubtail-hind \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 4728",
+    "loops 899",
+    "cells 621",
+    "clamped: fixed 0/917, grown 0/3802, links 0/899, walls 0/2662",
+    "dead ends: pruned 2, extended 184, snapped 955",
+    "named vein ends extended 5",
+    "under 2 mm at 3x: 5618/5618 segments",
+    "0.1364 mm/px",
+    "149 ms"
+   ],
+   "loops": 899,
+   "cells": 621,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 5618,
+   "ms": 149
+  },
+  {
+   "i": 7,
+   "sid": "VS03-08",
+   "chains": 0,
+   "de": {
+    "pruned": 0,
+    "extended": 0,
+    "snapped": 0
+   },
+   "u2": [
+    917,
+    917
+   ],
+   "fixedExt": 5,
+   "diff": null,
+   "stat": [
+    "VS03-08 \u00b7 cells \u00b7 clubtail-hind \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 926",
+    "loops 0",
+    "cells 613",
+    "clamped: fixed 0/917, grown 0/0, links 0/0, walls 0/2636",
+    "dead ends: pruned 0, extended 0, snapped 0",
+    "named vein ends extended 5",
+    "under 2 mm at 3x: 917/917 segments",
+    "0.1364 mm/px",
+    "31 ms"
+   ],
+   "loops": 0,
+   "cells": 613,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 917,
+   "ms": 31
+  },
+  {
+   "i": 8,
+   "sid": "VS03-09",
+   "chains": 197,
+   "de": {
+    "pruned": 0,
+    "extended": 137,
+    "snapped": 59
+   },
+   "u2": [
+    2959,
+    2959
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-09 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2792",
+    "loops 176",
+    "cells 624",
+    "clamped: fixed 0/869, grown 0/1914, links 0/176, walls 0/2617",
+    "dead ends: pruned 0, extended 137, snapped 59",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 2959/2959 segments",
+    "0.1364 mm/px",
+    "104 ms"
+   ],
+   "loops": 176,
+   "cells": 624,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2959,
+   "ms": 104
+  },
+  {
+   "i": 9,
+   "sid": "VS03-10",
+   "chains": 195,
+   "de": {
+    "pruned": 1,
+    "extended": 138,
+    "snapped": 57
+   },
+   "u2": [
+    2980,
+    2980
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-10 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2815",
+    "loops 174",
+    "cells 624",
+    "clamped: fixed 0/869, grown 0/1937, links 0/174, walls 0/2617",
+    "dead ends: pruned 1, extended 138, snapped 57",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 2980/2980 segments",
+    "0.1364 mm/px",
+    "126 ms"
+   ],
+   "loops": 174,
+   "cells": 624,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2980,
+   "ms": 126
+  },
+  {
+   "i": 10,
+   "sid": "VS03-11",
+   "chains": 197,
+   "de": {
+    "pruned": 1,
+    "extended": 137,
+    "snapped": 59
+   },
+   "u2": [
+    2926,
+    2926
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-11 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2760",
+    "loops 175",
+    "cells 624",
+    "clamped: fixed 0/869, grown 0/1882, links 0/175, walls 0/2617",
+    "dead ends: pruned 1, extended 137, snapped 59",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 2926/2926 segments",
+    "0.1364 mm/px",
+    "109 ms"
+   ],
+   "loops": 175,
+   "cells": 624,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 2926,
+   "ms": 109
+  },
+  {
+   "i": 11,
+   "sid": "VS03-12",
+   "chains": 402,
+   "de": {
+    "pruned": 29,
+    "extended": 132,
+    "snapped": 267
+   },
+   "u2": [
+    3297,
+    3297
+   ],
+   "fixedExt": 6,
+   "diff": null,
+   "stat": [
+    "VS03-12 \u00b7 hybrid \u00b7 clubtail-fore \u00b7 vein set fab \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 2926",
+    "loops 380",
+    "cells 624",
+    "clamped: fixed 0/869, grown 0/2048, links 0/380, walls 0/2617",
+    "dead ends: pruned 29, extended 132, snapped 267",
+    "named vein ends extended 6",
+    "under 2 mm at 3x: 3297/3297 segments",
+    "0.1364 mm/px",
+    "130 ms"
+   ],
+   "loops": 380,
+   "cells": 624,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 3297,
+   "ms": 130
+  },
+  {
+   "i": 12,
+   "sid": "VS03-13",
+   "chains": 546,
+   "de": {
+    "pruned": 1045,
+    "extended": 30,
+    "snapped": 8
+   },
+   "u2": [
+    4406,
+    4406
+   ],
+   "fixedExt": 0,
+   "diff": {
+    "ink": 40707,
+    "df": 1556,
+    "segs0": 5262
+   },
+   "stat": [
+    "VS03-13 \u00b7 closed \u00b7 ovate \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 4230",
+    "loops 177",
+    "closed cells 107",
+    "clamped: fixed 0/0, grown 0/4229, links 0/177, walls 0/0",
+    "dead ends: pruned 1045, extended 30, snapped 8",
+    "0.1364 mm/px",
+    "303 ms"
+   ],
+   "loops": 177,
+   "cells": 0,
+   "ponds": 107,
+   "clamped": 0,
+   "segs": 4406,
+   "ms": 303
+  },
+  {
+   "i": 13,
+   "sid": "VS03-14",
+   "chains": 682,
+   "de": {
+    "pruned": 1902,
+    "extended": 23,
+    "snapped": 166
+   },
+   "u2": [
+    4407,
+    4407
+   ],
+   "fixedExt": 0,
+   "diff": {
+    "ink": 39552,
+    "df": 1329,
+    "segs0": 6005
+   },
+   "stat": [
+    "VS03-14 \u00b7 closed \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 4077",
+    "loops 331",
+    "closed cells 120",
+    "clamped: fixed 0/0, grown 0/4076, links 0/331, walls 0/0",
+    "dead ends: pruned 1902, extended 23, snapped 166",
+    "0.1364 mm/px",
+    "359 ms"
+   ],
+   "loops": 331,
+   "cells": 0,
+   "ponds": 120,
+   "clamped": 0,
+   "segs": 4407,
+   "ms": 359
+  },
+  {
+   "i": 14,
+   "sid": "VS03-15",
+   "chains": 521,
+   "de": {
+    "pruned": 3431,
+    "extended": 105,
+    "snapped": 295
+   },
+   "u2": [
+    3629,
+    3629
+   ],
+   "fixedExt": 0,
+   "diff": {
+    "ink": 75553,
+    "df": 23359,
+    "segs0": 5921
+   },
+   "stat": [
+    "VS03-15 \u00b7 hybrid \u00b7 blob \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 3264",
+    "loops 366",
+    "cells 420",
+    "clamped: fixed 0/0, grown 0/3263, links 0/366, walls 0/1437",
+    "dead ends: pruned 3431, extended 105, snapped 295",
+    "0.1364 mm/px",
+    "180 ms"
+   ],
+   "loops": 366,
+   "cells": 420,
+   "ponds": 0,
+   "clamped": 0,
+   "segs": 3629,
+   "ms": 180
+  },
+  {
+   "i": 15,
+   "sid": "VS03-16",
+   "chains": 550,
+   "de": {
+    "pruned": 1884,
+    "extended": 28,
+    "snapped": 4
+   },
+   "u2": [
+    4488,
+    4488
+   ],
+   "fixedExt": 0,
+   "diff": {
+    "ink": 40446,
+    "df": 1373,
+    "segs0": 6192
+   },
+   "stat": [
+    "VS03-16 \u00b7 closed \u00b7 disk \u00b7 seed 7",
+    "Screen, no minimums \u00b7 120 mm",
+    "vein nodes 4303",
+    "loops 186",
+    "closed cells 140",
+    "clamped: fixed 0/0, grown 0/4302, links 0/186, walls 0/0",
+    "dead ends: pruned 1884, extended 28, snapped 4",
+    "0.1364 mm/px",
+    "439 ms"
+   ],
+   "loops": 186,
+   "cells": 0,
+   "ponds": 140,
+   "clamped": 0,
+   "segs": 4488,
+   "ms": 439
+  }
+ ]
+}

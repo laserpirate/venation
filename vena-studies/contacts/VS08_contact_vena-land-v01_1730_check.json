@@ -1,0 +1,24 @@
+{
+ "png": "VS08_contact_vena-land-v01_1730.png",
+ "tiles": 16,
+ "plex_mono_loaded": true,
+ "assert_fails": [],
+ "captions": [
+  "vena-land-berm--wing-VS03-04__01\nVS08-01 \u00b7 berm \u00b7 wing-VS03-04\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-wave--wing-VS03-04__01\nVS08-02 \u00b7 waveform mounds \u00b7 wing-VS03-04\n100 x 100 mm tile \u00b7 relief 2.0 to 10.3 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-pond--wing-VS03-04__01\nVS08-03 \u00b7 pond cells \u00b7 wing-VS03-04\n100 x 100 mm tile \u00b7 relief 10.7 to 19.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-terr--wing-VS03-04__01\nVS08-04 \u00b7 terraces \u00b7 wing-VS03-04\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-berm--ovate-VS02-04__01\nVS08-05 \u00b7 berm \u00b7 ovate-VS02-04\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-wave--ovate-VS02-04__01\nVS08-06 \u00b7 waveform mounds \u00b7 ovate-VS02-04\n100 x 100 mm tile \u00b7 relief 2.0 to 11.6 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-pond--ovate-VS02-04__01\nVS08-07 \u00b7 pond cells \u00b7 ovate-VS02-04\n100 x 100 mm tile \u00b7 relief 9.4 to 19.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-terr--ovate-VS02-04__01\nVS08-08 \u00b7 terraces \u00b7 ovate-VS02-04\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-berm--blob-VS02-10__01\nVS08-09 \u00b7 berm \u00b7 blob-VS02-10\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-wave--blob-VS02-10__01\nVS08-10 \u00b7 waveform mounds \u00b7 blob-VS02-10\n100 x 100 mm tile \u00b7 relief 2.0 to 12.6 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-pond--blob-VS02-10__01\nVS08-11 \u00b7 pond cells \u00b7 blob-VS02-10\n100 x 100 mm tile \u00b7 relief 8.4 to 19.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-terr--blob-VS02-10__01\nVS08-12 \u00b7 terraces \u00b7 blob-VS02-10\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-berm--cells-VS02-16__01\nVS08-13 \u00b7 berm \u00b7 cells-VS02-16\n100 x 100 mm tile \u00b7 relief 2.0 to 14.9 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-wave--cells-VS02-16__01\nVS08-14 \u00b7 waveform mounds \u00b7 cells-VS02-16\n100 x 100 mm tile \u00b7 relief 2.0 to 15.6 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-pond--cells-VS02-16__01\nVS08-15 \u00b7 pond cells \u00b7 cells-VS02-16\n100 x 100 mm tile \u00b7 relief 5.4 to 19.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set",
+  "vena-land-terr--cells-VS02-16__01\nVS08-16 \u00b7 terraces \u00b7 cells-VS02-16\n100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm \u00b7 1 mm contours\npattern study: no scale, no vertical exaggeration set"
+ ]
+}

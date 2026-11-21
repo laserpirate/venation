@@ -1,0 +1,126 @@
+{
+ "stem": "vena-lamp-egg--wing-wrap8-VS03-04__02_s07_b2.00in_h200mm_v01",
+ "id": "vena-lamp-egg--wing-wrap8-VS03-04__02",
+ "key": "c02",
+ "seed": 7,
+ "tech": "T1",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 200,
+  "W": 100
+ },
+ "pattern": {
+  "kind": "panels",
+  "count": 8,
+  "patterns": [
+   "L3_fore_s07",
+   "L3_hind_s07"
+  ],
+  "fixed": "named",
+  "vein_spacing": [
+   13.0,
+   11.0
+  ],
+  "kill_k": 0.6,
+  "cell_spacing": [
+   5.6,
+   4.4
+  ],
+  "cell_w": [
+   1.4,
+   1.2
+  ],
+  "vein_w": {
+   "foot": [
+    1.6,
+    3.6
+   ],
+   "rim": [
+    1.4,
+    2.4
+   ]
+  },
+  "cut": {
+   "deg": 32,
+   "zc": 158,
+   "phi_deg": 200
+  }
+ },
+ "note": "wing wrap, 8 panels, oblique rim 32 deg",
+ "stats": {
+  "vein_nodes": 7241,
+  "tip_links": 18,
+  "tips_pruned": 0,
+  "panels": 8,
+  "cut_deg": 32,
+  "cut_z_mm": [
+   129.5,
+   178.3
+  ],
+  "cell_seeds": 264,
+  "vein_samples": 21075,
+  "cells": 465,
+  "cells_closed_small": 256,
+  "cells_cut_at_rim": 0,
+  "least_cell_mm": 1.5,
+  "median_cell_mm": 5.05,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 46.1,
+  "window_clear_pct": 65.2,
+  "remesh": 0,
+  "grid": [
+   809,
+   500
+  ],
+  "tris_raw": 1268668,
+  "shell_cm2": 435.2,
+  "rib_w_mm": [
+   1.22,
+   3.6
+  ],
+  "decimated": "manifold simplify 0.03 mm"
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   104.7,
+   104.7,
+   178.4
+  ],
+  "dims_in": [
+   4.12,
+   4.12,
+   7.02
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   75.6,
+   75.6
+  ],
+  "height_ok": true,
+  "overhang_mm2": 1.16,
+  "overhang_faces": 22,
+  "overhang_widest_strip_mm": 0.18,
+  "overhang_largest_patch_mm2": 0.28,
+  "volume_cm3": 98.6,
+  "area_cm2": 1043.5,
+  "grams_est": 122.0,
+  "hours_est": 7.5,
+  "cost_usd_est": 4.03,
+  "least_window_mm": 1.5,
+  "pass": true,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm"
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "tris": 481110,
+ "build_s": 7.9,
+ "built": "2026-11-21 17:17"
+}

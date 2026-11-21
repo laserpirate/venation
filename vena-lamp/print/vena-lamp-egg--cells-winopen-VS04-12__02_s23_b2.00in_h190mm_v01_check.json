@@ -1,0 +1,94 @@
+{
+ "stem": "vena-lamp-egg--cells-winopen-VS04-12__02_s23_b2.00in_h190mm_v01",
+ "id": "vena-lamp-egg--cells-winopen-VS04-12__02",
+ "key": "c09",
+ "sheet": "VS06c",
+ "tile": 9,
+ "tech": "T1T2",
+ "window_mm": 0.85,
+ "form": {
+  "type": "egg",
+  "base_in": 2.0,
+  "H": 190,
+  "W": 95
+ },
+ "foot": {
+  "internal_diameter_mm": 51.3,
+  "collar_mm": 12.7
+ },
+ "stats": {
+  "cell_seeds": 558,
+  "vein_samples": 0,
+  "cells": 452,
+  "cells_closed_small": 35,
+  "cells_cut_at_rim": 139,
+  "least_cell_mm": 4.23,
+  "median_cell_mm": 7.09,
+  "holes_open": 285,
+  "windows_kept": 167,
+  "split_z_mm": 73.1,
+  "split_band_mm": 12.0,
+  "above_split_kept_closed": 0,
+  "least_hole_mm": 4.81,
+  "min_skin_mm": 0.85,
+  "skin_under_window_mm": -0.0,
+  "window_area_pct": 55.5,
+  "window_clear_pct": 25.0,
+  "remesh": 0,
+  "grid": [
+   770,
+   475
+  ],
+  "tris_raw": 1174580,
+  "shell_cm2": 424.2,
+  "rib_w_mm": [
+   1.63,
+   2.4
+  ],
+  "decimated": "rejected",
+  "stl_reload_watertight": true
+ },
+ "label": {
+  "label": "vena-lamp-egg--cells-winopen-VS04-12__02 v01",
+  "where": "inside the collar bore, 4.0 mm letters, 0.45 mm deep",
+  "label_cut": true,
+  "label_volume_mm3": 57.99
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   96.6,
+   96.6,
+   182.8
+  ],
+  "dims_in": [
+   3.8,
+   3.8,
+   7.2
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   79.7,
+   79.7
+  ],
+  "height_ok": true,
+  "overhang_mm2": 91.12,
+  "overhang_faces": 1550,
+  "overhang_widest_strip_mm": 0.6,
+  "overhang_largest_patch_mm2": 1.06,
+  "volume_cm3": 85.3,
+  "area_cm2": 952.8,
+  "grams_est": 106.0,
+  "hours_est": 6.8,
+  "cost_usd_est": 3.5,
+  "least_window_mm": 4.23,
+  "least_hole_mm": 4.81,
+  "pass_rule": "watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (faces over 45.5 deg, above z 0.75), skin at least the window thickness, least window 1.5 mm, least hole 2.0 mm",
+  "pass": true
+ },
+ "tris": 1178030,
+ "mockup_checks_pass": true,
+ "sliced": false
+}

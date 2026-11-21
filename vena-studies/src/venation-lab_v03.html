@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Venation Lab v03</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* layout: left control rail, big drawing, study strip below. Plates feel: paper ground, ink lines */
+:root{--bg:#f3f1ec;--panel:#e9e6df;--ink:#1d1c1a;--mute:#6b6861;--line:#c9c5bb;--acc:#2f5d50;--acc2:#9a4a2c;
+ --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171716;--panel:#20201e;--ink:#e6e3dc;--mute:#9a968d;--line:#3a3935;--acc:#7fc1ad;--acc2:#e09a78;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171716;--panel:#20201e;--ink:#e6e3dc;--mute:#9a968d;--line:#3a3935;--acc:#7fc1ad;--acc2:#e09a78;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans);margin:0;padding-block:0 24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:18px 0 10px;border-bottom:1px solid var(--line)}
+h1{font:500 18px var(--sans);margin:0;letter-spacing:.01em}
+header .sub{color:var(--mute);font:12px var(--mono)}
+.wrap{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;margin-top:16px}
+@media (max-width:760px){.wrap{grid-template-columns:1fr}}
+.rail{display:flex;flex-direction:column;gap:14px;min-width:0}
+fieldset{border:1px solid var(--line);padding:10px 12px 12px;margin:0;display:flex;flex-direction:column;gap:8px}
+legend{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:0 4px}
+label.row{display:grid;grid-template-columns:1fr 56px;gap:8px;align-items:center;font-size:12.5px}
+label.row span.v{font:12px var(--mono);text-align:right;color:var(--mute)}
+label.row input[type=range]{grid-column:1/3;width:100%;accent-color:var(--acc);margin:0}
+label.row select{grid-column:1/3}
+select,button{font:13px var(--sans);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:0;padding:6px 10px}
+button{cursor:pointer}button:hover{border-color:var(--ink)}button.pri{background:var(--acc);color:#fff;border-color:var(--acc)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--acc2);outline-offset:1px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.stage{min-width:0}
+canvas#c{width:100%;height:auto;display:block;background:var(--panel);border:1px solid var(--line)}
+.stat{font:12px var(--mono);color:var(--mute);margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:12px}
+.grid canvas{width:100%;height:auto;background:var(--panel);border:1px solid var(--line);cursor:pointer}
+.grid canvas:hover{border-color:var(--acc)}
+.note{font-size:12px;color:var(--mute)}
+.note b{color:var(--ink);font-weight:500}
+textarea{width:100%;height:60px;font:11px var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+/* contact sheet (built by VL.sheet for the headless proof render) */
+#sheet{display:none;background:var(--bg);padding:24px}
+#sheet.on{display:block}
+#sheet .sh-title{font:500 16px var(--mono);margin:0 0 14px}
+#sheet .sh-grid{display:grid;grid-template-columns:repeat(4,500px);gap:20px}
+#sheet .tile{width:500px;border:1px solid var(--line);background:var(--panel)}
+#sheet .tile canvas{display:block;width:500px;height:320px}
+#sheet .cap{font:400 16px/1.35 var(--mono);min-height:calc(7 * 1.35em + 14px);color:var(--ink);padding:6px 8px 8px;border-top:1px solid var(--line);background:var(--bg)}
+body.sheet-mode>header,body.sheet-mode>.wrap,body.sheet-mode>section{display:none}
+.tabs{display:flex;gap:6px;margin-left:auto}.tabs button.on{border-color:var(--ink);background:var(--bg)}
+section.tab{margin-top:16px}section.tab h2{font:500 13px var(--mono);letter-spacing:.04em;margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.gal figure{margin:0;border:1px solid var(--line);background:var(--panel);min-width:0}.gal img{display:block;width:100%;height:auto}
+.gal figcaption{font:11.5px/1.4 var(--mono);padding:6px 8px 8px;border-top:1px solid var(--line);background:var(--bg);overflow-wrap:anywhere}
+pre.params{font:11px/1.45 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;max-height:260px;overflow:auto;border:1px solid var(--line);background:var(--panel);padding:8px;margin:8px 0 0}
+details summary{font:12px var(--mono);cursor:pointer;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Venation Lab</h1>
+  <nav class="tabs"><button data-tab="lab" class="on">Lab</button><button data-tab="studies">Studies</button><button data-tab="lamps">Lamps</button></nav>
+  <span class="sub">v03 · leaf veins after Runions et al. 2005 · wing cells after Needham 1903 · Clubtail wing geometry from the C3 E1 model</span>
+</header>
+
+<div class="wrap">
+<div class="rail">
+  <fieldset><legend>Study</legend>
+    <label class="row">Mode<select id="mode">
+      <option value="open">Leaf veins, open (tree)</option>
+      <option value="closed">Leaf veins, closed (loops)</option>
+      <option value="cells">Wing cells (relaxed Voronoi)</option>
+      <option value="hybrid" selected>Hybrid: veins + cells</option>
+    </select></label>
+    <label class="row">Outline<select id="shape">
+      <option value="ovate">Leaf, ovate</option>
+      <option value="lanceolate">Leaf, lanceolate</option>
+      <option value="clubtail-fore" selected>Clubtail forewing</option>
+      <option value="clubtail-hind">Clubtail hindwing</option>
+      <option value="disk">Disk (lamp / landform section)</option>
+      <option value="blob">Irregular blob (landform)</option>
+    </select></label>
+    <label class="row">Vein set (wings)<select id="veinset">
+      <option value="full" selected>full (E1, 13)</option>
+      <option value="fab">fab (9): C, R1, RS, MA, CuA, A1, nodus, triangle, pterostigma</option>
+    </select></label>
+    <label class="row">Wing rule<select id="wingpass">
+      <option value="v03" selected>VS03: trunks with Murray widths, grown veins join them</option>
+      <option value="v02">VS02: fixed veins at one width, no growth in hybrid</option>
+    </select></label>
+    <label class="row">Dead ends<select id="nde">
+      <option value="1" selected>none: extend to the next vein or the outline, prune under 3 steps</option>
+      <option value="0">leave as grown</option>
+    </select></label>
+    <label class="row">View<select id="view">
+      <option value="full" selected>Full (veins, cells)</option>
+      <option value="ridges">Ridges only (centerlines)</option>
+      <option value="channels">Channels only (buffered union)</option>
+      <option value="cells">Cells only</option>
+    </select></label>
+    <label class="row">Seed<span class="v" id="seedv">7</span><input type="range" id="seed" min="1" max="99" value="7"></label>
+  </fieldset>
+
+  <fieldset><legend>Fabrication</legend>
+    <label class="row">Preset<select id="preset">
+      <option value="none" selected>Screen, no minimums</option>
+      <option value="p2s120">P2S test, 120 mm forewing</option>
+      <option value="p2s150">P2S final, 150 mm forewing</option>
+      <option value="objet45">Objet moving parts, 45 mm forewing</option>
+    </select></label>
+    <label class="row">Size, long axis (mm)<span class="v" id="mmv">120</span><input type="range" id="mm" min="20" max="600" step="5" value="120"></label>
+    <p class="note">Presets set size and minimum widths, nothing else. Widths below the minimum clamp up; the stat line counts them.</p>
+  </fieldset>
+
+  <fieldset><legend>Vein growth</legend>
+    <label class="row">Auxin sources<span class="v" id="nsrcv">500</span><input type="range" id="nsrc" min="40" max="1600" step="20" value="500"></label>
+    <label class="row">Birth distance<span class="v" id="birthv">14</span><input type="range" id="birth" min="4" max="40" value="14"></label>
+    <label class="row">Kill distance<span class="v" id="killv">6</span><input type="range" id="kill" min="2" max="24" value="6"></label>
+    <label class="row">Step length<span class="v" id="stepv">4</span><input type="range" id="step" min="1.5" max="12" step=".5" value="4"></label>
+    <label class="row">Iterations<span class="v" id="itersv">220</span><input type="range" id="iters" min="20" max="600" step="10" value="220"></label>
+    <label class="row">Anastomosis radius<span class="v" id="anav">10</span><input type="range" id="ana" min="0" max="30" value="10"></label>
+    <label class="row">Costal bias<span class="v" id="costbv">0</span><input type="range" id="costb" min="0" max="1" step=".05" value="0"></label>
+    <label class="row">Tip bias<span class="v" id="tipbv">0</span><input type="range" id="tipb" min="0" max="1" step=".05" value="0"></label>
+  </fieldset>
+
+  <fieldset><legend>Vein width</legend>
+    <label class="row">Murray exponent<span class="v" id="murv">2.6</span><input type="range" id="mur" min="1.5" max="4" step=".1" value="2.6"></label>
+    <label class="row">Tip width (px)<span class="v" id="tipv">0.8</span><input type="range" id="tip" min="0.3" max="3" step=".1" value="0.8"></label>
+    <label class="row">Max width (px)<span class="v" id="maxwv">9</span><input type="range" id="maxw" min="2" max="24" value="9"></label>
+  </fieldset>
+
+  <fieldset><legend>Cells</legend>
+    <label class="row">Cell count<span class="v" id="ncellv">420</span><input type="range" id="ncell" min="40" max="2000" step="20" value="420"></label>
+    <label class="row">Density gradient<span class="v" id="gradv">1.6</span><input type="range" id="grad" min="0" max="4" step=".1" value="1.6"></label>
+    <label class="row">Costal density<span class="v" id="costalv">2</span><input type="range" id="costal" min="0" max="5" step=".1" value="2"></label>
+    <label class="row">Lloyd relaxation<span class="v" id="lloydv">3</span><input type="range" id="lloyd" min="0" max="12" value="3"></label>
+    <label class="row">Cell wall width<span class="v" id="cwv">0.7</span><input type="range" id="cw" min="0.2" max="3" step=".1" value="0.7"></label>
+  </fieldset>
+
+  <fieldset><legend>Export</legend>
+    <label class="row">Study ID<input id="sid" type="text" value="VS00-00" pattern="VS[0-9]{2}-[0-9]{2}" style="grid-column:1/3;font:12px var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:5px 8px"></label>
+    <div class="btns">
+      <button class="pri" id="run">Grow</button>
+      <button id="svg">SVG, all layers</button>
+      <button id="graph">graph.json</button>
+      <button id="study">Study grid ×8</button>
+    </div>
+    <textarea id="out" readonly placeholder="Export also lands here as a fallback when the browser blocks downloads. Copy, paste into a .svg or .json file."></textarea>
+    <p class="note"><b>Layers</b>: outline, veins (stroked at width), ridges (centerlines, data-w in mm), channels (veins buffered by width and unioned), cells (closed polygons). <b>Width rule</b>: w<sup>n</sup> = Σ w<sub>i</sub><sup>n</sup> (Murray). <b>Closed</b> mode follows Runions section 4: a source pulls every vein node in its relative neighbourhood and stays until every tagged vein reaches it; the anastomosis radius joins a late vein to the first arrival.</p>
+  </fieldset>
+</div>
+
+<div class="stage">
+  <canvas id="c" width="1400" height="896"></canvas>
+  <div class="stat" id="stat"></div>
+  <div class="grid" id="grid"></div>
+</div>
+</div>
+
+<section class="tab" id="tab-studies" hidden></section>
+<section class="tab" id="tab-lamps" hidden></section>
+
+<div id="sheet"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/dist/d3-delaunay.min.js"></script>
+<script src="wing_geom.js"></script>
+<script>
+'use strict';
+const VERSION='v03';
+const W=1000,H=640;
+const $=id=>document.getElementById(id);
+const P=['seed','nsrc','birth','kill','step','iters','ana','costb','tipb','mur','tip','maxw','ncell','grad','costal','lloyd','cw','mm'];
+const PRESETS={
+ none:{label:'Screen, no minimums',mm:null,minVein:0,minWall:0},
+ p2s120:{label:'P2S test, 120 mm forewing',mm:120,minVein:2.0,minWall:1.6},
+ p2s150:{label:'P2S final, 150 mm forewing',mm:150,minVein:2.0,minWall:1.6},
+ objet45:{label:'Objet moving parts, 45 mm forewing',mm:45,minVein:0.8,minWall:0.8}};
+const DEFAULTS={mode:'hybrid',shape:'clubtail-fore',view:'full',veinset:'full',wingpass:'v03',nde:1,costb:0,tipb:0,sid:'VS00-00',preset:'none',seed:7,nsrc:500,birth:14,kill:6,step:4,iters:220,ana:10,mur:2.6,tip:0.8,maxw:9,ncell:420,grad:1.6,costal:2,lloyd:3,cw:0.7,mm:120};
+P.forEach(k=>{$(k).addEventListener('input',()=>{$(k+'v').textContent=$(k).value;});});
+function params(){const o={mode:$('mode').value,shape:$('shape').value,view:$('view').value,veinset:$('veinset').value,wingpass:$('wingpass').value,nde:+$('nde').value,sid:$('sid').value||'VS00-00',preset:$('preset').value};P.forEach(k=>o[k]=+$(k).value);return o}
+const isWing=s=>s==='clubtail-fore'||s==='clubtail-hind';
+
+function rng(seed){let s=seed*9301+49297;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+
+/* ---------------- geometry helpers ---------------- */
+function inside(poly,x,y){let c=false;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const[xi,yi]=poly[i],[xj,yj]=poly[j];
+ if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c}return c}
+function bbox(poly){let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;poly.forEach(([x,y])=>{x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y)});return[x0,y0,x1,y1]}
+function distSeg(px,py,ax,ay,bx,by){const dx=bx-ax,dy=by-ay;const l2=dx*dx+dy*dy||1;let t=((px-ax)*dx+(py-ay)*dy)/l2;t=Math.max(0,Math.min(1,t));const x=ax+t*dx,y=ay+t*dy;return Math.hypot(px-x,py-y)}
+function nearOutline(poly,x,y,d){for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];if(distSeg(x,y,a[0],a[1],b[0],b[1])<d)return true}return false}
+function area(poly){let a=0;for(let i=0,j=poly.length-1;i<poly.length;j=i++)a+=(poly[j][0]*poly[i][1]-poly[i][0]*poly[j][1]);return a/2}
+function centroid(poly){let a=0,cx=0,cy=0;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const f=poly[j][0]*poly[i][1]-poly[i][0]*poly[j][1];a+=f;cx+=(poly[j][0]+poly[i][0])*f;cy+=(poly[j][1]+poly[i][1])*f}
+ if(Math.abs(a)<1e-9){let sx=0,sy=0;poly.forEach(p=>{sx+=p[0];sy+=p[1]});return[sx/poly.length,sy/poly.length]}return[cx/(3*a),cy/(3*a)]}
+function dedupe(poly,eps=1e-6){const o=[];for(const p of poly){const q=o[o.length-1];if(!q||Math.hypot(p[0]-q[0],p[1]-q[1])>eps)o.push(p)}
+ while(o.length>1&&Math.hypot(o[0][0]-o[o.length-1][0],o[0][1]-o[o.length-1][1])<=eps)o.pop();return o}
+/* spatial hash */
+class Grid{constructor(cs){this.cs=cs;this.m=new Map()}
+ k(ix,iy){return ix*100003+iy}
+ add(i,x,y){const key=this.k(Math.floor(x/this.cs),Math.floor(y/this.cs));let a=this.m.get(key);if(!a){a=[];this.m.set(key,a)}a.push(i)}
+ query(x,y,r,fn){const c=this.cs,x0=Math.floor((x-r)/c),x1=Math.floor((x+r)/c),y0=Math.floor((y-r)/c),y1=Math.floor((y+r)/c);
+  for(let ix=x0;ix<=x1;ix++)for(let iy=y0;iy<=y1;iy++){const a=this.m.get(this.k(ix,iy));if(a)for(const i of a)fn(i)}}}
+
+/* Sutherland-Hodgman: subject = any simple polygon (the outline), clip = convex polygon (a Voronoi cell) */
+function clipConvex(subject,clip){const s=area(clip)>0?1:-1;let out=subject;
+ for(let i=0;i<clip.length&&out.length;i++){const a=clip[i],b=clip[(i+1)%clip.length];const inp=out;out=[];
+  const side=p=>s*((b[0]-a[0])*(p[1]-a[1])-(b[1]-a[1])*(p[0]-a[0]));
+  for(let j=0;j<inp.length;j++){const P=inp[j],Q=inp[(j+1)%inp.length];const sp=side(P),sq=side(Q);
+   if(sp>=0)out.push(P);
+   if((sp>=0)!==(sq>=0)){const t=sp/(sp-sq);out.push([P[0]+(Q[0]-P[0])*t,P[1]+(Q[1]-P[1])*t])}}}
+ return dedupe(out)}
+function segX(p,q,a,b){const r0=q[0]-p[0],r1=q[1]-p[1],s0=b[0]-a[0],s1=b[1]-a[1];const d=r0*s1-r1*s0;if(Math.abs(d)<1e-12)return null;
+ const t=((a[0]-p[0])*s1-(a[1]-p[1])*s0)/d,u=((a[0]-p[0])*r1-(a[1]-p[1])*r0)/d;if(t<0||t>1||u<0||u>1)return null;return[t,u]}
+/* split polygon P by open polyline L wherever L fully crosses it; dangling ends leave P whole */
+function splitByPolyline(P,L,depth=0){if(depth>12||P.length<3)return[P];
+ const X=[];for(let i=0;i<L.length-1;i++)for(let j=0;j<P.length;j++){const r=segX(L[i],L[i+1],P[j],P[(j+1)%P.length]);if(r)X.push({s:i+r[0],e:j,u:r[1],pt:[L[i][0]+(L[i+1][0]-L[i][0])*r[0],L[i][1]+(L[i+1][1]-L[i][1])*r[0]]})}
+ X.sort((a,b)=>a.s-b.s);
+ const at=s=>{const i=Math.min(Math.floor(s),L.length-2),t=s-i;return[L[i][0]+(L[i+1][0]-L[i][0])*t,L[i][1]+(L[i+1][1]-L[i][1])*t]};
+ for(let k=0;k<X.length-1;k++){const A=X[k],B=X[k+1];if(B.s-A.s<1e-7)continue;const m=at((A.s+B.s)/2);if(!inside(P,m[0],m[1]))continue;
+  const path=[];for(let i=Math.floor(A.s)+1;i<=Math.floor(B.s)&&i<L.length;i++)if(i>A.s&&i<B.s)path.push(L[i]);
+  /* ring with A and B inserted */
+  const ring=[];let iA=-1,iB=-1;for(let j=0;j<P.length;j++){ring.push(P[j]);const here=[A,B].filter(x=>x.e===j).sort((a,b)=>a.u-b.u);
+   for(const h of here){ring.push(h.pt);if(h===A)iA=ring.length-1;else iB=ring.length-1}}
+  const walk=(i0,i1)=>{const o=[];let i=i0;for(let g=0;g<=ring.length;g++){o.push(ring[i]);if(i===i1)break;i=(i+1)%ring.length}return o};
+  const p1=dedupe(walk(iA,iB).concat(path.slice().reverse())),p2=dedupe(walk(iB,iA).concat(path));
+  const rest=[B.pt].concat(L.slice(Math.floor(B.s)+1));const eps=1e-6;
+  if(rest.length>1){const d=[rest[1][0]-rest[0][0],rest[1][1]-rest[0][1]],l=Math.hypot(d[0],d[1])||1;rest[0]=[rest[0][0]+d[0]/l*eps,rest[0][1]+d[1]/l*eps]}
+  const res=[];for(const piece of [p1,p2]){if(piece.length<3||Math.abs(area(piece))<1e-6)continue;
+   if(rest.length>1)res.push(...splitByPolyline(piece,rest,depth+1));else res.push(piece)}
+  return res}
+ return[P]}
+
+/* ---------------- outlines (lab frame 1000 x 640, base on the left near x 60) ---------------- */
+const WING_K=880/WingGeom.FORE_L; /* lab units per wing mm at scale 1; forewing span = 880 units */
+const FAB=['C','R1','RS','MA','CuA','A1','nodus','triangle','pterostigma'];
+function wingFrame(shape,veinset){const kind=shape==='clubtail-hind'?'hind':'fore';const L=kind==='fore'?WingGeom.FORE_L:WingGeom.HIND_L;
+ const raw=WingGeom.wingOutline(kind,96,1.0);let v0=1e9,v1=-1e9;raw.forEach(p=>{v0=Math.min(v0,p[1]);v1=Math.max(v1,p[1])});const vm=(v0+v1)/2;
+ const X=p=>[60+p[0]*WING_K,H/2-(p[1]-vm)*WING_K];
+ const n=raw.length/2;const lead=raw.slice(0,n).map(X),trail=raw.slice(n).reverse().map(X);
+ const poly=dedupe(raw.map(X),1e-3);const vmOut=vm;
+ const V=WingGeom.wingVeins(kind,1.0);let veins={};Object.keys(V).forEach(k=>{if(k!=='cross')veins[k]=V[k].map(X)});
+ if(veinset==='fab'){/* RS = the RM stem from the hinge plus R3 distal of it (VL-17) */const x1=veins.RM_stem[1][0];const rs=veins.RM_stem.concat(veins.R3.filter(q=>q[0]>x1+1e-6));const f={};FAB.forEach(k=>{f[k]=k==='RS'?rs:veins[k]});veins=f}
+ return{kind,L,poly,lead,trail,veins,X,vm:vmOut}}
+function outline(kind){
+ if(isWing(kind))return wingFrame(kind).poly;
+ const pts=[];const cx=W/2,cy=H/2;const push=(x,y)=>pts.push([x,y]);
+ if(kind==='ovate'||kind==='lanceolate'){const n=160,k=kind==='ovate'?1.0:0.5;
+  for(let i=0;i<n;i++){const t=i/n*Math.PI*2;const u=(1-Math.cos(t))/2;
+   const half=Math.sin(Math.PI*Math.pow(u,0.75))*(kind==='ovate'?270:150)*k*(kind==='ovate'?1:1.6);
+   push(60+u*880,cy+(t<Math.PI?-1:1)*half)}}
+ else if(kind==='disk'){for(let i=0;i<180;i++){const t=i/180*Math.PI*2;push(cx+300*Math.cos(t),cy+300*Math.sin(t))}}
+ else{const r=rng(3);const n=180,amp=[];for(let k=0;k<5;k++)amp.push([r()*60,r()*Math.PI*2,2+k]);
+  for(let i=0;i<n;i++){const t=i/n*Math.PI*2;let rad=270;amp.forEach(([a,p,f])=>rad+=a*Math.sin(f*t+p));push(cx+rad*Math.cos(t)*1.25,cy+rad*Math.sin(t)*0.95)}}
+ return dedupe(pts)}
+
+/* fixed wing veins: names from wing_geom.js, width as a fraction of Max width */
+const VW={RS:.6,C:.75,Sc:.45,R1:.6,R2:.4,IR2:.32,R3:.45,IR3:.32,'R4+5':.42,MA:.45,MP:.4,CuA:.45,CuP:.38,A1:.4,RM_stem:.6,arculus:.45,triangle:.38,tri_split:.3,subtriangle:.35,nodus:.55,subnodus:.4,pterostigma:.35,anal_loop:.3};
+const CLOSED_FIXED=new Set(['triangle','subtriangle','pterostigma']);
+const RANK={C:1,R1:1,RS:1,R3:1,MA:2,CuA:2,A1:2},RW={1:.75,2:.5,3:.32};
+function resample(pts,d){const o=[pts[0]];for(let i=0;i<pts.length-1;i++){const a=pts[i],b=pts[i+1];const n=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/d));for(let k=1;k<=n;k++)o.push([a[0]+(b[0]-a[0])*k/n,a[1]+(b[1]-a[1])*k/n])}return o}
+/* VS03 rule: a named vein that starts or stops in the field runs on along its end tangent to the next named vein or the outline */
+function extendFixed(fixed,poly){let n=0;const tol=2.0;
+ const segs=[];fixed.forEach((f,fi)=>{for(let i=0;i<f.pts.length-1;i++)segs.push([f.pts[i],f.pts[i+1],fi])});
+ for(let i=0;i<poly.length;i++)segs.push([poly[i],poly[(i+1)%poly.length],-1]);
+ fixed.forEach((f,fi)=>{if(f.closed||f.pts.length<2)return;
+  for(const end of [0,1]){const e=end?f.pts[f.pts.length-1]:f.pts[0];const q=end?f.pts[Math.max(0,f.pts.length-3)]:f.pts[Math.min(f.pts.length-1,2)];
+   if(segs.some(sg=>sg[2]!==fi&&distSeg(e[0],e[1],sg[0][0],sg[0][1],sg[1][0],sg[1][1])<tol))continue;
+   const l=Math.hypot(e[0]-q[0],e[1]-q[1])||1,d=[(e[0]-q[0])/l,(e[1]-q[1])/l],far=[e[0]+d[0]*900,e[1]+d[1]*900];let bt=2;
+   for(const sg of segs){if(sg[2]===fi)continue;const r=segX(e,far,sg[0],sg[1]);if(r&&r[0]>1e-6&&r[0]<bt)bt=r[0]}
+   if(bt<=1){const pt=[e[0]+d[0]*900*bt,e[1]+d[1]*900*bt];if(end)f.pts.push(pt);else f.pts.unshift(pt);n++}}});
+ return n}
+/* VS03 rule for grown veins: no vein stops in the field */
+function deadEnds(p,poly,nodes,links,G){const st={pruned:0,extended:0,snapped:0};
+ const kids=nodes.map(()=>0),ch=nodes.map(()=>[]);nodes.forEach((n,i)=>{if(n.p>=0){kids[n.p]++;ch[n.p].push(i)}});
+ const linked=new Set();links.forEach(([a,b])=>{linked.add(a);linked.add(b)});
+ const tips=[];nodes.forEach((n,i)=>{if(n.p>=0&&kids[i]===0&&!linked.has(i))tips.push(i)});
+ const g=Math.ceil(p.kill/p.step)+6;
+ const kinOf=i=>{const s=new Set([i]);let x=i;for(let k=0;k<g&&nodes[x].p>=0;k++){x=nodes[x].p;s.add(x);for(const c of ch[x]){s.add(c);for(const cc of ch[c])s.add(cc)}}return s};
+ const nearNode=(x,y,r,skip)=>{let best=-1,bd=r;G.query(x,y,r,j=>{if(skip.has(j)||nodes[j].dead)return;const dd=Math.hypot(nodes[j].x-x,nodes[j].y-y);if(dd<bd){bd=dd;best=j}});return best};
+ const outHit=(a,b)=>{let bt=2;for(let i=0;i<poly.length;i++){const r=segX(a,b,poly[i],poly[(i+1)%poly.length]);if(r&&r[0]<bt)bt=r[0]}return bt<=1?[a[0]+(b[0]-a[0])*bt,a[1]+(b[1]-a[1])*bt]:null};
+ const outNear=(x,y)=>{let bd=1e9,pt=null;for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];const dx=b[0]-a[0],dy=b[1]-a[1];const l2=dx*dx+dy*dy||1;let t=((x-a[0])*dx+(y-a[1])*dy)/l2;t=Math.max(0,Math.min(1,t));const qx=a[0]+t*dx,qy=a[1]+t*dy,dd=Math.hypot(x-qx,y-qy);if(dd<bd){bd=dd;pt=[qx,qy]}}return{d:bd,pt}};
+ const add=(x,y,par)=>{nodes.push({x,y,p:par,w:0});const i=nodes.length-1;G.add(i,x,y);kids.push(0);ch.push([]);kids[par]++;ch[par].push(i);return i};
+ for(const i of tips){const n=nodes[i];const skip=kinOf(i);
+  const j=nearNode(n.x,n.y,p.kill,skip);if(j>=0){links.push([i,j]);st.snapped++;continue}
+  const o=outNear(n.x,n.y);if(o.d<p.kill){if(o.d>0.3)add(o.pt[0],o.pt[1],i);st.snapped++;continue}
+  let len=1,top=i,lk=false;while(nodes[top].p>=0&&kids[nodes[top].p]===1&&nodes[nodes[top].p].p>=0){top=nodes[top].p;len++;if(linked.has(top))lk=true}
+  if(len<3&&!lk){let x=i;for(let k=0;k<len;k++){nodes[x].dead=true;x=nodes[x].p}kids[x]--;ch[x]=ch[x].filter(c=>!nodes[c].dead);nodes[x].cut=(nodes[x].cut||0)+1;st.pruned++;continue}
+  const q0=nodes[nodes[n.p].p>=0?nodes[n.p].p:n.p];let dx=n.x-q0.x,dy=n.y-q0.y;const l=Math.hypot(dx,dy)||1;dx/=l;dy/=l;
+  let cur=i,pos=[n.x,n.y],done=false;
+  for(let k=0;k<400&&!done;k++){const q=[pos[0]+dx*p.step,pos[1]+dy*p.step];const hit=outHit(pos,q);
+   if(hit){add(hit[0],hit[1],cur);done=true;break}
+   cur=add(q[0],q[1],cur);skip.add(cur);pos=q;const t=nearNode(q[0],q[1],p.step*1.05,skip);if(t>=0){links.push([cur,t]);done=true}}
+  st.extended++}
+ /* compact: drop pruned nodes, remap indices (trunk nodes come first and never die) */
+ const map=new Int32Array(nodes.length).fill(-1);const keep=[];nodes.forEach((n,i)=>{if(!n.dead){map[i]=keep.length;keep.push(n)}});
+ keep.forEach(n=>{if(n.p>=0)n.p=map[n.p];if(n.tp!=null&&n.tp>=0)n.tp=map[n.tp]});
+ const nl=[];links.forEach(([a,b])=>{if(map[a]>=0&&map[b]>=0)nl.push([map[a],map[b]])});
+ return{nodes:keep,links:nl,st}}
+function fixedVeins(frame,p){const out=[];Object.keys(frame.veins).forEach(name=>{let pts=frame.veins[name].filter(q=>q[1]!=null&&isFinite(q[1]));
+  if(pts.length<2)return;if(CLOSED_FIXED.has(name))pts=pts.concat([pts[0]]);out.push({name,pts,w:(VW[name]||.35)*p.maxw,closed:CLOSED_FIXED.has(name),rank:RANK[name]||3})});return out}
+
+/* ---------------- space colonization (Runions 2005, sections 3 and 4) ---------------- */
+function grow(p,poly,r,fixed,opt){opt=opt||{};const trunk=!!(opt.trunk&&fixed);
+ const[bx0,by0,bx1,by1]=bbox(poly);let nodes=[];const fixedEdges=[];
+ if(trunk){/* VS03 rule: each named vein is a chain of trunk nodes (tp = trunk parent) that takes Murray flow from the veins grown off it */
+  fixed.forEach(f=>{f.pts=resample(f.pts,p.step*1.5);f.idx=[];f.pts.forEach((q,k)=>{nodes.push({x:q[0],y:q[1],p:-1,tp:k?nodes.length-1:-1,w:0,fixed:true});f.idx.push(nodes.length-1);if(k)fixedEdges.push([nodes.length-2,nodes.length-1])})})}
+ else if(opt.wingRoot){const base=opt.wingRoot;nodes.push({x:base[0],y:base[1],p:-1,w:0,fixed:true});let prev=0;for(let s=1;s<=4;s++){nodes.push({x:base[0]+s*8,y:base[1],p:prev,w:0,fixed:true});prev=nodes.length-1}}
+ else if(fixed){/* wing: every fixed vein is a set of root nodes; growth fills the fields between them */
+  fixed.forEach(f=>{for(let i=0;i<f.pts.length-1;i++){const a=f.pts[i],b=f.pts[i+1];const n=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/(p.step*1.5)));
+   for(let k=0;k<n;k++){if(i+k>0)fixedEdges.push([nodes.length-1,nodes.length]);nodes.push({x:a[0]+(b[0]-a[0])*k/n,y:a[1]+(b[1]-a[1])*k/n,p:-1,w:0,fixed:true})}}})}
+ else if(p.shape==='ovate'||p.shape==='lanceolate'){const base=[bx0+8,(by0+by1)/2];nodes.push({x:base[0],y:base[1],p:-1,w:0,fixed:true});let prev=0;for(let s=1;s<=10;s++){nodes.push({x:base[0]+s*12,y:base[1],p:prev,w:0,fixed:true});prev=nodes.length-1}}
+ else{nodes.push({x:(bx0+bx1)/2,y:(by0+by1)/2,p:-1,w:0,fixed:true})}
+ const infl=p.birth*4;const G=new Grid(infl);nodes.forEach((n,i)=>G.add(i,n.x,n.y));
+ /* sources by dart throwing */
+ const src=[];let tries=0;const SG=new Grid(p.birth);
+ while(src.length<p.nsrc&&tries<p.nsrc*40){tries++;const x=bx0+r()*(bx1-bx0),y=by0+r()*(by1-by0);
+  if(!inside(poly,x,y)||nearOutline(poly,x,y,3))continue;let ok=true;
+  SG.query(x,y,p.birth,j=>{if(ok&&Math.hypot(src[j].x-x,src[j].y-y)<p.birth)ok=false});if(!ok)continue;
+  G.query(x,y,p.birth,i=>{if(ok&&Math.hypot(nodes[i].x-x,nodes[i].y-y)<p.birth)ok=false});if(!ok)continue;
+  SG.add(src.length,x,y);src.push({x,y,alive:true,tags:null,first:-1,age:0})}
+ let links=[];const closed=p.mode==='closed';const bX=p.tipb||0,bY=-(p.costb||0);
+ const d=(i,s)=>Math.hypot(nodes[i].x-s.x,nodes[i].y-s.y);
+ const kin=(a,b,g)=>{let x=a;for(let k=0;k<g&&x>=0;k++){if(x===b)return true;x=nodes[x].p}x=b;for(let k=0;k<g&&x>=0;k++){if(x===a)return true;x=nodes[x].p}return false};
+ for(let it=0;it<p.iters;it++){
+  const live=src.filter(s=>s.alive);if(!live.length)break;
+  const pairs=[];/* [source, node] influence pairs this step */
+  if(!closed){for(const s of live){let best=-1,bd=infl;G.query(s.x,s.y,infl,i=>{const dd=d(i,s);if(dd<bd){bd=dd;best=i}});if(best>=0)pairs.push([s,best])}}
+  else{/* relative neighbourhood V(s): Delaunay neighbours of s in V + {s}, then the Eq. 2 test against every closer node */
+   const N=nodes.length,coords=new Float64Array((N+live.length)*2);
+   for(let i=0;i<N;i++){coords[2*i]=nodes[i].x;coords[2*i+1]=nodes[i].y}
+   live.forEach((s,j)=>{coords[2*(N+j)]=s.x;coords[2*(N+j)+1]=s.y});
+   const del=new d3.Delaunay(coords);
+   live.forEach((s,j)=>{s.V=[];
+    if(s.tags){for(const t of s.tags)pairs.push([s,t]);return}
+    for(const v of del.neighbors(N+j)){if(v>=N)continue;const dv=d(v,s);if(dv>=infl)continue;let ex=false;
+     G.query(s.x,s.y,dv,u=>{if(ex||u===v)return;if(d(u,s)<dv&&Math.hypot(nodes[u].x-nodes[v].x,nodes[u].y-nodes[v].y)<dv)ex=true});
+     if(!ex){s.V.push(v);pairs.push([s,v])}}})}
+  const acc=new Map();
+  for(const[s,i]of pairs){const n=nodes[i];const dd=Math.max(1e-6,d(i,s));const a=acc.get(i)||[0,0,0];a[0]+=(s.x-n.x)/dd;a[1]+=(s.y-n.y)/dd;a[2]++;acc.set(i,a)}
+  if(!acc.size)break;
+  const childOf=new Map();
+  for(const[i,a]of acc){const n=nodes[i];let l=Math.hypot(a[0],a[1]);if(l<1e-3)continue;
+   if(bX||bY){/* direction weight: unit pull toward the tip (+x) and the costa (up) added to the unit growth direction */a[0]=a[0]/l+bX;a[1]=a[1]/l+bY;l=Math.hypot(a[0],a[1]);if(l<1e-3)continue}
+   const x=n.x+a[0]/l*p.step,y=n.y+a[1]/l*p.step;
+   if(inside(poly,x,y)){nodes.push({x,y,p:i,w:0});G.add(nodes.length-1,x,y);childOf.set(i,nodes.length-1)}}
+  if(!closed){for(const s of live){let hit=false;G.query(s.x,s.y,p.kill,i=>{if(!hit&&d(i,s)<p.kill)hit=true});if(hit)s.alive=false}}
+  else{for(const s of live){
+    if(s.tags){const nt=new Set();for(const t of s.tags)nt.add(childOf.has(t)?childOf.get(t):t);s.tags=nt}
+    else{let first=-1,fd=p.kill;G.query(s.x,s.y,p.kill,i=>{const dd=d(i,s);if(dd<fd){fd=dd;first=i}});
+     if(first<0)continue;s.first=first;s.tags=new Set((s.V||[]).map(v=>childOf.has(v)?childOf.get(v):v))}
+    s.age++;
+    for(const t of [...s.tags]){if(t===s.first||kin(t,s.first,3)){s.tags.delete(t);continue}
+     const dd=d(t,s),df=Math.hypot(nodes[t].x-nodes[s.first].x,nodes[t].y-nodes[s.first].y);
+     if(dd<p.kill||(p.ana>0&&df<p.ana)){links.push([t,s.first]);s.tags.delete(t)}
+     else if(dd>infl)s.tags.delete(t)}
+    if(!s.tags.size||s.age>60)s.alive=false}}
+ }
+ let de=null;if(p.nde){const r2=deadEnds(p,poly,nodes,links,G);nodes=r2.nodes;links=r2.links;de=r2.st}
+ /* widths: Murray from tips to root (children always carry larger indices). Trunks: rank width at the root, tapering to the tip, plus the flow of every vein grown off them; one exponent for both */
+ const kids=nodes.map(()=>0);nodes.forEach(n=>{if(n.p>=0)kids[n.p]++});const ex=p.mur;
+ if(trunk)fixed.forEach(f=>{const rw=RW[f.rank]*p.maxw,rt=Math.max(p.tip,rw*0.3),m=f.idx.length;const inc=(Math.pow(rw,ex)-Math.pow(rt,ex))/Math.max(1,m-1);f.idx.forEach((i,k)=>{nodes[i].inc=inc;if(k===m-1)nodes[i].w=rt})});
+ for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(kids[i]===0&&!(trunk&&n.fixed))n.w=p.tip;
+  if(n.cut)n.w=Math.pow(Math.pow(n.w,ex)+n.cut*Math.pow(p.tip,ex),1/ex);/* a pruned twig still counts as one tip of flow, so pruning does not thin the trunks */
+  const par=n.p>=0?n.p:(trunk&&n.tp>=0?n.tp:-1);
+  if(par>=0){const q=nodes[par];q.w=Math.pow(Math.pow(q.w,ex)+Math.pow(n.w,ex)+(n.p<0?n.inc||0:0),1/ex)}}
+ nodes.forEach(n=>n.w=Math.min(p.maxw,n.w));
+ if(trunk)fixed.forEach(f=>{f.ws=f.idx.map(i=>nodes[i].w)});
+ return{nodes,links,kids,fixedEdges,trunk,de,src:src.filter(s=>s.alive).length}}
+
+/* ---------------- cells: relaxed Voronoi, density field, true clipping ---------------- */
+const smooth=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t)};
+function densityFn(p,poly,frame){const[bx0,,bx1]=bbox(poly);
+ if(!frame)return(x,y)=>{const u=(x-bx0)/(bx1-bx0);return p.grad>=0?Math.pow(0.15+u*0.85,p.grad):1};
+ const n=frame.lead.length;const x0=frame.lead[0][0],x1=frame.lead[n-1][0];
+ return(x,y)=>{const t=Math.max(0,Math.min(1,(x-x0)/(x1-x0)));const fi=t*(n-1),i=Math.min(n-2,Math.floor(fi)),g=fi-i;
+  const yl=frame.lead[i][1]+(frame.lead[i+1][1]-frame.lead[i][1])*g,yt=frame.trail[i][1]+(frame.trail[i+1][1]-frame.trail[i][1])*g;
+  const f=Math.max(0,Math.min(1,(y-yl)/Math.max(1e-6,yt-yl))); /* 0 at costa, 1 at trailing margin */
+  const distal=smooth(WingGeom.NODUS-0.12,WingGeom.NODUS+0.2,t);
+  const anal=smooth(0.5,0.9,f)*(1-smooth(0.25,0.55,t));
+  return(1+p.grad*distal)*(1+p.costal*Math.exp(-f/0.09))*(1-0.55*anal)}}
+function cells(p,poly,r,veins,ctx){
+ const{frame,fixed,mmPerU,preset}=ctx;const[bx0,by0,bx1,by1]=bbox(poly);
+ const areaU=Math.abs(area(poly));const areaMM=areaU*mmPerU*mmPerU;
+ const dens=densityFn(p,poly,frame);
+ let rmax=0,rsum=0;for(let k=0;k<600;k++){const x=bx0+r()*(bx1-bx0),y=by0+r()*(by1-by0);if(!inside(poly,x,y)){k--;continue}const v=dens(x,y);rmax=Math.max(rmax,v);rsum+=v}
+ const ravg=rsum/600;
+ /* wall rule (VLQ-2): the densest cell needs a void of 1.5 walls, so pitch = 2.5 x min wall */
+ let N=p.ncell,cap=null;
+ if(preset.minWall>0){const pitch=2.5*preset.minWall,hex=0.866*pitch*pitch;const fit=Math.max(4,Math.floor(areaMM/hex*ravg/rmax));if(fit<N){cap=fit;N=fit}}
+ const excl=frame?['triangle','subtriangle','pterostigma'].map(k=>frame.veins[k]).filter(Boolean):[];
+ const inEx=(x,y)=>excl.some(q=>inside(q,x,y));
+ const FG=new Grid(8),fpts=[];if(fixed)fixed.forEach(f=>{for(let i=0;i<f.pts.length-1;i++){const a=f.pts[i],b=f.pts[i+1];const n=Math.max(1,Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/2));for(let k=0;k<n;k++){const q=[a[0]+(b[0]-a[0])*k/n,a[1]+(b[1]-a[1])*k/n];FG.add(fpts.length,q[0],q[1]);fpts.push(q)}}});
+ const spacing=Math.sqrt(areaU/N);
+ const nearFixed=(x,y,dmin)=>{let hit=false;FG.query(x,y,dmin,i=>{if(!hit&&Math.hypot(fpts[i][0]-x,fpts[i][1]-y)<dmin)hit=true});return hit};
+ const vnodes=veins?veins.nodes:[];
+ const okPt=(x,y)=>{if(!inside(poly,x,y)||inEx(x,y))return false;
+  if(fixed&&nearFixed(x,y,0.22*spacing*Math.sqrt(ravg/dens(x,y))))return false;
+  if(!fixed&&vnodes.length){for(let i=0;i<vnodes.length;i+=2){const n=vnodes[i];if(n.w>p.tip*1.8&&Math.hypot(n.x-x,n.y-y)<n.w*1.2+4)return false}}
+  return true};
+ let pts=[];let tries=0;
+ while(pts.length<N&&tries<N*80){tries++;const x=bx0+r()*(bx1-bx0),y=by0+r()*(by1-by0);if(r()*rmax>dens(x,y))continue;if(okPt(x,y))pts.push([x,y])}
+ const BB=[bx0-60,by0-60,bx1+60,by1+60];
+ const clipCell=c=>{const cell=c.slice(0,-1);
+  if(cell.every(q=>inside(poly,q[0],q[1]))){const[cx0,cy0,cx1,cy1]=bbox(cell);if(!poly.some(q=>q[0]>cx0&&q[0]<cx1&&q[1]>cy0&&q[1]<cy1&&inside(cell,q[0],q[1])))return cell}
+  return clipConvex(poly,cell)};
+ for(let k=0;k<p.lloyd;k++){const vor=d3.Delaunay.from(pts).voronoi(BB);const np=[];
+  for(let i=0;i<pts.length;i++){const c=vor.cellPolygon(i);if(!c){np.push(pts[i]);continue}const cc=clipCell(c);if(cc.length<3){np.push(pts[i]);continue}
+   const g=centroid(cc);const x=pts[i][0]+(g[0]-pts[i][0])*0.6,y=pts[i][1]+(g[1]-pts[i][1])*0.6;np.push(okPt(x,y)?[x,y]:pts[i])}
+  pts=np}
+ const vor=d3.Delaunay.from(pts).voronoi(BB);let polys=[];
+ for(let i=0;i<pts.length;i++){const c=vor.cellPolygon(i);if(!c)continue;const cc=clipCell(c);if(cc.length>=3&&Math.abs(area(cc))>1e-3)polys.push(cc)}
+ if(fixed){/* split every cell along the fixed veins so no cell crosses a named vein */
+  for(const f of fixed){const[fx0,fy0,fx1,fy1]=bbox(f.pts);const next=[];
+   for(const c of polys){const[cx0,cy0,cx1,cy1]=bbox(c);if(cx1<fx0||cx0>fx1||cy1<fy0||cy0>fy1){next.push(c);continue}next.push(...splitByPolyline(c,f.pts))}
+   polys=next}
+  const ptero=frame.veins.pterostigma;polys=polys.filter(c=>{const g=centroid(c);return Math.abs(area(c))>0.5&&!(ptero&&inside(ptero,g[0],g[1]))})}
+ return{pts,polys,cap,asked:p.ncell}}
+
+/* ---------------- planar faces of a closed vein graph (ponds) ---------------- */
+function graphFaces(nodes,edges){const adj=new Map();const add=(a,b)=>{if(a===b)return;if(!adj.has(a))adj.set(a,new Set());adj.get(a).add(b)};
+ edges.forEach(([a,b])=>{add(a,b);add(b,a)});const ord=new Map();
+ for(const[v,s]of adj){const arr=[...s];arr.sort((x,y)=>Math.atan2(nodes[x].y-nodes[v].y,nodes[x].x-nodes[v].x)-Math.atan2(nodes[y].y-nodes[v].y,nodes[y].x-nodes[v].x));ord.set(v,arr)}
+ const seen=new Set(),faces=[];
+ for(const[v,arr]of ord)for(const w of arr){if(seen.has(v+','+w))continue;const f=[];let a=v,b=w,g=0;
+  while(!seen.has(a+','+b)&&g++<20000){seen.add(a+','+b);f.push(a);const nb=ord.get(b);const i=nb.indexOf(a);const c=nb[(i-1+nb.length)%nb.length];a=b;b=c}
+  /* remove spikes (dangling veins inside a loop) */
+  let ring=f.slice(),ch=true;while(ch&&ring.length>2){ch=false;for(let i=0;i<ring.length;i++){const pr=ring[(i-1+ring.length)%ring.length],nx=ring[(i+1)%ring.length];if(pr===nx){ring.splice(i,1);ring.splice(i%ring.length,1);ch=true;break}}}
+  if(ring.length>=3){const poly=ring.map(i=>[nodes[i].x,nodes[i].y]);faces.push(poly)}}
+ if(!faces.length)return[];
+ const areas=faces.map(area);const sgn=Math.sign(areas.reduce((a,b)=>Math.abs(b)>Math.abs(a)?b:a,0));
+ return faces.filter((f,i)=>Math.sign(areas[i])!==sgn||false).filter(f=>Math.abs(area(f))>1)}
+
+/* ---------------- build ---------------- */
+function mmPerUnit(p){return p.mm/880}
+function build(p){const t0=performance.now();const r=rng(p.seed);const preset=PRESETS[p.preset]||PRESETS.none;
+ if(preset.mm)p.mm=preset.mm;
+ const frame=isWing(p.shape)?wingFrame(p.shape,p.veinset):null;const poly=frame?frame.poly:outline(p.shape);
+ const v3=!!frame&&p.wingpass!=='v02';let fixed=frame?fixedVeins(frame,p):null;const mmPerU=mmPerUnit(p);
+ let veins=null,cel=null,ponds=[],fixedExt=0;
+ if(v3&&p.mode==='open')fixed=null;/* open on a wing: grown from the hinge only, no named veins */
+ if(v3&&fixed)fixedExt=extendFixed(fixed,poly);
+ if(v3){const hinge=[(frame.lead[0][0]+frame.trail[0][0])/2+3,(frame.lead[0][1]+frame.trail[0][1])/2];
+  veins=grow(p.mode==='cells'?{...p,nsrc:0}:p,poly,r,fixed,{trunk:!!fixed,wingRoot:fixed?null:hinge})}
+ else if(p.mode==='open'||p.mode==='closed'||(p.mode==='hybrid'&&!frame))veins=grow(p,poly,r,fixed);
+ if(p.mode==='cells'||p.mode==='hybrid')cel=cells(p,poly,r,veins,{frame,fixed,mmPerU,preset});
+ if(veins&&p.mode==='closed'){const e=[];veins.nodes.forEach((n,i)=>{if(n.p>=0)e.push([n.p,i])});veins.links.forEach(l=>e.push(l));veins.fixedEdges.forEach(l=>e.push(l));ponds=graphFaces(veins.nodes,e)}
+ const minV=preset.minVein/mmPerU,minWl=preset.minWall/mmPerU;
+ const L={fixed:[0,0],grown:[0,0],links:[0,0]};const mm3=90/880,u2=[0,0];/* widths at 3x: forewing 90 mm over 880 units */
+ const cnt=w=>{u2[1]++;if(w*mm3<2)u2[0]++};if(veins)veins.nodes.forEach(n=>{if(n.p>=0){L.grown[1]++;cnt(n.w);if(n.w<minV)L.grown[0]++}});
+ if(veins){L.links[1]=veins.links.length;veins.links.forEach(()=>cnt(p.tip));if(p.tip<minV)L.links[0]=veins.links.length}
+ if(fixed)fixed.forEach(f=>{for(let i=0;i<f.pts.length-1;i++){const w=f.ws?(f.ws[i]+f.ws[i+1])/2:f.w;L.fixed[1]++;cnt(w);if(w<minV)L.fixed[0]++}});
+ const segs=L.fixed[1]+L.grown[1]+L.links[1],clamped=L.fixed[0]+L.grown[0]+L.links[0];
+ let walls=0,wallsClamped=0;if(cel){const ks=new Set();cel.polys.forEach(c=>c.forEach((a,i)=>{const b=c[(i+1)%c.length];const k=[a[0].toFixed(2),a[1].toFixed(2),b[0].toFixed(2),b[1].toFixed(2)];ks.add(k[0]+k[1]<k[2]+k[3]?k.join():k[2]+','+k[3]+','+k[0]+','+k[1])}));walls=ks.size;if(p.cw<minWl)wallsClamped=walls}
+ return{poly,frame,fixed,veins,cel,ponds,p,preset,mmPerU,minV,minWl,segs,clamped,layers:L,u2,fixedExt,v3,walls,wallsClamped,ms:Math.round(performance.now()-t0)}}
+
+/* ridge chains: root or branch point to the next branch point or tip */
+function chains(veins){const{nodes,kids}=veins;const ch=[];const child=nodes.map(()=>[]);nodes.forEach((n,i)=>{if(n.p>=0)child[n.p].push(i)});
+ nodes.forEach((n,i)=>{if(n.p<0)return;const par=nodes[n.p];if(kids[n.p]===1&&par.p>=0)return;/* start where the parent is a root or a branch point */
+  const c=[n.p,i];let j=i;while(kids[j]===1){j=child[j][0];c.push(j)}ch.push(c)});return ch}
+
+/* ---------------- draw ---------------- */
+function ink(){return getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()}
+function draw(ctx,res,scale){const{poly,veins,cel,p,fixed,ponds,minV,minWl}=res;const view=p.view||'full';const col=ink();
+ ctx.save();ctx.scale(scale,scale);ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=col;ctx.fillStyle=col;
+ const W_=w=>Math.max(w,minV);
+ ctx.beginPath();poly.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.lineWidth=view==='ridges'?0.8:Math.max(1.2,minV);ctx.stroke();
+ if(view==='channels'){const ch=channels(res);ctx.beginPath();ch.forEach(r=>{r.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath()});ctx.globalAlpha=.85;ctx.fill('evenodd');ctx.globalAlpha=1;ctx.lineWidth=0.6;ctx.stroke();ctx.restore();return}
+ if(cel&&(view==='full'||view==='cells')){ctx.lineWidth=Math.max(p.cw,minWl);ctx.beginPath();cel.polys.forEach(c=>{c.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath()});ctx.stroke()}
+ if(view==='cells'&&ponds.length){ctx.lineWidth=1;ctx.beginPath();ponds.forEach(c=>{c.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath()});ctx.stroke()}
+ if(view==='cells'){ctx.restore();return}
+ const ridge=view==='ridges';
+ if(fixed){fixed.forEach(f=>{if(f.ws&&!ridge){for(let i=0;i<f.pts.length-1;i++){ctx.lineWidth=W_((f.ws[i]+f.ws[i+1])/2);ctx.beginPath();ctx.moveTo(f.pts[i][0],f.pts[i][1]);ctx.lineTo(f.pts[i+1][0],f.pts[i+1][1]);ctx.stroke()}}
+   else{ctx.lineWidth=ridge?0.8:W_(f.w);ctx.beginPath();f.pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.stroke()}
+   if(f.name==='pterostigma'&&!ridge){ctx.beginPath();f.pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.fill()}})}
+ if(veins){const{nodes,links}=veins;
+  if(ridge){ctx.lineWidth=0.8;ctx.beginPath();chains(veins).forEach(c=>c.forEach((i,k)=>k?ctx.lineTo(nodes[i].x,nodes[i].y):ctx.moveTo(nodes[i].x,nodes[i].y)));ctx.stroke()}
+  else for(let i=1;i<nodes.length;i++){const n=nodes[i];if(n.p<0)continue;const q=nodes[n.p];ctx.lineWidth=W_(n.w);ctx.beginPath();ctx.moveTo(q.x,q.y);ctx.lineTo(n.x,n.y);ctx.stroke()}
+  ctx.lineWidth=ridge?0.8:W_(p.tip);ctx.beginPath();links.forEach(([i,j])=>{ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y)});ctx.stroke()}
+ ctx.restore()}
+
+/* ---------------- channels: veins buffered by width, unioned (raster union, marching squares, RDP) ---------------- */
+function channels(res){if(res._channels)return res._channels;const{veins,fixed,p,minV}=res;const S=2;/* raster px per lab unit */
+ const cw=W*S+4,chh=H*S+4;const cv=document.createElement('canvas');cv.width=cw;cv.height=chh;const g=cv.getContext('2d');
+ g.translate(2,2);g.scale(S,S);g.lineCap='round';g.lineJoin='round';g.strokeStyle='#000';const W_=w=>Math.max(w,minV);
+ if(fixed)fixed.forEach(f=>{if(f.ws){for(let i=0;i<f.pts.length-1;i++){g.lineWidth=W_((f.ws[i]+f.ws[i+1])/2);g.beginPath();g.moveTo(f.pts[i][0],f.pts[i][1]);g.lineTo(f.pts[i+1][0],f.pts[i+1][1]);g.stroke()}}
+  else{g.lineWidth=W_(f.w);g.beginPath();f.pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.stroke()}});
+ if(veins){const{nodes,links}=veins;for(let i=1;i<nodes.length;i++){const n=nodes[i];if(n.p<0)continue;const q=nodes[n.p];g.lineWidth=W_(n.w);g.beginPath();g.moveTo(q.x,q.y);g.lineTo(n.x,n.y);g.stroke()}
+  g.lineWidth=W_(p.tip);g.beginPath();links.forEach(([i,j])=>{g.moveTo(nodes[i].x,nodes[i].y);g.lineTo(nodes[j].x,nodes[j].y)});g.stroke()}
+ const img=g.getImageData(0,0,cw,chh).data;const on=(x,y)=>x>=0&&y>=0&&x<cw&&y<chh&&img[(y*cw+x)*4+3]>127;
+ /* edge points: h(x,y) between (x,y)-(x+1,y); v(x,y) between (x,y)-(x,y+1). key = id */
+ const adj=new Map();const link=(a,b)=>{(adj.get(a)||adj.set(a,[]).get(a)).push(b);(adj.get(b)||adj.set(b,[]).get(b)).push(a)};
+ const hk=(x,y)=>2*(y*cw+x),vk=(x,y)=>2*(y*cw+x)+1;
+ for(let y=0;y<chh-1;y++)for(let x=0;x<cw-1;x++){const c=(on(x,y)?8:0)|(on(x+1,y)?4:0)|(on(x+1,y+1)?2:0)|(on(x,y+1)?1:0);if(c===0||c===15)continue;
+  const T=hk(x,y),B=hk(x,y+1),Lf=vk(x,y),R=vk(x+1,y);
+  switch(c){case 1:case 14:link(Lf,B);break;case 2:case 13:link(B,R);break;case 3:case 12:link(Lf,R);break;case 4:case 11:link(T,R);break;
+   case 6:case 9:link(T,B);break;case 7:case 8:link(Lf,T);break;case 5:link(Lf,T);link(B,R);break;case 10:link(T,R);link(Lf,B);break}}
+ const pt=k=>{const id=k>>1,x=id%cw,y=(id-x)/cw;return(k&1)?[(x-2)/S,(y+0.5-2)/S]:[(x+0.5-2)/S,(y-2)/S]};
+ const used=new Set(),rings=[];
+ for(const k0 of adj.keys()){if(used.has(k0))continue;const ring=[];let prev=-1,k=k0;
+  for(let g2=0;g2<1e6;g2++){used.add(k);ring.push(pt(k));const nb=adj.get(k);const nx=nb[0]!==prev?nb[0]:nb[1];prev=k;k=nx;if(k===k0||k===undefined||used.has(k))break}
+  if(ring.length>=4)rings.push(rdp(ring,0.35))}
+ res._channels=rings.filter(r=>r.length>=3);return res._channels}
+function rdp(pts,eps){if(pts.length<3)return pts;let dm=0,ix=0;const a=pts[0],b=pts[pts.length-1];
+ for(let i=1;i<pts.length-1;i++){const d=distSeg(pts[i][0],pts[i][1],a[0],a[1],b[0],b[1]);if(d>dm){dm=d;ix=i}}
+ if(dm>eps){const l=rdp(pts.slice(0,ix+1),eps),r=rdp(pts.slice(ix),eps);return l.slice(0,-1).concat(r)}return[a,b]}
+
+/* ---------------- stat ---------------- */
+function statText(res){const{p,veins,cel,preset}=res;const nv=veins?veins.nodes.length:0,nl=veins?veins.links.length:0,nc=cel?cel.polys.length:0;
+ const parts=[`${p.sid} · ${p.mode} · ${p.shape}${isWing(p.shape)?' · vein set '+p.veinset:''} · seed ${p.seed}`,`${preset.label}${preset.mm?'':' · '+p.mm+' mm'}`,`vein nodes ${nv}`,`loops ${nl}`];
+ if(res.ponds.length)parts.push(`closed cells ${res.ponds.length}`);
+ if(cel)parts.push(cel.cap!=null?`cells ${nc} (wall rule: ${cel.cap} seeds fit, ${cel.asked} asked)`:`cells ${nc}`);
+ {const L=res.layers;parts.push(`clamped: fixed ${L.fixed[0]}/${L.fixed[1]}, grown ${L.grown[0]}/${L.grown[1]}, links ${L.links[0]}/${L.links[1]}, walls ${res.wallsClamped}/${res.walls}`)}
+ if(res.veins&&res.veins.de){const d=res.veins.de;parts.push(`dead ends: pruned ${d.pruned}, extended ${d.extended}, snapped ${d.snapped}`)}
+ if(res.v3&&res.fixed)parts.push(`named vein ends extended ${res.fixedExt}`);if(res.frame)parts.push(`under 2 mm at 3x: ${res.u2[0]}/${res.u2[1]} segments`);
+ parts.push(`${res.mmPerU.toFixed(4)} mm/px`,`${res.ms} ms`);return parts}
+
+let current=null;
+function run(){const p=params();if(typeof d3==='undefined'){$('stat').textContent='d3-delaunay did not load (needs network for cdnjs).';return}
+ current=build(p);if(current.preset.mm){$('mm').value=current.preset.mm;$('mmv').textContent=current.preset.mm}
+ const c=$('c');const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);draw(ctx,current,c.width/W);
+ $('stat').innerHTML=statText(current).map(s=>`<span>${s}</span>`).join('')}
+
+/* ---------------- export ---------------- */
+const pad2=n=>String(n).padStart(2,'0');
+function fname(res,ext){const p=res.p;return`${p.sid}_${p.mode}_${p.shape}_s${pad2(p.seed)}_${p.mm}mm_${VERSION}.${ext}`}
+function ridgeList(res){const{veins,fixed}=res;const W_=w=>Math.max(w,res.minV);const out=[];
+ if(fixed)fixed.forEach(f=>out.push({name:f.name,pts:f.pts,w0:W_(f.ws?f.ws[0]:f.w),w1:W_(f.ws?f.ws[f.ws.length-1]:f.w)}));
+ if(veins){const{nodes,links}=veins;chains(veins).forEach(c=>{const pts=c.map(i=>[nodes[i].x,nodes[i].y]);out.push({name:'vein',pts,w0:W_(nodes[c[1]].w),w1:W_(nodes[c[c.length-1]].w)})});
+  links.forEach(([i,j])=>out.push({name:'link',pts:[[nodes[i].x,nodes[i].y],[nodes[j].x,nodes[j].y]],w0:W_(res.p.tip),w1:W_(res.p.tip)}))}
+ return out}
+function svg(res){const{poly,veins,cel,p,fixed,ponds,mmPerU:sc}=res;const f=v=>(v*sc).toFixed(3);const W_=w=>Math.max(w,res.minV);
+ const P_=pts=>pts.map(([x,y])=>f(x)+','+f(y)).join(' ');
+ let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${(W*sc).toFixed(3)}mm" height="${(H*sc).toFixed(3)}mm" viewBox="0 0 ${(W*sc).toFixed(3)} ${(H*sc).toFixed(3)}" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">\n<!-- Venation Lab ${VERSION} · units mm · ${JSON.stringify(p)} -->\n`;
+ s+=`<g id="outline" stroke-width="${(Math.max(1.2,res.minV)*sc).toFixed(3)}"><path d="M${poly.map(([x,y])=>f(x)+','+f(y)).join('L')}Z"/></g>\n`;
+ s+=`<g id="veins">`;if(fixed)fixed.forEach(v=>{if(v.ws){for(let i=0;i<v.pts.length-1;i++)s+=`<line data-name="${v.name}" x1="${f(v.pts[i][0])}" y1="${f(v.pts[i][1])}" x2="${f(v.pts[i+1][0])}" y2="${f(v.pts[i+1][1])}" stroke-width="${(W_((v.ws[i]+v.ws[i+1])/2)*sc).toFixed(3)}"/>`}
+  else s+=`<polyline data-name="${v.name}" stroke-width="${(W_(v.w)*sc).toFixed(3)}" points="${P_(v.pts)}"/>`});
+ if(veins){const{nodes,links}=veins;for(let i=1;i<nodes.length;i++){const n=nodes[i];if(n.p<0)continue;const q=nodes[n.p];s+=`<line x1="${f(q.x)}" y1="${f(q.y)}" x2="${f(n.x)}" y2="${f(n.y)}" stroke-width="${(W_(n.w)*sc).toFixed(3)}"/>`}
+  links.forEach(([i,j])=>s+=`<line data-kind="link" x1="${f(nodes[i].x)}" y1="${f(nodes[i].y)}" x2="${f(nodes[j].x)}" y2="${f(nodes[j].y)}" stroke-width="${(W_(p.tip)*sc).toFixed(3)}"/>`)}
+ s+=`</g>\n<g id="ridges" stroke-width="0.1">`;ridgeList(res).forEach(r=>s+=`<polyline data-name="${r.name}" data-w="${((r.w0+r.w1)/2*sc).toFixed(3)}" data-w0="${(r.w0*sc).toFixed(3)}" data-w1="${(r.w1*sc).toFixed(3)}" points="${P_(r.pts)}"/>`);
+ s+=`</g>\n<g id="channels" stroke="none" fill="#000"><path fill-rule="evenodd" d="${channels(res).map(r=>'M'+r.map(([x,y])=>f(x)+','+f(y)).join('L')+'Z').join('')}"/></g>\n`;
+ const cp=cellPolys(res);s+=`<g id="cells" stroke-width="${(Math.max(p.cw,res.minWl)*sc).toFixed(3)}">`;cp.forEach(c=>s+=`<polygon points="${P_(c)}"/>`);s+=`</g>\n`;
+ if(fixed&&res.frame.veins.pterostigma)s+=`<g id="pterostigma" stroke="none" fill="#000"><polygon points="${P_(res.frame.veins.pterostigma)}"/></g>\n`;
+ return s+`</svg>\n`}
+function cellPolys(res){return res.cel?res.cel.polys:res.ponds}
+function graph(res){const{veins,fixed,p,mmPerU:sc}=res;const r3=v=>Math.round(v*sc*1000)/1000;const W_=w=>Math.max(w,res.minV);
+ const nodes=[],edges=[];
+ if(fixed)fixed.forEach(f=>{const base=nodes.length;f.pts.forEach(([x,y],i)=>nodes.push({x:r3(x),y:r3(y),w:r3(W_(f.ws?f.ws[i]:f.w)),kind:'fixed',name:f.name}));for(let i=1;i<f.pts.length;i++)edges.push({parent:base+i-1,child:base+i,kind:'fixed'})});
+ if(veins){const base=nodes.length;veins.nodes.forEach(n=>nodes.push({x:r3(n.x),y:r3(n.y),w:r3(W_(n.w)),kind:n.fixed?(veins.trunk?'trunk':'root'):'vein'}));
+  veins.nodes.forEach((n,i)=>{if(n.p>=0)edges.push({parent:base+n.p,child:base+i,kind:'tree'})});veins.links.forEach(([i,j])=>edges.push({parent:base+j,child:base+i,kind:'link'}))}
+ return JSON.stringify({format:'venation-lab graph',version:VERSION,units:'mm',frame:'svg, y down, origin top left of the export box',
+  width:r3(W),height:r3(H),preset:p.preset,params:p,nodes,edges,cells:cellPolys(res).map(c=>c.map(([x,y])=>[r3(x),r3(y)])),
+  wing:res.frame?{kind:res.frame.kind,k:WING_K,x0:60,y0:H/2,vm:res.frame.vm,note:'lab x = x0 + u*k, lab y = y0 - (v - vm)*k; u,v in wing mm at scale 1; file units = lab * mm_per_unit'}:null,mm_per_unit:sc,
+  stats:{dead_ends:res.veins?res.veins.de:null,fixed_ends_extended:res.fixedExt,under_2mm_at_3x:res.u2,segments:res.segs,clamped:res.clamped,walls:res.walls,walls_clamped:res.wallsClamped,cell_cap:res.cel?res.cel.cap:null}})}
+function save(name,txt,mime){$('out').value=txt;try{const url=URL.createObjectURL(new Blob([txt],{type:mime}));const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000)}catch(e){}}
+$('run').onclick=run;
+$('svg').onclick=()=>{if(!current)run();save(fname(current,'svg'),svg(current),'image/svg+xml')};
+$('graph').onclick=()=>{if(!current)run();save(fname(current,'json'),graph(current),'application/json')};
+$('study').onclick=()=>{const g=$('grid');g.innerHTML='';const base=params();for(let k=0;k<8;k++){const p={...base,seed:(base.seed*7+k*13)%99+1};const res=build(p);const c=document.createElement('canvas');c.width=500;c.height=320;c.title='seed '+p.seed+' (click to load)';
+  draw(c.getContext('2d'),res,0.5);c.onclick=()=>{$('seed').value=p.seed;$('seedv').textContent=p.seed;run();window.scrollTo({top:0,behavior:'smooth'})};g.appendChild(c)}};
+$('preset').addEventListener('change',()=>{const pr=PRESETS[$('preset').value];if(pr.mm){$('mm').value=pr.mm;$('mmv').textContent=pr.mm}run()});
+['mode','shape','view','veinset','wingpass','nde','sid'].forEach(id=>$(id).addEventListener('change',run));
+P.forEach(k=>$(k).addEventListener('change',run));
+
+/* ---------------- contact sheet hook (headless proof render uses build() and draw() above) ---------------- */
+function sheet(specs,title,sheetId){document.documentElement.dataset.theme='light';document.body.classList.add('sheet-mode');const sh=$('sheet');sh.className='on';sh.innerHTML='';
+ const h=document.createElement('div');h.className='sh-title';h.textContent=title;sh.appendChild(h);const grid=document.createElement('div');grid.className='sh-grid';sh.appendChild(grid);
+ const out=[];specs.forEach((sp,i)=>{const p={...DEFAULTS,...sp};if(sheetId)p.sid=sheetId+'-'+pad2(i+1);const res=build(p);const t=document.createElement('div');t.className='tile';t.id='tile'+i;
+  const c=document.createElement('canvas');c.width=1000;c.height=640;draw(c.getContext('2d'),res,1);t.appendChild(c);
+  const cap=document.createElement('div');cap.className='cap';cap.id='cap'+i;
+  const nch=res.veins?chains(res.veins).length:0;const wing=!!res.frame;
+  const Ls=[`${p.sid} · ${p.mode} · ${p.shape} · seed ${pad2(p.seed)}`,`${res.preset.label}${res.preset.mm?'':' · '+p.mm+' mm'}${wing&&res.fixed?' · vein set '+p.veinset:''}${wing&&!res.v3?' · VS02 rule':''}`];
+  if(p.costb||p.tipb)Ls.push(`bias: costal ${p.costb} · tip ${p.tipb}`);
+  Ls.push(`clamped ${res.clamped}/${res.segs} veins${res.cel?` · ${res.wallsClamped}/${res.walls} walls`:''}`);
+  if(p.view==='ridges')Ls.push(`view ridges: ${nch} centerline chains + ${res.veins?res.veins.links.length:0} loop links at 0.8 px, cells layer off`);else if(p.view!=='full')Ls.push('view '+p.view+' only');
+  if(res.cel)Ls.push(res.cel.cap!=null?`cells ${res.cel.polys.length} (wall cap ${res.cel.cap} of ${res.cel.asked})`:`cells ${res.cel.polys.length}`);else if(res.ponds.length)Ls.push(`closed cells ${res.ponds.length}`);
+  if(res.veins&&res.veins.de){const d=res.veins.de;Ls.push(`dead ends: pruned ${d.pruned} · extended ${d.extended} · snapped ${d.snapped}${res.v3&&res.fixed?' · named ends '+res.fixedExt:''}`)}
+  if(wing&&res.v3)Ls.push(`under 2 mm at 3x: ${res.u2[0]}/${res.u2[1]} segments`);
+  let diff=null;if(sp.cmpNde){const r0=build({...p,nde:0});const c0=document.createElement('canvas');c0.width=1000;c0.height=640;draw(c0.getContext('2d'),r0,1);
+   const A=c.getContext('2d').getImageData(0,0,1000,640).data,B=c0.getContext('2d').getImageData(0,0,1000,640).data;let ink=0,df=0;for(let k=3;k<A.length;k+=4){if(A[k]>40||B[k]>40){ink++;if(Math.abs(A[k]-B[k])>40)df++}}
+   diff={ink,df,segs0:r0.segs};Ls.push(`rule off: ${r0.segs} segments · ${(100*df/ink).toFixed(1)} % of ink px differ`)}
+  cap.innerHTML=Ls.map(x=>`<div>${x}</div>`).join('');
+  t.appendChild(cap);grid.appendChild(t);out.push({i,sid:p.sid,chains:nch,de:res.veins?res.veins.de:null,u2:res.u2,fixedExt:res.fixedExt,diff,stat:statText(res),loops:res.veins?res.veins.links.length:0,cells:res.cel?res.cel.polys.length:0,ponds:res.ponds.length,clamped:res.clamped,segs:res.segs,ms:res.ms})});
+ return out}
+/* ---------------- tabs: Studies (VS sheets as tile galleries) and Lamps (L1 to L6) ---------------- */
+const SITE={"sheets": [{"id": "VS02", "sheet": "VS02_contact_v02b_0123.png", "tiles": [{"id": "VS02-01", "img": "studies/VS02-01.png", "lines": ["VS02-01 · hybrid · clubtail-fore · seed 07", "P2S test, 120 mm forewing · vein set full · VS02 rule", "clamped 432/432 veins · 783/783 walls", "cells 147 (wall cap 46 of 420)"]}, {"id": "VS02-02", "img": "studies/VS02-02.png", "lines": ["VS02-02 · hybrid · clubtail-fore · seed 07", "P2S final, 150 mm forewing · vein set full · VS02 rule", "clamped 432/432 veins · 973/973 walls", "cells 202 (wall cap 71 of 420)"]}, {"id": "VS02-03", "img": "studies/VS02-03.png", "lines": ["VS02-03 · hybrid · clubtail-fore · seed 07", "Objet moving parts, 45 mm forewing · vein set full · VS02 rule", "clamped 432/432 veins · 618/618 walls", "cells 98 (wall cap 25 of 420)"]}, {"id": "VS02-04", "img": "studies/VS02-04.png", "lines": ["VS02-04 · closed · ovate · seed 07", "Screen, no minimums · 120 mm", "clamped 0/5262 veins", "closed cells 94"]}, {"id": "VS02-05", "img": "studies/VS02-05.png", "lines": ["VS02-05 · hybrid · clubtail-hind · seed 07", "P2S test, 120 mm forewing · vein set full · VS02 rule", "clamped 440/440 veins · 946/946 walls", "cells 187 (wall cap 57 of 420)"]}, {"id": "VS02-06", "img": "studies/VS02-06.png", "lines": ["VS02-06 · hybrid · clubtail-hind · seed 07", "P2S final, 150 mm forewing · vein set full · VS02 rule", "clamped 440/440 veins · 1142/1142 walls", "cells 259 (wall cap 90 of 420)"]}, {"id": "VS02-07", "img": "studies/VS02-07.png", "lines": ["VS02-07 · hybrid · clubtail-hind · seed 07", "Objet moving parts, 45 mm forewing · vein set full · VS02 rule", "clamped 440/440 veins · 790/790 walls", "cells 134 (wall cap 32 of 420)"]}, {"id": "VS02-08", "img": "studies/VS02-08.png", "lines": ["VS02-08 · closed · ovate · seed 23", "Screen, no minimums · 120 mm", "clamped 0/4744 veins", "closed cells 94"]}, {"id": "VS02-09", "img": "studies/VS02-09.png", "lines": ["VS02-09 · open · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/5921 veins"]}, {"id": "VS02-10", "img": "studies/VS02-10.png", "lines": ["VS02-10 · closed · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/6005 veins", "closed cells 109"]}, {"id": "VS02-11", "img": "studies/VS02-11.png", "lines": ["VS02-11 · hybrid · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/5921 veins · 0/1437 walls", "cells 420"]}, {"id": "VS02-12", "img": "studies/VS02-12.png", "lines": ["VS02-12 · closed · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/6005 veins", "view ridges: 2641 centerline chains + 155 loop links at 0.8 px, cells layer off", "closed cells 109"]}, {"id": "VS02-13", "img": "studies/VS02-13.png", "lines": ["VS02-13 · open · disk · seed 07", "Screen, no minimums · 120 mm", "clamped 0/6134 veins"]}, {"id": "VS02-14", "img": "studies/VS02-14.png", "lines": ["VS02-14 · closed · disk · seed 07", "Screen, no minimums · 120 mm", "clamped 0/6192 veins", "closed cells 123"]}, {"id": "VS02-15", "img": "studies/VS02-15.png", "lines": ["VS02-15 · hybrid · disk · seed 07", "Screen, no minimums · 120 mm", "clamped 0/6134 veins · 0/1437 walls", "cells 420"]}, {"id": "VS02-16", "img": "studies/VS02-16.png", "lines": ["VS02-16 · cells · disk · seed 07", "Screen, no minimums · 120 mm", "clamped 0/0 veins · 0/1437 walls", "cells 420"]}]}, {"id": "VS03", "sheet": "VS03_contact_v02c_0129.png", "tiles": [{"id": "VS03-01", "img": "studies/VS03-01.png", "lines": ["VS03-01 · open · clubtail-fore · seed 07", "Screen, no minimums · 120 mm", "clamped 0/2014 veins", "dead ends: pruned 1796 · extended 50 · snapped 141", "under 2 mm at 3x: 2014/2014 segments"]}, {"id": "VS03-02", "img": "studies/VS03-02.png", "lines": ["VS03-02 · closed · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/2765 veins", "closed cells 115", "dead ends: pruned 8 · extended 26 · snapped 26 · named ends 6", "under 2 mm at 3x: 2765/2765 segments"]}, {"id": "VS03-03", "img": "studies/VS03-03.png", "lines": ["VS03-03 · hybrid · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/2970 veins · 0/2617 walls", "cells 624", "dead ends: pruned 0 · extended 136 · snapped 61 · named ends 6", "under 2 mm at 3x: 2970/2970 segments"]}, {"id": "VS03-04", "img": "studies/VS03-04.png", "lines": ["VS03-04 · cells · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/869 veins · 0/2566 walls", "cells 606", "dead ends: pruned 0 · extended 0 · snapped 0 · named ends 6", "under 2 mm at 3x: 869/869 segments"]}, {"id": "VS03-05", "img": "studies/VS03-05.png", "lines": ["VS03-05 · open · clubtail-hind · seed 07", "Screen, no minimums · 120 mm", "clamped 0/2734 veins", "dead ends: pruned 2744 · extended 78 · snapped 237", "under 2 mm at 3x: 2734/2734 segments"]}, {"id": "VS03-06", "img": "studies/VS03-06.png", "lines": ["VS03-06 · closed · clubtail-hind · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/3899 veins", "closed cells 161", "dead ends: pruned 41 · extended 33 · snapped 98 · named ends 5", "under 2 mm at 3x: 3899/3899 segments"]}, {"id": "VS03-07", "img": "studies/VS03-07.png", "lines": ["VS03-07 · hybrid · clubtail-hind · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/5618 veins · 0/2662 walls", "cells 621", "dead ends: pruned 2 · extended 184 · snapped 955 · named ends 5", "under 2 mm at 3x: 5618/5618 segments"]}, {"id": "VS03-08", "img": "studies/VS03-08.png", "lines": ["VS03-08 · cells · clubtail-hind · seed 07", "Screen, no minimums · 120 mm · vein set fab", "clamped 0/917 veins · 0/2636 walls", "cells 613", "dead ends: pruned 0 · extended 0 · snapped 0 · named ends 5", "under 2 mm at 3x: 917/917 segments"]}, {"id": "VS03-09", "img": "studies/VS03-09.png", "lines": ["VS03-09 · hybrid · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "bias: costal 0.3 · tip 0", "clamped 0/2959 veins · 0/2617 walls", "cells 624", "dead ends: pruned 0 · extended 137 · snapped 59 · named ends 6", "under 2 mm at 3x: 2959/2959 segments"]}, {"id": "VS03-10", "img": "studies/VS03-10.png", "lines": ["VS03-10 · hybrid · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "bias: costal 0.6 · tip 0", "clamped 0/2980 veins · 0/2617 walls", "cells 624", "dead ends: pruned 1 · extended 138 · snapped 57 · named ends 6", "under 2 mm at 3x: 2980/2980 segments"]}, {"id": "VS03-11", "img": "studies/VS03-11.png", "lines": ["VS03-11 · hybrid · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "bias: costal 0 · tip 0.3", "clamped 0/2926 veins · 0/2617 walls", "cells 624", "dead ends: pruned 1 · extended 137 · snapped 59 · named ends 6", "under 2 mm at 3x: 2926/2926 segments"]}, {"id": "VS03-12", "img": "studies/VS03-12.png", "lines": ["VS03-12 · hybrid · clubtail-fore · seed 07", "Screen, no minimums · 120 mm · vein set fab", "bias: costal 0 · tip 0.6", "clamped 0/3297 veins · 0/2617 walls", "cells 624", "dead ends: pruned 29 · extended 132 · snapped 267 · named ends 6", "under 2 mm at 3x: 3297/3297 segments"]}, {"id": "VS03-13", "img": "studies/VS03-13.png", "lines": ["VS03-13 · closed · ovate · seed 07", "Screen, no minimums · 120 mm", "clamped 0/4406 veins", "closed cells 107", "dead ends: pruned 1045 · extended 30 · snapped 8", "rule off: 5262 segments · 3.8 % of ink px differ"]}, {"id": "VS03-14", "img": "studies/VS03-14.png", "lines": ["VS03-14 · closed · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/4407 veins", "closed cells 120", "dead ends: pruned 1902 · extended 23 · snapped 166", "rule off: 6005 segments · 3.4 % of ink px differ"]}, {"id": "VS03-15", "img": "studies/VS03-15.png", "lines": ["VS03-15 · hybrid · blob · seed 07", "Screen, no minimums · 120 mm", "clamped 0/3629 veins · 0/1437 walls", "cells 420", "dead ends: pruned 3431 · extended 105 · snapped 295", "rule off: 5921 segments · 30.9 % of ink px differ"]}, {"id": "VS03-16", "img": "studies/VS03-16.png", "lines": ["VS03-16 · closed · disk · seed 07", "Screen, no minimums · 120 mm", "clamped 0/4488 veins", "closed cells 140", "dead ends: pruned 1884 · extended 28 · snapped 4", "rule off: 6192 segments · 3.4 % of ink px differ"]}]}, {"id": "VS04", "sheet": "VS04_contact_lamps-v01_0150.png", "tiles": [{"id": "VS04-01", "img": "studies/VS04-01.png", "lines": ["VS04-01 · L1 · seed 07", "egg 2:1, veins grown on the surface", "source: VS02-10 closed blob", "88 x 88 x 168 mm (3.46 x 3.46 x 6.63 in)", "92 g · 6.1 h estimated, not sliced", "holes 84 · cells kept closed 17", "PASS"]}, {"id": "VS04-02", "img": "studies/VS04-02.png", "lines": ["VS04-02 · L1 · seed 23", "egg 2:1, veins grown on the surface", "source: VS02-10 closed blob", "88 x 88 x 170 mm (3.46 x 3.46 x 6.68 in)", "90 g · 6.0 h estimated, not sliced", "holes 86 · cells kept closed 12", "PASS"]}, {"id": "VS04-03", "img": "studies/VS04-03.png", "lines": ["VS04-03 · L2 · seed 07", "egg, six ovate leaf panels", "source: VS02-04 closed ovate", "90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)", "97 g · 6.3 h estimated, not sliced", "holes 96 · cells kept closed 42", "PASS"]}, {"id": "VS04-04", "img": "studies/VS04-04.png", "lines": ["VS04-04 · L2 · seed 23", "egg, six ovate leaf panels", "source: VS02-04 closed ovate", "90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)", "98 g · 6.3 h estimated, not sliced", "holes 69 · cells kept closed 107", "PASS"]}, {"id": "VS04-05", "img": "studies/VS04-05.png", "lines": ["VS04-05 · L3 · seed 07", "egg, eight Clubtail wing panels", "source: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)", "90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)", "115 g · 7.1 h estimated, not sliced", "holes 125 · cells kept closed 317", "PASS"]}, {"id": "VS04-06", "img": "studies/VS04-06.png", "lines": ["VS04-06 · L3 · seed 23", "egg, eight Clubtail wing panels", "source: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)", "90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)", "115 g · 7.1 h estimated, not sliced", "holes 134 · cells kept closed 346", "PASS"]}, {"id": "VS04-07", "img": "studies/VS04-07.png", "lines": ["VS04-07 · L4 · seed 07", "cylinder, disk study unrolled", "source: VS02-15 hybrid disk", "103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)", "123 g · 7.3 h estimated, not sliced", "holes 200 · cells kept closed 340", "PASS"]}, {"id": "VS04-08", "img": "studies/VS04-08.png", "lines": ["VS04-08 · L4 · seed 23", "cylinder, disk study unrolled", "source: VS02-15 hybrid disk", "103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)", "122 g · 7.2 h estimated, not sliced", "holes 204 · cells kept closed 298", "PASS"]}, {"id": "VS04-09", "img": "studies/VS04-09.png", "lines": ["VS04-09 · L5 · seed 07", "mound, blob outline lofted", "source: VS02-10 blob outline, open venation", "160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)", "103 g · 5.7 h estimated, not sliced", "holes 139 · cells kept closed 90", "PASS"]}, {"id": "VS04-10", "img": "studies/VS04-10.png", "lines": ["VS04-10 · L5 · seed 23", "mound, blob outline lofted", "source: VS02-10 blob outline, open venation", "160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)", "104 g · 5.7 h estimated, not sliced", "holes 136 · cells kept closed 96", "PASS"]}, {"id": "VS04-11", "img": "studies/VS04-11.png", "lines": ["VS04-11 · L6 · seed 07", "egg, cells only (control)", "source: VS02-16 cells disk", "85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)", "86 g · 5.8 h estimated, not sliced", "holes 317 · cells kept closed 135", "PASS"]}, {"id": "VS04-12", "img": "studies/VS04-12.png", "lines": ["VS04-12 · L6 · seed 23", "egg, cells only (control)", "source: VS02-16 cells disk", "85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)", "85 g · 5.8 h estimated, not sliced", "holes 313 · cells kept closed 147", "PASS"]}]}, {"id": "VS05", "sheet": "VS05_contact_dfly-v01_0155.png", "tiles": [{"id": "VS05-01", "img": "studies/VS05-01.png", "lines": ["VS05-01 · D1 · top view", "hybrid fab wings (named ribs, grown veins, cells)", "E1 Clubtail print body at 3x (factor 1.0345 on the source)", "168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)", "39 g · 2.0 h estimated, not sliced", "open cells: fore 3, hind 3 per wing · kept closed 28, 38", "FAIL: wings pass, body keeps the E1 overhang (1894 mm2)"]}, {"id": "VS05-02", "img": "studies/VS05-02.png", "lines": ["VS05-02 · D1 · three-quarter view", "hybrid fab wings (named ribs, grown veins, cells)", "E1 Clubtail print body at 3x (factor 1.0345 on the source)", "168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)", "39 g · 2.0 h estimated, not sliced", "open cells: fore 3, hind 3 per wing · kept closed 28, 38", "FAIL: wings pass, body keeps the E1 overhang (1894 mm2)"]}, {"id": "VS05-03", "img": "studies/VS05-03.png", "lines": ["VS05-03 · D2 · top view", "cells fab wings (the Stage 1 picks VS03-04, VS03-08)", "E1 Clubtail print body at 3x (factor 1.0345 on the source)", "168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)", "38 g · 2.0 h estimated, not sliced", "open cells: fore 4, hind 10 per wing · kept closed 26, 22", "FAIL: wings pass, body keeps the E1 overhang (1894 mm2)"]}, {"id": "VS05-04", "img": "studies/VS05-04.png", "lines": ["VS05-04 · D2 · three-quarter view", "cells fab wings (the Stage 1 picks VS03-04, VS03-08)", "E1 Clubtail print body at 3x (factor 1.0345 on the source)", "168 x 179 x 24 mm (6.63 x 7.03 x 0.96 in)", "38 g · 2.0 h estimated, not sliced", "open cells: fore 4, hind 10 per wing · kept closed 26, 22", "FAIL: wings pass, body keeps the E1 overhang (1894 mm2)"]}]}], "lamps": [{"id": "L1", "file": "L1.json", "params": {"id": "L1", "mode_field": "L1-closed", "shape_field": "egg", "size_mm": 170, "source_study": "VS02-10 closed blob", "note": "Reference form. Closed venation grown on the egg itself: sources on the surface, each growth step projected back to it. Same rule as VS02-10, not the same drawing.", "form": {"type": "egg", "args": {"H": 170, "W": 85}}, "source": {"kind": "surface", "mode": "closed", "spacing": 11.0, "step": 2.0, "kill": 3.0, "roots": 3}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-01", "img": "studies/VS04-01.png", "lines": ["VS04-01 · L1 · seed 07", "egg 2:1, veins grown on the surface", "source: VS02-10 closed blob", "88 x 88 x 168 mm (3.46 x 3.46 x 6.63 in)", "92 g · 6.1 h estimated, not sliced", "holes 84 · cells kept closed 17", "PASS"]}, {"id": "VS04-02", "img": "studies/VS04-02.png", "lines": ["VS04-02 · L1 · seed 23", "egg 2:1, veins grown on the surface", "source: VS02-10 closed blob", "88 x 88 x 170 mm (3.46 x 3.46 x 6.68 in)", "90 g · 6.0 h estimated, not sliced", "holes 86 · cells kept closed 12", "PASS"]}]}, {"id": "L2", "file": "L2.json", "params": {"id": "L2", "mode_field": "L2-closed", "shape_field": "egg-6-ovate", "size_mm": 170, "source_study": "VS02-04 closed ovate", "note": "Six ovate leaf panels wrapped on the egg, each mapped by UV onto a 60 degree sector plus 6 mm overlap, panels alternately outside (1.2 mm proud). Veins grown in 2D on the page, coarser than VS02-04 so cells clear the 3 mm hole rule.", "form": {"type": "egg", "args": {"H": 170, "W": 85}}, "source": {"kind": "panels", "count": 6, "overlap": 6.0, "patterns": ["L2_ovate"]}, "page_specs": {"L2_ovate": {"mode": "closed", "shape": "ovate", "nsrc": 45, "birth": 70, "kill": 14, "step": 8, "ana": 20, "nde": 1}}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-03", "img": "studies/VS04-03.png", "lines": ["VS04-03 · L2 · seed 07", "egg, six ovate leaf panels", "source: VS02-04 closed ovate", "90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)", "97 g · 6.3 h estimated, not sliced", "holes 96 · cells kept closed 42", "PASS"]}, {"id": "VS04-04", "img": "studies/VS04-04.png", "lines": ["VS04-04 · L2 · seed 23", "egg, six ovate leaf panels", "source: VS02-04 closed ovate", "90 x 89 x 170 mm (3.56 x 3.51 x 6.69 in)", "98 g · 6.3 h estimated, not sliced", "holes 69 · cells kept closed 107", "PASS"]}]}, {"id": "L3", "file": "L3.json", "params": {"id": "L3", "mode_field": "L3-cells-fab", "shape_field": "egg-8-wings", "size_mm": 170, "source_study": "VS03-04 and VS03-08 (cells fab, the Stage 1 picks)", "note": "Eight panels, Clubtail forewings (outside) and hindwings (inside) alternating, roots at the foot, tips at the open top. Named fab veins in relief, cells between them are the holes.", "form": {"type": "egg", "args": {"H": 170, "W": 85}}, "source": {"kind": "panels", "count": 8, "overlap": 6.0, "patterns": ["L3_fore", "L3_hind"], "cells": true}, "page_specs": {"L3_fore": {"mode": "cells", "shape": "clubtail-fore", "veinset": "fab", "ncell": 40, "grad": 0.6, "costal": 0.5}, "L3_hind": {"mode": "cells", "shape": "clubtail-hind", "veinset": "fab", "ncell": 40, "grad": 0.6, "costal": 0.5}}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-05", "img": "studies/VS04-05.png", "lines": ["VS04-05 · L3 · seed 07", "egg, eight Clubtail wing panels", "source: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)", "90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)", "115 g · 7.1 h estimated, not sliced", "holes 125 · cells kept closed 317", "PASS"]}, {"id": "VS04-06", "img": "studies/VS04-06.png", "lines": ["VS04-06 · L3 · seed 23", "egg, eight Clubtail wing panels", "source: VS03-04 and VS03-08 (cells fab, the Stage 1 picks)", "90 x 90 x 170 mm (3.56 x 3.56 x 6.69 in)", "115 g · 7.1 h estimated, not sliced", "holes 134 · cells kept closed 346", "PASS"]}]}, {"id": "L4", "file": "L4.json", "params": {"id": "L4", "mode_field": "L4-hybrid", "shape_field": "cylinder", "size_mm": 150, "source_study": "VS02-15 hybrid disk", "note": "Hybrid disk study unrolled on a cylinder: disk radius becomes height, disk bearing becomes bearing, the centre sits in the foot. Foot ring 10 mm wide, so the clear hole is 80 mm.", "form": {"type": "cyl", "args": {"H": 150, "W": 100}}, "source": {"kind": "polar", "pattern": "L4_disk"}, "page_specs": {"L4_disk": {"mode": "hybrid", "shape": "disk", "nsrc": 200, "birth": 22, "kill": 8, "step": 5, "ncell": 420, "nde": 1}}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-07", "img": "studies/VS04-07.png", "lines": ["VS04-07 · L4 · seed 07", "cylinder, disk study unrolled", "source: VS02-15 hybrid disk", "103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)", "123 g · 7.3 h estimated, not sliced", "holes 200 · cells kept closed 340", "PASS"]}, {"id": "VS04-08", "img": "studies/VS04-08.png", "lines": ["VS04-08 · L4 · seed 23", "cylinder, disk study unrolled", "source: VS02-15 hybrid disk", "103 x 103 x 150 mm (4.06 x 4.06 x 5.90 in)", "122 g · 7.2 h estimated, not sliced", "holes 204 · cells kept closed 298", "PASS"]}]}, {"id": "L5", "file": "L5.json", "params": {"id": "L5", "mode_field": "L5-open", "shape_field": "mound", "size_mm": 160, "source_study": "VS02-10 blob outline, open venation", "note": "The blob outline lofted as a low dome 160 wide and 90 tall, open top. Open veins grown on the surface from five roots at the foot; Voronoi cells on the surface give the holes because open veins enclose nothing. Lamp and landform study at once.", "form": {"type": "mound", "args": {"H": 90, "W": 160, "k": 0.35}}, "foot_w": 16, "source": {"kind": "surface", "mode": "open", "spacing": 12.0, "step": 2.0, "kill": 3.0, "roots": 5, "cells": 12.0}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-09", "img": "studies/VS04-09.png", "lines": ["VS04-09 · L5 · seed 07", "mound, blob outline lofted", "source: VS02-10 blob outline, open venation", "160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)", "103 g · 5.7 h estimated, not sliced", "holes 139 · cells kept closed 90", "PASS"]}, {"id": "VS04-10", "img": "studies/VS04-10.png", "lines": ["VS04-10 · L5 · seed 23", "mound, blob outline lofted", "source: VS02-10 blob outline, open venation", "160 x 122 x 89 mm (6.30 x 4.81 x 3.51 in)", "104 g · 5.7 h estimated, not sliced", "holes 136 · cells kept closed 96", "PASS"]}]}, {"id": "L6", "file": "L6.json", "params": {"id": "L6", "mode_field": "L6-cells", "shape_field": "egg", "size_mm": 170, "source_study": "VS02-16 cells disk", "note": "Control: cells only, no veins. The cell seeds of the disk study are unrolled on the egg (radius to height) and the cells are re-cut on the surface.", "form": {"type": "egg", "args": {"H": 170, "W": 85}}, "source": {"kind": "polar", "pattern": "L6_disk"}, "page_specs": {"L6_disk": {"mode": "cells", "shape": "disk", "ncell": 420}}, "seeds": [7, 23]}, "tiles": [{"id": "VS04-11", "img": "studies/VS04-11.png", "lines": ["VS04-11 · L6 · seed 07", "egg, cells only (control)", "source: VS02-16 cells disk", "85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)", "86 g · 5.8 h estimated, not sliced", "holes 317 · cells kept closed 135", "PASS"]}, {"id": "VS04-12", "img": "studies/VS04-12.png", "lines": ["VS04-12 · L6 · seed 23", "egg, cells only (control)", "source: VS02-16 cells disk", "85 x 85 x 170 mm (3.34 x 3.35 x 6.69 in)", "85 g · 5.8 h estimated, not sliced", "holes 313 · cells kept closed 147", "PASS"]}]}]};
+function fig(t){const f=document.createElement('figure');const im=document.createElement('img');im.loading='lazy';im.src=t.img;im.alt=t.id;f.appendChild(im);
+ const c=document.createElement('figcaption');t.lines.forEach(x=>{const d=document.createElement('div');d.textContent=x;c.appendChild(d)});f.appendChild(c);return f}
+function buildTabs(){const S=$('tab-studies');SITE.sheets.forEach(sh=>{const h=document.createElement('h2');h.textContent=sh.id+' \u00b7 '+sh.sheet;S.appendChild(h);const g=document.createElement('div');g.className='gal';sh.tiles.forEach(t=>g.appendChild(fig(t)));S.appendChild(g)});
+ const Lp=$('tab-lamps');SITE.lamps.forEach(l=>{const h=document.createElement('h2');h.textContent=l.id+' \u00b7 '+l.params.source_study;Lp.appendChild(h);
+  const n=document.createElement('p');n.className='note';n.textContent=l.params.note;Lp.appendChild(n);const g=document.createElement('div');g.className='gal';l.tiles.forEach(t=>g.appendChild(fig(t)));Lp.appendChild(g);
+  const d=document.createElement('details');const s=document.createElement('summary');s.textContent=l.file;d.appendChild(s);const pre=document.createElement('pre');pre.className='params';pre.textContent=JSON.stringify(l.params,null,1);d.appendChild(pre);Lp.appendChild(d)})}
+function showTab(k){document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));document.querySelector('.wrap').style.display=k==='lab'?'':'none';$('tab-studies').hidden=k!=='studies';$('tab-lamps').hidden=k!=='lamps'}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));buildTabs();
+window.VL={SITE,showTab,VERSION,PRESETS,DEFAULTS,build,draw,svg,graph,channels,sheet,statText,fname};
+if(typeof d3!=='undefined')run();else $('stat').textContent='d3-delaunay did not load (needs network for cdnjs).';
+</script>
+</body>
+</html>

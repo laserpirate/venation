@@ -1,0 +1,47 @@
+{
+ "id": "L3",
+ "mode_field": "L3-cells-fab",
+ "shape_field": "egg-8-wings",
+ "size_mm": 170,
+ "source_study": "VS03-04 and VS03-08 (cells fab, the Stage 1 picks)",
+ "note": "Eight panels, Clubtail forewings (outside) and hindwings (inside) alternating, roots at the foot, tips at the open top. Named fab veins in relief, cells between them are the holes.",
+ "form": {
+  "type": "egg",
+  "args": {
+   "H": 170,
+   "W": 85
+  }
+ },
+ "source": {
+  "kind": "panels",
+  "count": 8,
+  "overlap": 6.0,
+  "patterns": [
+   "L3_fore",
+   "L3_hind"
+  ],
+  "cells": true
+ },
+ "page_specs": {
+  "L3_fore": {
+   "mode": "cells",
+   "shape": "clubtail-fore",
+   "veinset": "fab",
+   "ncell": 40,
+   "grad": 0.6,
+   "costal": 0.5
+  },
+  "L3_hind": {
+   "mode": "cells",
+   "shape": "clubtail-hind",
+   "veinset": "fab",
+   "ncell": 40,
+   "grad": 0.6,
+   "costal": 0.5
+  }
+ },
+ "seeds": [
+  7,
+  23
+ ]
+}
