@@ -1,0 +1,437 @@
+{
+ "runs": [
+  {
+   "w": 1400,
+   "h": 900,
+   "controls": 46,
+   "fails": [],
+   "drawing": [
+    1032,
+    661
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1032,
+      661
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lab",
+   "errors": [],
+   "ok": true,
+   "file": "lab_1400x900.png"
+  },
+  {
+   "w": 1920,
+   "h": 1080,
+   "controls": 46,
+   "fails": [],
+   "drawing": [
+    1216,
+    779
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "cw",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      779
+     ],
+     "pageScrollY": 0
+    },
+    {
+     "rail": "rail2",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      779
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [
+    "g_Fabrication",
+    "g_Export"
+   ],
+   "page": "lab",
+   "errors": [],
+   "ok": true,
+   "file": "lab_1920x1080.png"
+  },
+  {
+   "w": 1100,
+   "h": 700,
+   "controls": 46,
+   "fails": [],
+   "drawing": [
+    732,
+    469
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      89,
+      732,
+      469
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lab",
+   "errors": [],
+   "ok": true,
+   "file": "lab_1100x700.png"
+  },
+  {
+   "w": 400,
+   "h": 800,
+   "controls": 46,
+   "fails": [],
+   "drawing": [
+    368,
+    236
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      16,
+      6,
+      368,
+      236
+     ],
+     "pageScrollY": 1810
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lab",
+   "errors": [],
+   "ok": true,
+   "file": "lab_400x800.png"
+  },
+  {
+   "w": 1400,
+   "h": 900,
+   "controls": 130,
+   "fails": [],
+   "drawing": [
+    1032,
+    696
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "c_cw",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1032,
+      696
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "land",
+   "errors": [],
+   "ok": true,
+   "file": "land_1400x900.png"
+  },
+  {
+   "w": 1920,
+   "h": 1080,
+   "controls": 130,
+   "fails": [],
+   "drawing": [
+    1216,
+    876
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "c_cw",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      876
+     ],
+     "pageScrollY": 0
+    },
+    {
+     "rail": "rail2",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      876
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [
+    "g_Scale",
+    "g_Water",
+    "g_Grading",
+    "g_Export",
+    "g_Readouts"
+   ],
+   "page": "land",
+   "errors": [],
+   "ok": true,
+   "file": "land_1920x1080.png"
+  },
+  {
+   "w": 1100,
+   "h": 700,
+   "controls": 130,
+   "fails": [],
+   "drawing": [
+    732,
+    496
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "c_cw",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      732,
+      496
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "land",
+   "errors": [],
+   "ok": true,
+   "file": "land_1100x700.png"
+  },
+  {
+   "w": 400,
+   "h": 800,
+   "controls": 130,
+   "fails": [],
+   "drawing": [
+    368,
+    284
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "c_cw",
+     "drawingInView": 1,
+     "drawing": [
+      16,
+      6,
+      368,
+      284
+     ],
+     "pageScrollY": 4394
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "land",
+   "errors": [],
+   "ok": true,
+   "file": "land_400x800.png"
+  },
+  {
+   "w": 1400,
+   "h": 900,
+   "controls": 33,
+   "fails": [],
+   "drawing": [
+    1032,
+    639
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1032,
+      639
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lamp",
+   "errors": [],
+   "ok": true,
+   "file": "lamp_1400x900.png"
+  },
+  {
+   "w": 1920,
+   "h": 1080,
+   "controls": 33,
+   "fails": [],
+   "drawing": [
+    1216,
+    754
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "c_light",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      754
+     ],
+     "pageScrollY": 0
+    },
+    {
+     "rail": "rail2",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      1216,
+      754
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [
+    "g_Readouts",
+    "g_Export"
+   ],
+   "page": "lamp",
+   "errors": [],
+   "ok": true,
+   "file": "lamp_1920x1080.png"
+  },
+  {
+   "w": 1100,
+   "h": 700,
+   "controls": 33,
+   "fails": [],
+   "drawing": [
+    732,
+    451
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      352,
+      66,
+      732,
+      451
+     ],
+     "pageScrollY": 0
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lamp",
+   "errors": [],
+   "ok": true,
+   "file": "lamp_1100x700.png"
+  },
+  {
+   "w": 400,
+   "h": 800,
+   "controls": 33,
+   "fails": [],
+   "drawing": [
+    368,
+    224
+   ],
+   "afterLast": [
+    {
+     "rail": "rail",
+     "last": "out",
+     "drawingInView": 1,
+     "drawing": [
+      16,
+      6,
+      368,
+      224
+     ],
+     "pageScrollY": 1533
+    }
+   ],
+   "pageScroll": 0,
+   "tolerance_px": 2,
+   "hscroll": 0,
+   "rail2_groups": [],
+   "page": "lamp",
+   "errors": [],
+   "ok": true,
+   "file": "lamp_400x800.png"
+  }
+ ],
+ "all_ok": true
+}

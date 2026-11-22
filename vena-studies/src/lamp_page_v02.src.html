@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Venation Lamp v02</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#f3f1ec;--panel:#e9e6df;--ink:#1d1c1a;--mute:#6b6861;--line:#c9c5bb;--acc:#2f5d50;--acc2:#9a4a2c;
+ --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171716;--panel:#20201e;--ink:#e6e3dc;--mute:#9a968d;--line:#3a3935;--acc:#7fc1ad;--acc2:#e09a78;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171716;--panel:#20201e;--ink:#e6e3dc;--mute:#9a968d;--line:#3a3935;--acc:#7fc1ad;--acc2:#e09a78;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans);margin:0;padding:0 16px 24px}
+header{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:18px 0 10px;border-bottom:1px solid var(--line)}
+h1{font:500 18px var(--sans);margin:0;letter-spacing:.01em}
+header .sub{color:var(--mute);font:12px var(--mono)}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+a.nb{font:13px var(--sans);color:var(--ink);background:var(--panel);border:1px solid var(--line);padding:6px 10px;text-decoration:none}a.nb:hover,a.nb.on{border-color:var(--ink)}a.nb.on{background:var(--bg)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 74px;gap:4px 8px;align-items:center;font-size:12.5px;border-left:3px solid transparent;padding-left:6px;margin-left:-9px}
+.row.chg{border-left-color:var(--acc2)}
+.row .was{grid-column:1/3;font:11px var(--mono);color:var(--acc2);display:none}.row.chg .was{display:block}
+.row .hint{grid-column:1/3;font:11px var(--mono);color:var(--mute)}.row .hint:empty{display:none}
+.row input[type=range]{grid-column:1/3;width:100%;accent-color:var(--acc);margin:0}
+.row select{grid-column:1/3;min-width:0;width:100%}
+.row input[type=number]{font:12px var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:4px 6px;width:100%;border-radius:0}
+.row input[type=checkbox]{justify-self:end;accent-color:var(--acc);width:16px;height:16px;margin:0}
+select,button{font:13px var(--sans);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:0;padding:6px 10px}
+button{cursor:pointer}button:hover{border-color:var(--ink)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--acc2);outline-offset:1px}
+.btns{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.note{font-size:12px;color:var(--mute);margin:0}
+textarea{width:100%;font:12px var(--mono);background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:6px;border-radius:0}
+.views{display:flex;gap:10px;justify-content:center;flex:none}
+.pane{border:1px solid var(--line);background:#07090e;position:relative;min-width:0;width:var(--pw);height:calc(var(--pw) * 1.25);flex:none}
+#v3d{width:100%;height:100%}#v3d canvas{display:block;width:100%;height:100%;touch-action:none}
+.pane img{display:block;width:100%;height:100%;object-fit:contain;background:#07090e}
+@media (min-width:1100px){.stage{--pw:max(110px,min(calc(50cqw - 5px),calc((100cqh - 60px) * 0.8)))}}
+@media (max-width:1099.98px){.stage{--pw:min(calc(50vw - 21px),calc(30vh * 0.8))}}
+h2 .sup{color:var(--acc2)}
+.pane .tag{position:absolute;left:8px;top:6px;right:8px;font:12px var(--mono);color:#b0b0c1;pointer-events:none}
+.cap{font:13px/1.5 var(--mono);border:1px solid var(--line);background:var(--panel);padding:8px 10px;overflow-wrap:anywhere}
+.cap div:first-child{font-weight:500}
+table.read{border-collapse:collapse;width:100%;font:12px/1.4 var(--mono)}
+table.read th,table.read td{text-align:left;padding:4px 8px 4px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.read th{font-weight:500;color:var(--mute)}table.read td.warn{color:var(--acc2);font-weight:500}
+.scroll{overflow-x:auto}
+h2{font:500 13px var(--mono);letter-spacing:.04em;margin:18px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gal figure{margin:0;border:1px solid var(--line);background:var(--panel);min-width:0;cursor:pointer}.gal figure:hover,.gal figure.on{border-color:var(--ink)}
+.gal img{display:block;width:100%;height:auto}.gal .noimg{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font:11.5px var(--mono);color:var(--mute);padding:8px;text-align:center}
+.gal figcaption{font:11.5px/1.4 var(--mono);padding:6px 8px 8px;border-top:1px solid var(--line);background:var(--bg);overflow-wrap:anywhere}
+</style>
+<link rel="stylesheet" href="vena-shell.css">
+</head>
+<body>
+<div class="frame">
+<header>
+  <h1>Venation Lamp</h1>
+  <nav class="tabs"><a class="below" href="#below">Studies below</a><a class="nb" href="index.html">Lab</a><a class="nb" href="land.html">Land</a><a class="nb on" href="lamp.html">Lamp</a></nav>
+  <span class="sub">v02 · the parameters of the built lamps · spec out for __BUILDER__</span>
+</header>
+<div class="app">
+<div class="rail" id="rail"><div class="pagebtns"><button id="reset">Reset to study</button><button id="resetdef">Page defaults</button><span class="note" id="state"></span></div></div>
+<div class="stage" id="stage">
+  <div class="views" data-drawing>
+    <div class="pane"><div id="v3d"></div><span class="tag" id="tag3d">Preview</span></div>
+    <div class="pane"><img id="render" alt=""><span class="tag" id="rtag">Lit render of the built lamp</span></div>
+  </div>
+  <div class="stagefoot">
+  <div class="cap" id="cap"></div>
+  <p class="note" id="standin">The preview is a fast stand-in, not the print mesh: the pattern is drawn by the Lab engine and mapped onto the form as raised ribs and thinner windows; root count, the tear of the rim and the seam at the back differ from the built piece. The render beside it uses a guessed material.</p>
+  </div>
+</div>
+<div class="rail" id="rail2"></div>
+</div>
+</div>
+<section id="below">
+  <div id="gals"></div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/dist/d3-delaunay.min.js"></script>
+<script src="wing_geom.js"></script>
+<script src="vena-engine.js"></script>
+<script src="vena-shell.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+window.T3={THREE,OrbitControls};window.dispatchEvent(new Event('three-ready'));
+</script>
+<script>
+'use strict';
+const VERSION='lamp v02';
+const SHEETS=__SHEETS__;const OLD=__OLDLAMPS__;
+const LAMPS=__LAMPS__;
+const $=id=>document.getElementById(id);
+const IN=25.4,T_SHELL=2.0,WIN_MIN=1.5,HOLE_MIN=2.0,BED=203,ZMAX=256;       /* the limits lamp_build_v03.py states */
+const BYKEY={};LAMPS.forEach(l=>BYKEY[l.key]=l);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const PATLABEL={cells:'cells',closed:'closed',hybrid:'hybrid',wing:'wing wrap',leaf:'leaf wrap'};
+function kindOf(sp){const p=sp.pattern;if(p.kind==='panels')return (p.patterns||[''])[0].indexOf('L3')===0?'wing':'leaf';if(p.cell_spacing&&p.vein_spacing)return 'hybrid';return p.vein_spacing?'closed':'cells'}
+const TEMPLATE={};['cells','closed','hybrid','wing','leaf'].forEach(k=>{const l=LAMPS.find(l=>kindOf(l.spec)===k&&!l.spec.window_bands&&(k!=='wing'&&k!=='leaf'||l.spec.pattern.count===3));TEMPLATE[k]=l?l.key:null});
+const SRC={cells:'VS04-12',closed:'VS04-01',hybrid:'VS04-07',wing:'VS03-04',leaf:'VS02-04'};
+
+/* ---------------- controls ---------------- */
+const PR=[
+ {id:'form',g:'Form',label:'Form',type:'select',opts:[['egg','egg'],['cyl','cylinder'],['cylw','wide cylinder']]},
+ {id:'base',g:'Form',label:'Base diameter (in)',type:'select',opts:[['1.75','1.75 in (44.5 mm)'],['2','2.0 in (50.8 mm)'],['2.25','2.25 in (57.2 mm)'],['6','6 in (152.4 mm)']]},
+ {id:'H',g:'Form',label:'Height (mm), 6 to 9 in',min:152,max:229,step:1},
+ {id:'W',g:'Form',label:'Widest diameter (mm): egg, wide cylinder',min:60,max:200,step:1},
+ {id:'pat',g:'Pattern',label:'Pattern',type:'select',opts:Object.keys(PATLABEL).map(k=>[k,PATLABEL[k]])},
+ {id:'dens',g:'Pattern',label:'Density, times the loaded lamp',min:.5,max:3,step:.1},
+ {id:'count',g:'Pattern',label:'Wrap count (wraps)',type:'select',opts:[['1','1'],['3','3'],['6','6'],['8','8']]},
+ {id:'seed',g:'Pattern',label:'Seed',min:1,max:99,step:1},
+ {id:'rim',g:'Rim',label:'Rim',type:'select',opts:[['torn','torn'],['oblique','oblique plane']]},
+ {id:'tear',g:'Rim',label:'Tear depth (mm)',min:0,max:30,step:1},
+ {id:'cut',g:'Rim',label:'Oblique angle (deg)',min:10,max:50,step:1},
+ {id:'tech',g:'Technique',label:'Technique',type:'select',opts:[['T1','window: thin skin in every cell'],['T2','open: holes in every cell'],['T1T2','window below, open above']]},
+ {id:'split',g:'Technique',label:'Change height (mm)',min:30,max:200,step:1},
+ {id:'light',g:'Preview',label:'Light inside, on',type:'check',noSpec:1}];
+const PID={};PR.forEach(p=>PID[p.id]=p);const V={};let stored={};let cur=null;
+const isNum=p=>!p.type;
+function mkRow(p){const r=document.createElement('label');r.className='row';r.id='row_'+p.id;const t=document.createElement('span');t.textContent=p.label;r.appendChild(t);let inp;
+ if(p.type==='select'){inp=document.createElement('select');p.opts.forEach(([v,l])=>{const o=document.createElement('option');o.value=v;o.textContent=l;inp.appendChild(o)});r.appendChild(document.createElement('span'));r.appendChild(inp)}
+ else if(p.type==='check'){inp=document.createElement('input');inp.type='checkbox';r.appendChild(inp)}
+ else{const nb=document.createElement('input');nb.type='number';nb.min=p.min;nb.max=p.max;nb.step=p.step;nb.id='n_'+p.id;nb.setAttribute('aria-label',p.label+', typed value');r.appendChild(nb);inp=document.createElement('input');inp.type='range';inp.min=p.min;inp.max=p.max;inp.step=p.step;r.appendChild(inp);
+  nb.addEventListener('change',()=>{let v=+nb.value;if(!isFinite(v))v=V[p.id];setV(p.id,Math.max(p.min,Math.min(p.max,v)));changedCtl(p,true)})}
+ inp.id='c_'+p.id;const h=document.createElement('span');h.className='hint';h.id='hint_'+p.id;r.appendChild(h);const was=document.createElement('span');was.className='was';was.id='was_'+p.id;r.appendChild(was);
+ inp.addEventListener('input',()=>{V[p.id]=readInp(p);syncRow(p);if(p.id==='light'||p.id==='tear'||p.id==='cut'||p.id==='split')changedCtl(p,false)});
+ inp.addEventListener('change',()=>{V[p.id]=readInp(p);syncRow(p);changedCtl(p,true)});return r}
+function readInp(p){const e=$('c_'+p.id);return p.type==='check'?(e.checked?1:0):p.type==='select'?e.value:+e.value}
+function setV(id,v){const p=PID[id];V[id]=p.type==='check'?(v?1:0):isNum(p)?+v:String(v);const e=$('c_'+id);if(p.type==='check')e.checked=!!V[id];else e.value=V[id];syncRow(p)}
+function show(p,v){if(p.type==='check')return +v?'on':'off';if(p.type==='select'){const o=p.opts.find(o=>o[0]===String(v));return o?o[1]:String(v)}return String(v)}
+function syncRow(p){if(isNum(p))$('n_'+p.id).value=V[p.id];const ch=!p.noSpec&&p.id in stored&&String(stored[p.id])!==String(V[p.id]);$('row_'+p.id).classList.toggle('chg',ch);$('was_'+p.id).textContent=ch?'built '+show(p,stored[p.id]):''}
+function buildRail(){const rail=$('rail');let g=null,box=null;PR.forEach(p=>{if(p.g!==g){g=p.g;const d=document.createElement('details');d.className='grp';d.id='g_'+g;d.open=true;d.innerHTML='<summary>'+g+'</summary>';box=document.createElement('div');box.className='body';d.appendChild(box);rail.appendChild(d)}box.appendChild(mkRow(p))});
+ const x=document.createElement('details');x.className='grp';x.id='g_Export';x.dataset.noreset='';x.open=true;x.innerHTML='<summary>Export</summary><div class="body"><p class="note" id="newid"></p><div class="btns"><button id="x_spec">Spec JSON for the builder</button><button id="x_png">PNG of the preview</button></div><label class="row"><span>Note</span><textarea id="note" rows="3" style="grid-column:1/3" placeholder="What to change or keep on this lamp."></textarea></label><div class="btns"><button id="copychat">Copy for chat</button><span class="note" id="copystate"></span></div><textarea id="out" rows="5" readonly placeholder="The spec and the Copy for chat text land here."></textarea><p class="note">No STL from this page. The spec file builds with: python __BUILDER__ &lt;spec.json&gt; p01 &lt;out folder&gt;</p></div>';rail.appendChild(x);
+ const rd=document.createElement('details');rd.className='grp';rd.id='g_Readouts';rd.dataset.noreset='';rd.open=true;rd.innerHTML='<summary>Readouts</summary><div class="body"><div class="scroll"><table class="read" id="read"></table></div></div>';rail.insertBefore(rd,x)}
+
+/* ---------------- a built lamp to control values, and back to a spec ---------------- */
+function defSplit(f){const base=+f.base_in;const collar=(f.collar_in!=null?f.collar_in:(base>=6?.25:.5))*IN;const zp0=collar+2;return Math.round(zp0+(f.H-zp0)/3)}
+function fromSpec(sp){const f=sp.form,p=sp.pattern;const rb=(f.base_in*IN+.5)/2;return{form:f.type,base:String(+f.base_in),H:Math.round(f.H),W:Math.round(f.W!=null?f.W:2*(f.R!=null?f.R:rb+T_SHELL)),pat:kindOf(sp),dens:1,count:String(p.count||1),seed:sp.seed,
+ rim:p.cut?'oblique':'torn',tear:p.tear!=null?p.tear:14,cut:p.cut?p.cut.deg:32,tech:sp.tech,split:sp.split_z!=null?Math.round(sp.split_z):defSplit(f),light:1}}
+function changed(){const ch=[];PR.forEach(p=>{if(!p.noSpec&&String(stored[p.id])!==String(V[p.id])&&used(p.id))ch.push({id:p.id,label:p.label,from:show(p,stored[p.id]),to:show(p,V[p.id])})});return ch}
+function used(id){if(id==='W')return V.form!=='cyl';if(id==='count')return V.pat==='wing'||V.pat==='leaf';if(id==='tear')return V.rim==='torn';if(id==='cut')return V.rim==='oblique';if(id==='split')return V.tech==='T1T2';return true}
+function newId(){const ch=changed();if(!ch.length)return cur.spec.id;const structural=ch.some(c=>['form','pat','count','tech','rim'].includes(c.id));let stem;
+ if(!structural)stem=cur.spec.id.replace(/__\d+$/,'');else{const wrap=(V.pat==='wing'||V.pat==='leaf')?V.pat+'-wrap'+V.count:V.pat;stem='vena-lamp-'+(V.form==='egg'?'egg':'cyl')+'--'+wrap+(V.form==='cylw'?'-wide':'')+(V.tech==='T1T2'?'-winopen':'')+'-'+SRC[V.pat]}
+ let n=0;LAMPS.forEach(l=>{if(l.spec.id.indexOf(stem+'__')===0)n=Math.max(n,+l.spec.id.slice(stem.length+2))});return stem+'__'+String(n+1).padStart(2,'0')}
+function specOut(){const ch=changed();if(!ch.length)return clone(cur.spec);const sp=clone(cur.spec);const has=id=>ch.some(c=>c.id===id);delete sp.reload_fail;delete sp.sheet;delete sp.tile;delete sp.free;delete sp.window_bands;
+ const f=sp.form;const shape=has('form')||has('H')||has('W')||has('base');f.type=V.form;f.base_in=+V.base;f.H=V.H;if(V.form==='cyl'){delete f.W}else f.W=V.W;
+ if(shape){delete f.zc;delete f.rtop;delete f.R;delete f.foot_w;delete f.collar_in;if(+V.base<6)delete f.foot_wall}
+ if(has('pat')){const t=clone(BYKEY[TEMPLATE[V.pat]].spec.pattern);delete t.cut;delete t.tear;if(sp.pattern.tear!=null)t.tear=sp.pattern.tear;sp.pattern=t}
+ const p=sp.pattern;if(V.dens!==1){const k=1/Math.sqrt(V.dens);['cell_spacing','vein_spacing'].forEach(a=>{if(p[a])p[a]=p[a].map(v=>+(v*k).toFixed(2))})}
+ if(p.kind==='panels')p.count=+V.count;
+ if(V.rim==='torn'){delete p.cut;p.tear=V.tear}else{p.cut={deg:V.cut,zc:Math.round(.79*V.H),phi_deg:(cur.spec.pattern.cut&&cur.spec.pattern.cut.phi_deg)||200}}
+ sp.tech=V.tech;if(V.tech==='T1T2')sp.split_z=V.split;else delete sp.split_z;sp.seed=V.seed;sp.id=newId();sp.ver='v01';sp.note='made on the Lamp page from '+cur.spec.id+': '+ch.map(c=>c.id+' '+c.from+' to '+c.to).join(', ');return sp}
+
+/* ---------------- form (port of Form in lamp_build_v03.py) ---------------- */
+function formOf(){const base=+V.base;const f={type:V.form,H:V.H,base_in:base};f.rbase=(base*IN+.5)/2;const sf=cur.spec.form;const same=sf.type===V.form&&+sf.base_in===base&&Math.round(sf.H)===V.H&&(V.form==='cyl'||Math.round(sf.W)===V.W);
+ f.collar=((same&&sf.collar_in!=null)?sf.collar_in:(base>=6?.25:.5))*IN;f.zp0=f.collar+2;
+ if(f.type==='egg'){f.r0=f.rbase+((same&&sf.foot_wall!=null)?sf.foot_wall:3);f.Rmax=V.W/2;f.zc=(same&&sf.zc!=null)?sf.zc:.365*f.H;const rtop=(same&&sf.rtop!=null)?sf.rtop:.4*f.Rmax;f.a=(f.H-f.zc)/Math.sqrt(1-Math.pow(rtop/f.Rmax,2))}
+ else if(f.type==='cylw'){f.R0=f.rbase+T_SHELL;f.R=V.W/2;f.Rmax=f.R}else{f.R=(same&&sf.R!=null)?sf.R:f.rbase+T_SHELL;f.Rmax=f.R}
+ f.Rb=z=>{if(f.type==='cylw')return Math.max(f.R0,Math.min(f.R,f.R0+.85*(z-f.zp0)));if(f.type==='egg'){if(z<f.zc)return f.r0+(f.Rmax-f.r0)*Math.sin(.5*Math.PI*Math.max(0,Math.min(1,z/f.zc)));return f.Rmax*Math.sqrt(Math.max(1e-6,Math.min(1,1-Math.pow((z-f.zc)/f.a,2))))}return f.R};
+ f.tz=(z,a,b)=>a+(b-a)*Math.max(0,Math.min(1,(z-f.zp0)/(f.H-f.zp0)));return f}
+function rimFn(F){const r=rng(V.seed);const ph=[],am=[];for(let i=0;i<4;i++){ph.push(r()*2*Math.PI);am.push(.4+.6*r())}const as=am.reduce((a,b)=>a+b,0);const p=cur.spec.pattern;const tear=V.rim==='torn'?V.tear:(p.tear!=null?p.tear:14);const tilt=(V.rim==='torn'&&p.tilt&&!changed().some(c=>c.id==='pat'))?p.tilt:0;
+ const ztop=t=>{let n=0;for(let k=0;k<4;k++)n+=am[k]*Math.sin((k+1)*t+ph[k]);n/=as;return F.H-1.5-tear*(.5+.5*n)-tilt*(.5+.5*Math.cos(t-ph[0]))};
+ if(V.rim!=='oblique')return ztop;const ta=Math.tan(V.cut*Math.PI/180),phi=((p.cut&&p.cut.phi_deg)||200)*Math.PI/180,zc=(p.cut&&!changed().some(c=>c.id==='H'))?p.cut.zc:.79*F.H;
+ return t=>{let zz=zc;for(let i=0;i<8;i++)zz=zc+ta*F.Rb(zz)*Math.cos(t-phi);return Math.min(ztop(t),zz)}}
+
+/* ---------------- pattern for the preview: the Lab engine on the unrolled surface (surface kinds) or per panel (wraps) ---------------- */
+let PATT=null;
+function meanSp(a,k){return a?(a[0]+a[1])/2*k:null}
+function makePattern(F){const sp=specOut().pattern;const Hp=F.H-F.zp0;const C=2*Math.PI*F.Rmax;const mmu=Hp/880;const kind=V.pat;const out={kind,mmu,segs:[],cells:[],panels:[],C,Hp};
+ const cw=sp.cell_w||[1.6,1.2],vw=sp.vein_w||{foot:[1.4,4.0],rim:[1.2,2.4]};out.cw=cw;out.vw=vw;
+ if(kind==='cells'||kind==='closed'||kind==='hybrid'){const yh=440*C/Hp;const poly=[[60,320-yh],[940,320-yh],[940,320+yh],[60,320+yh]];const r=rng(V.seed);const areaMM=C*Hp;const p={...DEFAULTS,seed:V.seed,preset:'none',mode:kind,nde:1};let veins=null,cel=null;
+  if(sp.vein_spacing){const vs=meanSp(sp.vein_spacing,1)/mmu;p.birth=Math.max(4,vs*1.1);p.kill=Math.max(2,vs*.5);p.step=Math.max(2,vs*.33);p.nsrc=Math.min(4000,Math.round(areaMM/Math.pow(meanSp(sp.vein_spacing,1),2)*1.4));p.iters=400;p.ana=p.birth*.8;veins=grow({...p,mode:'closed'},poly,r,null)}
+  if(sp.cell_spacing){const cs=meanSp(sp.cell_spacing,1);p.ncell=Math.max(40,Math.min(2600,Math.round(areaMM/(2.1*cs*cs))/* 2.1: fitted to the cell counts of the three built density pieces (332, 669, 974) */));p.grad=Math.max(0,Math.min(4,(sp.cell_spacing[0]/sp.cell_spacing[1]-1)*2));p.costal=0;p.lloyd=3;cel=cells(p,poly,r,veins,{frame:null,fixed:null,mmPerU:mmu,preset:PRESETS.none})}
+  const T=q=>[(q[1]-(320-yh))/(2*yh)*2*Math.PI,F.zp0+(q[0]-60)*mmu];
+  if(veins){let wm=1e-9;veins.nodes.forEach(n=>{if(n.w>wm)wm=n.w});veins.nodes.forEach(n=>{if(n.p>=0){const q=veins.nodes[n.p];out.segs.push([T([q.x,q.y]),T([n.x,n.y]),Math.min(1,n.w/wm)])}});veins.links.forEach(([i,j])=>out.segs.push([T([veins.nodes[i].x,veins.nodes[i].y]),T([veins.nodes[j].x,veins.nodes[j].y]),0]))}
+  if(cel)cel.polys.forEach(c=>{out.cells.push({pts:c.map(T),area:Math.abs(area(c))*mmu*mmu})});
+  else if(veins){const e=[];veins.nodes.forEach((n,i)=>{if(n.p>=0)e.push([n.p,i])});veins.links.forEach(l=>e.push(l));graphFaces(veins.nodes,e).forEach(c=>{const a=Math.abs(area(c))*mmu*mmu;if(a<areaMM*.5)out.cells.push({pts:null,area:a})})}
+  out.zone='all'}
+ else{const n=+V.count;const dens=V.dens;const mk=shape=>{const base=kind==='wing'?{mode:'cells',shape,veinset:'fab'}:{mode:'closed',shape:'ovate',nde:0};const p={...DEFAULTS,...base,seed:V.seed,preset:'none'};p.ncell=Math.round(p.ncell*dens);p.nsrc=Math.round(p.nsrc*dens);return build(p)};
+  const A=mk('clubtail-fore'),B=kind==='wing'&&n>1?mk('clubtail-hind'):A;const sector=2*Math.PI/n;
+  for(let k=0;k<n;k++){const res=(k%2)?B:A;const bb=bbox(res.poly);const span=bb[2]-bb[0];const s=Hp*.94/span;const arcW=(bb[3]-bb[1])*s;const squeeze=Math.min(2.4,sector*F.Rmax*.96/arcW)/* a panel is stretched or squeezed to its sector, as the builder warps it */;const th0=(k+.5)*sector;const cy=(bb[1]+bb[3])/2;
+   const T=q=>[th0+(q[1]-cy)*s*squeeze/F.Rmax,F.zp0+Hp*.03+(q[0]-bb[0])*s];const pn={outline:res.poly.map(T)};out.panels.push(pn);
+   if(res.fixed)res.fixed.forEach(f=>{for(let i=0;i<f.pts.length-1;i++)out.segs.push([T(f.pts[i]),T(f.pts[i+1]),.8])});
+   if(res.veins){let wm=1e-9;res.veins.nodes.forEach(nd=>{if(nd.w>wm)wm=nd.w});res.veins.nodes.forEach(nd=>{if(nd.p>=0){const q=res.veins.nodes[nd.p];out.segs.push([T([q.x,q.y]),T([nd.x,nd.y]),Math.min(1,nd.w/wm)])}});res.veins.links.forEach(([i,j])=>out.segs.push([T([res.veins.nodes[i].x,res.veins.nodes[i].y]),T([res.veins.nodes[j].x,res.veins.nodes[j].y]),0]))}
+   cellPolys(res).forEach(c=>out.cells.push({pts:res.cel?c.map(T):null,area:Math.abs(area(c))*s*s*squeeze}))}
+  out.zone='panels'}
+ return out}
+
+/* ---------------- the two textures: surface (with holes) and light ---------------- */
+const TW=2048,TH=1024;const cvA=document.createElement('canvas'),cvE=document.createElement('canvas');cvA.width=cvE.width=TW;cvA.height=cvE.height=TH;
+function paint(F,P,rim){const X=t=>t/(2*Math.PI)*TW,Y=z=>TH-z/F.H*TH;const pxmm=(TW/P.C+TH/F.H)/2;
+ const run=(cv,shell,win,holes)=>{const g=cv.getContext('2d');g.globalCompositeOperation='source-over';g.clearRect(0,0,TW,TH);g.fillStyle=shell;g.fillRect(0,0,TW,TH);g.lineCap='round';g.lineJoin='round';
+  const zone=()=>{g.beginPath();if(P.zone==='all')g.rect(0,Y(F.H),TW,Y(F.zp0)-Y(F.H));else P.panels.forEach(pn=>{[-TW,0,TW].forEach(dx=>{pn.outline.forEach((q,i)=>i?g.lineTo(X(q[0])+dx,Y(q[1])):g.moveTo(X(q[0])+dx,Y(q[1])));g.closePath()})})};
+  const fillZone=(mode,style,y0,y1)=>{g.save();g.beginPath();g.rect(0,y0,TW,y1-y0);g.clip();zone();g.globalCompositeOperation=mode;g.fillStyle=style;g.fill();g.restore()};
+  const ys=Y(V.split);
+  if(V.tech==='T1'||!holes)fillZone('source-over',win,0,TH);else if(V.tech==='T2')fillZone('destination-out','#000',0,TH);else{fillZone('source-over',win,ys,TH);fillZone('destination-out','#000',0,ys)}
+  g.globalCompositeOperation='source-over';g.strokeStyle=shell;
+  const stroke=(a,b,w)=>{[-TW,0,TW].forEach(dx=>{const x0=X(a[0])+dx,x1=X(b[0])+dx;if(Math.max(x0,x1)<-20||Math.min(x0,x1)>TW+20)return;g.lineWidth=w;g.beginPath();g.moveTo(x0,Y(a[1]));g.lineTo(x1,Y(b[1]));g.stroke()})};
+  P.cells.forEach(c=>{if(!c.pts)return;const zc=c.pts[0][1];const w=Math.max(1.5,F.tz(zc,P.cw[0],P.cw[1])*pxmm);for(let i=0;i<c.pts.length;i++){const a=c.pts[i],b=c.pts[(i+1)%c.pts.length];if(Math.abs(a[0]-b[0])>Math.PI)continue;stroke(a,b,w)}});
+  P.segs.forEach(s=>{const z=(s[0][1]+s[1][1])/2;const lo=F.tz(z,P.vw.foot[0],P.vw.rim[0]),hi=F.tz(z,P.vw.foot[1],P.vw.rim[1]);stroke(s[0],s[1],Math.max(1.5,(lo+s[2]*(hi-lo))*pxmm))});
+  if(P.zone==='panels'){P.panels.forEach(pn=>{for(let i=0;i<pn.outline.length;i++)stroke(pn.outline[i],pn.outline[(i+1)%pn.outline.length],1.6*pxmm)})}
+  g.globalCompositeOperation=cv===cvA?'destination-out':'source-over';g.fillStyle='#000';for(let x=0;x<TW;x+=2){const y=Y(rim((x+1)/TW*2*Math.PI));g.fillRect(x,0,2,Math.max(0,y))}g.globalCompositeOperation='source-over'};
+ run(cvA,'#d9d6cf','#9d9a93',true);run(cvE,'#33281c','#ffe1ad',false)}
+
+/* ---------------- preview (three.js) ---------------- */
+let view3=null;
+function make3D(){const{THREE,OrbitControls}=window.T3;const host=$('v3d');const rd=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});rd.setPixelRatio(Math.min(2,window.devicePixelRatio||1));rd.setClearColor(0x07090e);host.appendChild(rd.domElement);
+ const sc=new THREE.Scene();const cam=new THREE.PerspectiveCamera(30,4/5,1,5000);const ctl=new OrbitControls(cam,rd.domElement);let dirty=true;ctl.addEventListener('change',()=>{dirty=true});
+ const amb=new THREE.AmbientLight(0xffffff,.55);sc.add(amb);const key=new THREE.DirectionalLight(0xffffff,1.6);key.position.set(200,300,260);sc.add(key);const bulb=new THREE.PointLight(0xffd9a0,0,0,1.2);sc.add(bulb);
+ const tA=new THREE.CanvasTexture(cvA),tE=new THREE.CanvasTexture(cvE);[tA,tE].forEach(t=>{t.wrapS=THREE.RepeatWrapping;t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4});
+ const mat=new THREE.MeshStandardMaterial({map:tA,bumpMap:tA,bumpScale:2.2,emissiveMap:tE,emissive:0xffffff,emissiveIntensity:0,alphaTest:.5,side:THREE.DoubleSide,roughness:.85,metalness:0});
+ let mesh=null;const glow=new THREE.Mesh(new THREE.SphereGeometry(1,24,16),new THREE.MeshBasicMaterial({color:0xffe6bd}));sc.add(glow);
+ const floor=new THREE.Mesh(new THREE.CircleGeometry(400,64),new THREE.MeshStandardMaterial({color:0x0c0d12,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.2;sc.add(floor);
+ let lastH=0;
+ function update(F){if(mesh){sc.remove(mesh);mesh.geometry.dispose()}const pts=[];const n=160;for(let i=0;i<=n;i++){const z=F.H*i/n;pts.push(new THREE.Vector2(F.Rb(z),z))}mesh=new THREE.Mesh(new THREE.LatheGeometry(pts,128),mat);sc.add(mesh);tA.needsUpdate=true;tE.needsUpdate=true;
+  const on=!!V.light;mat.emissiveIntensity=on?1.15:0;amb.intensity=on?.12:.55;key.intensity=on?.25:1.6;bulb.intensity=on?900:0;bulb.position.set(0,F.H*.4,0);glow.visible=on;glow.scale.setScalar(Math.max(6,F.rbase*.5));glow.position.set(0,F.H*.35,0);
+  if(F.H!==lastH){lastH=F.H;cam.position.set(F.H*1.75,F.H*.95,F.H*1.75);ctl.target.set(0,F.H*.48,0);ctl.update()}dirty=true}
+ function size(){const w=host.clientWidth,h=host.clientHeight||w*1.25;rd.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();dirty=true}new ResizeObserver(size).observe(host);size();
+ (function loop(){if(dirty){dirty=false;rd.render(sc,cam)}requestAnimationFrame(loop)})();
+ return{update,render:()=>rd.render(sc,cam),canvas:rd.domElement}}
+function start3D(){if(view3||!window.T3)return;try{view3=make3D();if(cur)update()}catch(e){$('tag3d').textContent='Preview did not start: '+e.message}}
+window.addEventListener('three-ready',start3D);
+setTimeout(()=>{if(!window.T3)$('tag3d').textContent='Preview did not load (three.js 0.160.0 from jsdelivr needs the network). The spec and the readouts work without it.'},6000);
+
+/* ---------------- readouts ---------------- */
+const mmin=v=>v.toFixed(0)+' mm ('+(v/IN).toFixed(2)+' in)';
+let EST=null;
+function readout(F,P){const R=[];const row=(a,b,c,w)=>R.push([a,b,c,w]);const tech=V.tech;const wide=2*F.Rmax+(F.type==='egg'?0:0);
+ row('height',mmin(F.H),'control: height',F.H>ZMAX?'over the '+ZMAX+' mm the builder allows':'');
+ row('widest diameter',mmin(wide),V.form==='cyl'?'derived: base diameter plus the shell':'control: widest diameter',wide>BED?'footprint over the '+BED+' mm bed':'');
+ row('base',V.base+' in ('+(+V.base*IN).toFixed(1)+' mm) · collar sleeves over it','control: base diameter','');
+ const areas=P.cells.map(c=>c.area).filter(a=>a>0).sort((a,b)=>a-b);const rib=(P.cw[0]+P.cw[1])/2;const eq=a=>2*Math.sqrt(a/Math.PI)-rib;const least=areas.length?eq(areas[0]):null;const lim=tech==='T2'?HOLE_MIN:WIN_MIN;const under=areas.filter(a=>eq(a)<lim).length;
+ row('cells, estimate',areas.length?String(areas.length):'not counted for this pattern','derived: the preview pattern, not the builder count','');
+ row(tech==='T2'?'least hole, estimate':tech==='T1'?'least window, estimate':'least window or hole, estimate',least!=null?(least<.5?'under 0.5 mm':least.toFixed(1)+' mm'):'not estimated','derived: cell area as a circle, less the mean rib '+rib.toFixed(1)+' mm',least!=null&&under?under+' cells under the '+lim+' mm the builder allows'+(tech==='T2'?' for a hole':' for a window')+'; it closes them as rib':'');
+ if(tech==='T1T2'){const u2=areas.filter(a=>eq(a)<HOLE_MIN).length;row('holes above the change height','least hole allowed '+HOLE_MIN+' mm','derived',u2?u2+' cells under '+HOLE_MIN+' mm would stay closed above '+V.split+' mm':'')}
+ row('rim',V.rim==='torn'?'torn, tear depth '+V.tear+' mm':'oblique plane at '+V.cut+' deg','control: rim',(V.rim==='oblique'&&V.pat!=='wing'&&V.pat!=='leaf')?'lamp_build_v03.py builds the oblique rim on wraps only; on this pattern it stops with an error':'');
+ row('technique',show(PID.tech,V.tech)+(tech==='T1T2'?' · change at '+mmin(V.split):''),'control: technique','');
+ EST={cells:areas.length,least,under,warnings:R.filter(r=>r[3]).map(r=>r[0]+': '+r[3])};
+ $('read').innerHTML='<tr><th>readout</th><th>value</th><th>source</th><th>warning</th></tr>'+R.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="warn">'+r[3]+'</td></tr>').join('');
+ const ch=changed();$('cap').innerHTML=[newId(),'started from '+cur.spec.id,ch.length?'changed against the built lamp: '+ch.map(c=>c.label+' '+c.from+' to '+c.to).join('; '):'no values changed against the built lamp','preview: a stand-in, not the print mesh'].map(x=>'<div>'+x+'</div>').join('');
+ $('newid').textContent='spec id: '+newId();groupMarks()}
+
+/* ---------------- update ---------------- */
+let growT=0;
+function hints(){PR.forEach(p=>{if(!p.noSpec)$('hint_'+p.id).textContent=used(p.id)?'':'not used with this '+(p.id==='W'?'form':p.id==='count'?'pattern':p.id==='split'?'technique':'rim')})}
+function update(){const F=formOf();PATT=makePattern(F);paint(F,PATT,rimFn(F));if(view3)view3.update(F);readout(F,PATT);hints()}
+function repaint(){const F=formOf();paint(F,PATT,rimFn(F));if(view3)view3.update(F);readout(F,PATT);hints()}
+function changedCtl(p,released){if(p.id==='light'||((p.id==='tear'||p.id==='cut'||p.id==='split')&&PATT)){repaint();return}if(!released)return;$('state').textContent='regrowing';clearTimeout(growT);growT=setTimeout(()=>{update();$('state').textContent=''},30)}
+function load(key){cur=BYKEY[key];stored=fromSpec(cur.spec);Object.keys(stored).forEach(k=>setV(k,stored[k]));PR.forEach(syncRow);const im=$('render');if(cur.tile){im.src=cur.tile.img;im.alt='lit render of '+cur.spec.id;im.style.visibility='';$('rtag').textContent='Lit render of the built lamp · '+cur.spec.id+' · '+cur.tile.sheet}else{im.removeAttribute('src');im.style.visibility='hidden';$('rtag').textContent='No render of '+cur.spec.id+' on the sheets'}
+ document.querySelectorAll('#gals figure').forEach(f=>f.classList.toggle('on',f.dataset.key===key));update()}
+function chatText(){const ch=changed();const note=$('note').value.trim();return newId()+' · started from '+cur.spec.id+'\n'+(ch.length?'changed against the built lamp: '+ch.map(c=>c.label+' '+c.from+' to '+c.to).join('; '):'no values changed against the built lamp')+(EST&&EST.warnings.length?'\nwarnings: '+EST.warnings.join(' | '):'')+(note?'\nnote: '+note:'')}
+function dl(name,blob){try{const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000)}catch(e){}}
+function specFile(){return JSON.stringify({p01:specOut()},null,1)}
+function resetGroup(gid){const g=gid.slice(2);PR.filter(p=>p.g===g&&p.id in stored).forEach(p=>setV(p.id,stored[p.id]));update()}
+function groupMarks(){const c={};PR.forEach(p=>{const gid='g_'+p.g;const ch=!p.noSpec&&p.id in stored&&String(stored[p.id])!==String(V[p.id]);c[gid]=(c[gid]||0)+(ch?1:0)});if(window.VSHELL)VSHELL.marks(c)}
+let FIRSTKEY=null;
+function wire(){$('reset').onclick=()=>load(cur.key);$('resetdef').onclick=()=>load(FIRSTKEY);
+ $('x_spec').onclick=()=>{const t=specFile();$('out').value=t;dl(newId()+'_spec_v01.json',new Blob([t],{type:'application/json'}))};
+ $('x_png').onclick=()=>{if(!view3)return;view3.render();view3.canvas.toBlob(b=>dl(newId()+'_preview_v01.png',b),'image/png')};
+ $('copychat').onclick=()=>{const t=chatText();$('out').value=t;const done=()=>{$('copystate').textContent='copied'};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,()=>{$('out').select();document.execCommand('copy');done()});else{$('out').select();document.execCommand('copy');done()}}}
+function figure(t,l,sheet){const f=document.createElement('figure');f.tabIndex=0;const im=document.createElement('img');im.loading='lazy';im.src=t.img;im.alt=t.id;f.appendChild(im);
+ const c=document.createElement('figcaption');const L=t.lines.slice(0,4);if(!l)L.push(sheet==='VS04'?'v01, superseded · image only':'image only: no print file to load');L.forEach(x=>{const d=document.createElement('div');d.textContent=x;c.appendChild(d)});f.appendChild(c);
+ if(l){f.dataset.key=l.key;f.title='load '+l.spec.id;f.addEventListener('click',()=>{load(l.key);window.scrollTo({top:0})});f.addEventListener('keydown',e=>{if(e.key==='Enter'){load(l.key);window.scrollTo({top:0})}})}else{f.classList.add('img');f.style.cursor='default'}return f}
+function galleries(){const G=$('gals');const byTile={};LAMPS.forEach(l=>{if(l.tile)byTile[l.spec.id]=l});let nl=0,ni=0;
+ SHEETS.forEach(sh=>{const h=document.createElement('h2');h.innerHTML=sh.id+' · '+sh.sheet+(sh.id==='VS04'?' · <span class="sup">v01, superseded</span> · the first twelve lamps, built with the v01 builders':'')+' · '+sh.tiles.length+' tiles';G.appendChild(h);const g=document.createElement('div');g.className='gal';
+  sh.tiles.forEach(t=>{const l=sh.id==='VS04'?null:byTile[t.id];l?nl++:ni++;g.appendChild(figure(t,l,sh.id))});G.appendChild(g);
+  if(sh.id==='VS04'){const n=document.createElement('p');n.className='note';n.textContent='VS04 lamps L1 to L6 were built by the v01 lamp builders from these parameter files; this page cannot load them, so the tiles are image only.';G.appendChild(n);
+   OLD.forEach(o=>{const d=document.createElement('details');const s=document.createElement('summary');s.textContent=o.id+' · '+o.file+' · source study '+o.params.source_study+' · tiles '+o.tiles.join(', ');d.appendChild(s);const pre=document.createElement('pre');pre.className='params';pre.textContent=JSON.stringify(o.params,null,1);d.appendChild(pre);G.appendChild(d)})}});
+ const loose=LAMPS.filter(l=>!l.tile);if(loose.length){const h=document.createElement('h2');h.textContent='Built lamps with no tile on the sheets · '+loose.length;G.appendChild(h);const g=document.createElement('div');g.className='gal';loose.forEach(l=>{nl++;g.appendChild(gallery1(l))});G.appendChild(g)}
+ return{load:nl,image:ni}}
+function gallery1(l){{const f=document.createElement('figure');f.dataset.key=l.key;f.tabIndex=0;f.title='load '+l.spec.id;if(l.tile){const im=document.createElement('img');im.loading='lazy';im.src=l.tile.img;im.alt=l.spec.id;f.appendChild(im)}else{const d=document.createElement('div');d.className='noimg';d.textContent='no render on the sheets';f.appendChild(d)}
+  const c=document.createElement('figcaption');[l.spec.id,(l.tile?l.tile.sheet+' · ':'')+l.spec.tech+' · '+l.spec.form.type+' · '+l.spec.form.base_in+' in · '+Math.round(l.spec.form.H)+' mm'].forEach(x=>{const d=document.createElement('div');d.textContent=x;c.appendChild(d)});f.appendChild(c);f.addEventListener('click',()=>{load(l.key);window.scrollTo({top:0})});f.addEventListener('keydown',e=>{if(e.key==='Enter')load(l.key)});return f}}
+buildRail();wire();const GALN=galleries();FIRSTKEY=LAMPS.find(l=>l.tile).key;
+VSHELL.init({overflow:['g_Readouts','g_Export'],groupReset:resetGroup});
+if(typeof d3==='undefined')$('state').textContent='d3-delaunay did not load (needs the network).';else load(FIRSTKEY);
+window.LAMP={GALN,SHEETS,resetGroup,V,LAMPS,load,set(id,v){setV(id,v);const p=PID[id];if(p.id==='light')repaint();else update()},spec:specOut,specFile,changed,chatText,newId,est:()=>EST,has3D:()=>!!view3,png(){view3.render();return view3.canvas.toDataURL('image/png')}};
+</script>
+</body>
+</html>
