@@ -17,7 +17,7 @@ else: print('warning: _work/v06/gate_terms.txt not found; school, plug-in and ow
 
 
 def check(s, name):
-    assert '—' not in s and '__' + 'STUD' not in s and '__SHEETS__' not in s and '__BUILDER__' not in s, name
+    assert chr(0x2014) not in s and '__' + 'STUD' not in s and '__SHEETS__' not in s and '__BUILDER__' not in s, name
     m = re.search(BAD, s); assert not m, (name, s[max(0, m.start() - 40):m.end() + 40])
     for k in ('localStorage', 'sessionStorage', 'document.cookie'): assert k not in s, (name, k)
 

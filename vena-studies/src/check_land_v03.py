@@ -7,6 +7,8 @@ import sys, json, base64, io, zipfile, re
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from PIL import Image, ImageDraw, ImageFont
+import os
+FONTS = os.path.join(os.environ.get('WINDIR', ''), 'Fonts', '')   # the system font folder
 site = Path(sys.argv[1]).resolve(); work = Path(sys.argv[2]).resolve(); sheet = Path(sys.argv[3]).resolve(); (work / 'cap').mkdir(parents=True, exist_ok=True)
 rep = {'captures': [], 'checks': {}}; caps = []
 OFF = dict(rv_on=0, bc_on=0, pb_on=0, hd_on=0, cv_on=0, ex_on=0, st_on=0, ws_on=0, tw_on=0, sun_on=0, rain=0, map='none', ve=1, typ='none', ground='flat', blend=0)
@@ -64,7 +66,7 @@ with sync_playwright() as pw:
     y0s = [p[0][0] for p in profs]; zmax = max(max(z for _, z in p) for p in profs); zmin = min(min(z for _, z in p) for p in profs)
     X = lambda y: 40 + (y - profs[0][0][0]) / (profs[0][-1][0] - profs[0][0][0]) * 920; Yp = lambda z: 470 - (z - zmin) / max(1e-6, zmax - zmin) * 400
     for k, p in enumerate(profs): cd.line([(X(y), Yp(z)) for y, z in p], fill=cols[k], width=2)
-    try: FK = ImageFont.truetype('C:/Windows/Fonts/consola.ttf', 18)
+    try: FK = ImageFont.truetype(FONTS + 'consola.ttf', 18)
     except Exception: FK = ImageFont.load_default()
     for k in range(6): cd.text((48 + (k % 3) * 300, 12 + (k // 3) * 24), '%d %s' % (k, ['linear', 'ease-out', 'smooth', 'very smooth', 'cosine', 'concentrated'][k]), fill=cols[k], font=FK)
     cd.text((40, 490), 'across the midrib, 40 %% of the tile · height %.1f to %.1f mm, height axis stretched to fit' % (zmin, zmax), fill=(176, 176, 193), font=FK)
@@ -118,7 +120,7 @@ rep['all_ok'] = not rep['errors']; Path(str(sheet).replace('.png', '_check.json'
 print('controls', rep['controls'], 'errors', len(rep['errors']), json.dumps(rep['checks'])[:1500])
 # the set as a tile: layers, counts, first CSV rows, README head
 gi = Image.new('RGB', (1000, 1000), (250, 249, 246)); gd = ImageDraw.Draw(gi)
-try: F = ImageFont.truetype('C:/Windows/Fonts/consola.ttf', 15); FB = ImageFont.truetype('C:/Windows/Fonts/consolab.ttf', 17); FT = ImageFont.truetype('C:/Windows/Fonts/consola.ttf', 17)
+try: F = ImageFont.truetype(FONTS + 'consola.ttf', 15); FB = ImageFont.truetype(FONTS + 'consolab.ttf', 17); FT = ImageFont.truetype(FONTS + 'consola.ttf', 17)
 except Exception: F = FB = FT = ImageFont.load_default()
 y = 12; gd.text((12, y), zp.name, fill=(20, 20, 20), font=FB); y += 28
 for n in names: gd.text((12, y), n, fill=(60, 60, 60), font=F); y += 19

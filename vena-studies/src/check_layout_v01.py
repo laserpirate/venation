@@ -6,6 +6,8 @@ import sys, json, time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from PIL import Image, ImageDraw, ImageFont
+import os
+FONTS = os.path.join(os.environ.get('WINDIR', ''), 'Fonts', '')   # the system font folder
 site = Path(sys.argv[1]).resolve(); work = Path(sys.argv[2]).resolve(); sheet = Path(sys.argv[3]).resolve(); (work / 'cap').mkdir(parents=True, exist_ok=True)
 ARGS = ['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']
 PAGES = [('lab', 'index.html', 'window.VL && typeof d3!=="undefined" && document.querySelector("#stat span")'), ('land', 'land.html', 'window.LAND && LAND.has3D()'), ('lamp', 'lamp.html', 'window.LAMP && LAMP.has3D()')]
@@ -29,7 +31,7 @@ rep['all_ok'] = all(r['ok'] for r in rep['runs'])
 Path(str(sheet).replace('.png', '_check.json')).write_text(json.dumps(rep, indent=1), encoding='utf-8')
 # contact sheet: 3 rows (pages) x 4 columns (sizes), each capture scaled into a 640 x 560 cell with its caption under it
 CW, CH, TH = 640, 470, 128; M = 24
-try: F = ImageFont.truetype('C:/Windows/Fonts/consola.ttf', 17); FB = ImageFont.truetype('C:/Windows/Fonts/consolab.ttf', 22)
+try: F = ImageFont.truetype(FONTS + 'consola.ttf', 17); FB = ImageFont.truetype(FONTS + 'consolab.ttf', 22)
 except Exception: F = FB = ImageFont.load_default()
 W = M + 4 * (CW + M); H = 70 + 3 * (CH + TH + M) + M
 im = Image.new('RGB', (W, H), (243, 241, 236)); d = ImageDraw.Draw(im)
