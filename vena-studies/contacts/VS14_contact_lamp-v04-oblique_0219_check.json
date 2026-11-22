@@ -1,0 +1,11 @@
+{
+ "png": "VS14_contact_lamp-v04-oblique_0219.png",
+ "tiles": 3,
+ "plex_mono_loaded": true,
+ "assert_fails": [],
+ "captions": [
+  "vena-lamp-cyl--hybrid-obl-VS04-07__01\nVS14-01 \u00b7 T1 window 0.85 mm \u00b7 oblique rim 32 deg on a surface pattern: T1 window, veins and cells, cylinder (from a05)\nbase 2.25 in, collar 0.50 in \u00b7 64 x 64 x 177 mm (6.98 in tall)\ncells 395 (about 197 a face) \u00b7 Hyphae photo ref01 about 533 a face\nleast window 1.5 mm \u00b7 ribs 1.2 to 4.2 mm \u00b7 138 small cells closed\noblique rim 32 deg, rim from 138.7 to 177.3 mm \u00b7 widest down-facing strip 0.13 mm\n63 g \u00b7 4.8 h estimated, not sliced\nPASS",
+  "vena-lamp-cyl--closed-obl-VS04-01__01\nVS14-02 \u00b7 T2 open, graded \u00b7 oblique rim 32 deg on a surface pattern: T2 open, veins, cylinder (from a08)\nbase 2.00 in, collar 0.50 in \u00b7 58 x 58 x 159 mm (6.27 in tall)\ncells 7 \u00b7 opened 7\nleast hole 2.1 mm \u00b7 ribs 1.9 to 4.5 mm \u00b7 14 small cells closed\noblique rim 32 deg, rim from 124.7 to 159.3 mm \u00b7 widest down-facing strip 0.65 mm\n33 g \u00b7 3.3 h estimated, not sliced\nPASS",
+  "vena-lamp-egg--cells-winopen-obl-VS04-12__01\nVS14-03 \u00b7 T1 window 0.85 mm below, open above \u00b7 oblique rim 32 deg on a surface pattern: T1T2 window below and open above, cells, egg (from c09)\nbase 2.00 in, collar 0.50 in \u00b7 97 x 97 x 169 mm (6.66 in tall)\ncells 410 (about 205 a face) \u00b7 Hyphae photo ref01 about 533 a face\nopened 236 \u00b7 stayed windows 174 (0 of them above the change) \u00b7 change at 73 mm over 24 mm\nleast hole 4.8 mm \u00b7 least window 4.2 mm \u00b7 ribs 1.7 to 2.4 mm \u00b7 fine, below lab minimum\noblique rim 32 deg, rim from 122.9 to 169.3 mm \u00b7 widest down-facing strip 0.56 mm\n99 g \u00b7 6.4 h estimated, not sliced\nPASS"
+ ]
+}

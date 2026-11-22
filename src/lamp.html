@@ -58,7 +58,7 @@ h2{font:500 13px var(--mono);letter-spacing:.04em;margin:18px 0 8px;padding-bott
 <header>
   <h1>Venation Lamp</h1>
   <nav class="tabs"><a class="below" href="#below">Studies below</a><a class="nb" href="index.html">Lab</a><a class="nb" href="land.html">Land</a><a class="nb on" href="lamp.html">Lamp</a></nav>
-  <span class="sub">v02 · the parameters of the built lamps · spec out for lamp_build_v03.py</span>
+  <span class="sub">v02 · the parameters of the built lamps · spec out for lamp_build_v04.py</span>
 </header>
 <div class="app">
 <div class="rail" id="rail"><div class="pagebtns"><button id="reset">Reset to study</button><button id="resetdef">Page defaults</button><span class="note" id="state"></span></div></div>
@@ -134,7 +134,7 @@ function setV(id,v){const p=PID[id];V[id]=p.type==='check'?(v?1:0):isNum(p)?+v:S
 function show(p,v){if(p.type==='check')return +v?'on':'off';if(p.type==='select'){const o=p.opts.find(o=>o[0]===String(v));return o?o[1]:String(v)}return String(v)}
 function syncRow(p){if(isNum(p))$('n_'+p.id).value=V[p.id];const ch=!p.noSpec&&p.id in stored&&String(stored[p.id])!==String(V[p.id]);$('row_'+p.id).classList.toggle('chg',ch);$('was_'+p.id).textContent=ch?'built '+show(p,stored[p.id]):''}
 function buildRail(){const rail=$('rail');let g=null,box=null;PR.forEach(p=>{if(p.g!==g){g=p.g;const d=document.createElement('details');d.className='grp';d.id='g_'+g;d.open=true;d.innerHTML='<summary>'+g+'</summary>';box=document.createElement('div');box.className='body';d.appendChild(box);rail.appendChild(d)}box.appendChild(mkRow(p))});
- const x=document.createElement('details');x.className='grp';x.id='g_Export';x.dataset.noreset='';x.open=true;x.innerHTML='<summary>Export</summary><div class="body"><p class="note" id="newid"></p><div class="btns"><button id="x_spec">Spec JSON for the builder</button><button id="x_png">PNG of the preview</button></div><label class="row"><span>Note</span><textarea id="note" rows="3" style="grid-column:1/3" placeholder="What to change or keep on this lamp."></textarea></label><div class="btns"><button id="copychat">Copy for chat</button><span class="note" id="copystate"></span></div><textarea id="out" rows="5" readonly placeholder="The spec and the Copy for chat text land here."></textarea><p class="note">No STL from this page. The spec file builds with: python lamp_build_v03.py &lt;spec.json&gt; p01 &lt;out folder&gt;</p></div>';rail.appendChild(x);
+ const x=document.createElement('details');x.className='grp';x.id='g_Export';x.dataset.noreset='';x.open=true;x.innerHTML='<summary>Export</summary><div class="body"><p class="note" id="newid"></p><div class="btns"><button id="x_spec">Spec JSON for the builder</button><button id="x_png">PNG of the preview</button></div><label class="row"><span>Note</span><textarea id="note" rows="3" style="grid-column:1/3" placeholder="What to change or keep on this lamp."></textarea></label><div class="btns"><button id="copychat">Copy for chat</button><span class="note" id="copystate"></span></div><textarea id="out" rows="5" readonly placeholder="The spec and the Copy for chat text land here."></textarea><p class="note">No STL from this page. The spec file builds with: python lamp_build_v04.py &lt;spec.json&gt; p01 &lt;out folder&gt;</p></div>';rail.appendChild(x);
  const rd=document.createElement('details');rd.className='grp';rd.id='g_Readouts';rd.dataset.noreset='';rd.open=true;rd.innerHTML='<summary>Readouts</summary><div class="body"><div class="scroll"><table class="read" id="read"></table></div></div>';rail.insertBefore(rd,x)}
 
 /* ---------------- a built lamp to control values, and back to a spec ---------------- */
@@ -237,7 +237,7 @@ function readout(F,P){const R=[];const row=(a,b,c,w)=>R.push([a,b,c,w]);const te
  row('cells, estimate',areas.length?String(areas.length):'not counted for this pattern','derived: the preview pattern, not the builder count','');
  row(tech==='T2'?'least hole, estimate':tech==='T1'?'least window, estimate':'least window or hole, estimate',least!=null?(least<.5?'under 0.5 mm':least.toFixed(1)+' mm'):'not estimated','derived: cell area as a circle, less the mean rib '+rib.toFixed(1)+' mm',least!=null&&under?under+' cells under the '+lim+' mm the builder allows'+(tech==='T2'?' for a hole':' for a window')+'; it closes them as rib':'');
  if(tech==='T1T2'){const u2=areas.filter(a=>eq(a)<HOLE_MIN).length;row('holes above the change height','least hole allowed '+HOLE_MIN+' mm','derived',u2?u2+' cells under '+HOLE_MIN+' mm would stay closed above '+V.split+' mm':'')}
- row('rim',V.rim==='torn'?'torn, tear depth '+V.tear+' mm':'oblique plane at '+V.cut+' deg','control: rim',(V.rim==='oblique'&&V.pat!=='wing'&&V.pat!=='leaf')?'lamp_build_v03.py builds the oblique rim on wraps only; on this pattern it stops with an error':'');
+ row('rim',V.rim==='torn'?'torn, tear depth '+V.tear+' mm':'oblique plane at '+V.cut+' deg','control: rim','');
  row('technique',show(PID.tech,V.tech)+(tech==='T1T2'?' · change at '+mmin(V.split):''),'control: technique','');
  EST={cells:areas.length,least,under,warnings:R.filter(r=>r[3]).map(r=>r[0]+': '+r[3])};
  $('read').innerHTML='<tr><th>readout</th><th>value</th><th>source</th><th>warning</th></tr>'+R.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="warn">'+r[3]+'</td></tr>').join('');

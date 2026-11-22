@@ -237,7 +237,7 @@ function readout(F,P){const R=[];const row=(a,b,c,w)=>R.push([a,b,c,w]);const te
  row('cells, estimate',areas.length?String(areas.length):'not counted for this pattern','derived: the preview pattern, not the builder count','');
  row(tech==='T2'?'least hole, estimate':tech==='T1'?'least window, estimate':'least window or hole, estimate',least!=null?(least<.5?'under 0.5 mm':least.toFixed(1)+' mm'):'not estimated','derived: cell area as a circle, less the mean rib '+rib.toFixed(1)+' mm',least!=null&&under?under+' cells under the '+lim+' mm the builder allows'+(tech==='T2'?' for a hole':' for a window')+'; it closes them as rib':'');
  if(tech==='T1T2'){const u2=areas.filter(a=>eq(a)<HOLE_MIN).length;row('holes above the change height','least hole allowed '+HOLE_MIN+' mm','derived',u2?u2+' cells under '+HOLE_MIN+' mm would stay closed above '+V.split+' mm':'')}
- row('rim',V.rim==='torn'?'torn, tear depth '+V.tear+' mm':'oblique plane at '+V.cut+' deg','control: rim',(V.rim==='oblique'&&V.pat!=='wing'&&V.pat!=='leaf')?'lamp_build_v03.py builds the oblique rim on wraps only; on this pattern it stops with an error':'');
+ row('rim',V.rim==='torn'?'torn, tear depth '+V.tear+' mm':'oblique plane at '+V.cut+' deg','control: rim','');
  row('technique',show(PID.tech,V.tech)+(tech==='T1T2'?' · change at '+mmin(V.split):''),'control: technique','');
  EST={cells:areas.length,least,under,warnings:R.filter(r=>r[3]).map(r=>r[0]+': '+r[3])};
  $('read').innerHTML='<tr><th>readout</th><th>value</th><th>source</th><th>warning</th></tr>'+R.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td class="warn">'+r[3]+'</td></tr>').join('');

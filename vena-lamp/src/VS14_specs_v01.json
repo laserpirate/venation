@@ -1,0 +1,120 @@
+{
+ "o01": {
+  "id": "vena-lamp-cyl--hybrid-obl-VS04-07__01",
+  "sheet": "VS14",
+  "tile": 1,
+  "tech": "T1",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.25,
+   "H": 200
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    13.0,
+    10.0
+   ],
+   "roots": 3,
+   "cell_spacing": [
+    6.5,
+    4.2
+   ],
+   "cell_w": [
+    1.5,
+    1.2
+   ],
+   "vein_w": {
+    "foot": [
+     1.8,
+     4.2
+    ],
+    "rim": [
+     1.5,
+     2.6
+    ]
+   },
+   "cut": {
+    "deg": 32,
+    "zc": 158,
+    "phi_deg": 200
+   }
+  },
+  "seed": 7,
+  "note": "oblique rim 32 deg on a surface pattern: T1 window, veins and cells, cylinder (from a05)",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "o02": {
+  "id": "vena-lamp-cyl--closed-obl-VS04-01__01",
+  "sheet": "VS14",
+  "tile": 2,
+  "tech": "T2",
+  "form": {
+   "type": "cyl",
+   "base_in": 2.0,
+   "H": 180
+  },
+  "pattern": {
+   "kind": "surface",
+   "vein_spacing": [
+    19.0,
+    8.0
+   ],
+   "roots": 3,
+   "vein_w": {
+    "foot": [
+     3.5,
+     4.5
+    ],
+    "rim": [
+     1.6,
+     1.6
+    ]
+   },
+   "tear": 10,
+   "cut": {
+    "deg": 32,
+    "zc": 142,
+    "phi_deg": 200
+   }
+  },
+  "seed": 7,
+  "note": "oblique rim 32 deg on a surface pattern: T2 open, veins, cylinder (from a08)",
+  "window_mm": 0.85,
+  "free": null
+ },
+ "o03": {
+  "id": "vena-lamp-egg--cells-winopen-obl-VS04-12__01",
+  "sheet": "VS14",
+  "tile": 3,
+  "tech": "T1T2",
+  "form": {
+   "type": "egg",
+   "base_in": 2.0,
+   "H": 190,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    8.4,
+    5.8
+   ],
+   "cell_w": [
+    2.4,
+    1.6
+   ],
+   "tear": 10,
+   "cut": {
+    "deg": 32,
+    "zc": 150,
+    "phi_deg": 200
+   }
+  },
+  "seed": 23,
+  "note": "oblique rim 32 deg on a surface pattern: T1T2 window below and open above, cells, egg (from c09)",
+  "window_mm": 0.85,
+  "free": null
+ }
+}

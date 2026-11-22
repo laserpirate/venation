@@ -351,15 +351,18 @@ vena-lamp/renders/vena-lamp-free--hybrid-fine-winopen-VS04-12__01_s05_b2.00in_h2
 vena-lamp/renders/vena-lamp-test--windows-VS06a-01__01_s23_b3.20in_h46mm_v01_render.png
 vena-lamp/src/VS06_specs_v01.json
 vena-lamp/src/VS06c_specs_v01.json
+vena-lamp/src/VS14_specs_v01.json
 vena-lamp/src/count_photo_cells_v01.py
 vena-lamp/src/export_patterns_v01.py
 vena-lamp/src/lamp_build_v01.py
 vena-lamp/src/lamp_build_v02.py
 vena-lamp/src/lamp_build_v03.py
+vena-lamp/src/lamp_build_v04.py
 vena-lamp/src/lamp_print_v01.py
 vena-lamp/src/lamp_sheet_v01.py
 vena-lamp/src/lamp_sheet_v02.py
 vena-lamp/src/lamp_sheet_v03.py
+vena-lamp/src/lamp_sheet_v04.py
 vena-lamp/src/make_specs.py
 vena-lamp/src/ray_skin_check_v01.py
 vena-lamp/src/render_v01.py
@@ -559,6 +562,8 @@ vena-studies/contacts/VS12_contact_site-layout-v01_0157.png
 vena-studies/contacts/VS12_contact_site-layout-v01_0157_check.json
 vena-studies/contacts/VS13_contact_site-land-v03_0212.png
 vena-studies/contacts/VS13_contact_site-land-v03_0212_check.json
+vena-studies/contacts/VS14_contact_lamp-v04-oblique_0219.png
+vena-studies/contacts/VS14_contact_lamp-v04-oblique_0219_check.json
 vena-studies/contacts/contact_v02_0838.png
 vena-studies/export_svg/VS02-10_closed_blob_s07_120mm_v03.json
 vena-studies/export_svg/VS02-10_closed_blob_s07_120mm_v03.svg
