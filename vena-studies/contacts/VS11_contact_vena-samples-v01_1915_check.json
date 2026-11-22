@@ -1,0 +1,23 @@
+{
+ "png": "VS11_contact_vena-samples-v01_1915.png",
+ "plates": [
+  "vena-samples--VS02__01",
+  "vena-samples--VS02__02",
+  "vena-samples--VS03__01",
+  "vena-samples--VS03__02",
+  "vena-samples--VS08__01"
+ ],
+ "tiles": 48,
+ "tiles_pass": 48,
+ "tiles_fail": 0,
+ "kept_share_range": [
+  0.084,
+  0.833
+ ],
+ "grams": 306.5,
+ "hours": 14.1,
+ "two_printers_h": 7.5,
+ "plex_mono_loaded": true,
+ "captions_lead_with_plate": true,
+ "built": "2026-11-21 19:15"
+}

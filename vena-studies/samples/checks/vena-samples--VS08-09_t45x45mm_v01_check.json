@@ -1,0 +1,65 @@
+{
+ "stem": "vena-samples--VS08-09_t45x45mm_v01",
+ "id": "VS08-09",
+ "full_id": "vena-land-berm--blob-VS02-10__01",
+ "set": "VS08",
+ "wing": false,
+ "info": {
+  "kind": "landform",
+  "size_mm": [
+   45.0,
+   45.0
+  ],
+  "source_relief_mm": [
+   2.0,
+   20.0
+  ],
+  "relief_scale": 0.3,
+  "tile_relief_mm": [
+   0.6,
+   6.0
+  ],
+  "landform_side_mm": 38.0,
+  "kept": 1,
+  "total": 1,
+  "kept_share": 1.0
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   45.0,
+   45.0,
+   8.0
+  ],
+  "dims_in": [
+   1.77,
+   1.77,
+   0.31
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   105.5,
+   105.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 0.0,
+  "overhang_faces": 0,
+  "overhang_widest_strip_mm": 0.0,
+  "overhang_largest_patch_mm2": 0.0,
+  "volume_cm3": 6.4,
+  "area_cm2": 52.6,
+  "grams_est": 7.9,
+  "hours_est": 0.45,
+  "cost_usd_est": 0.26,
+  "manifold_status": "Error.NoError",
+  "simplify_tol": 0.02,
+  "reload_watertight": true,
+  "reload_bodies": 1,
+  "pass": true,
+  "pass_rule": "as saved and reloaded: watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (the engraved underside ID is the only down face). The 2.0 mm lab minimum wall is not met by design: fine, below lab minimum."
+ },
+ "tris": 60878,
+ "built": "2026-11-21 19:12"
+}

@@ -1,0 +1,68 @@
+{
+ "stem": "vena-samples--VS03-10_t95x45mm_v01",
+ "id": "VS03-10",
+ "full_id": "VS03-10",
+ "set": "VS03",
+ "wing": true,
+ "info": {
+  "kind": "pattern",
+  "size_mm": [
+   95.0,
+   45.0
+  ],
+  "scale_mm_per_lab_unit": 0.09927,
+  "drop_level": 11,
+  "of_levels": 12,
+  "gap_share": 0.0607,
+  "open_in_outline": 0.4527,
+  "veins_kept": 176,
+  "veins_total": 2111,
+  "named_kept": 869,
+  "cells_kept": 52,
+  "cells_total": 624,
+  "gaps_closed_as_rib_mm2": 48.64,
+  "rib_area_mm2": 801.9,
+  "membrane_open_share": 0.754,
+  "kept": 1097,
+  "total": 3604,
+  "kept_share": 0.304
+ },
+ "checks": {
+  "watertight": true,
+  "shells": 1,
+  "nonmanifold_edges": 0,
+  "dims_mm": [
+   95.0,
+   45.0,
+   2.4
+  ],
+  "dims_in": [
+   3.74,
+   1.77,
+   0.09
+  ],
+  "footprint_ok": true,
+  "margin_mm": [
+   80.5,
+   105.5
+  ],
+  "height_ok": true,
+  "overhang_mm2": 0.0,
+  "overhang_faces": 0,
+  "overhang_widest_strip_mm": 0.0,
+  "overhang_largest_patch_mm2": 0.0,
+  "volume_cm3": 4.6,
+  "area_cm2": 101.7,
+  "grams_est": 5.7,
+  "hours_est": 0.29,
+  "cost_usd_est": 0.19,
+  "manifold_status": "Error.NoError",
+  "simplify_tol": 0.02,
+  "reload_watertight": true,
+  "reload_bodies": 1,
+  "pass": true,
+  "pass_rule": "as saved and reloaded: watertight, one shell, 0 non-manifold edges, footprint in 203 x 203, height in 256, widest down-facing strip 1.0 mm or less (the engraved underside ID is the only down face). The 2.0 mm lab minimum wall is not met by design: fine, below lab minimum."
+ },
+ "tris": 19012,
+ "built": "2026-11-21 19:12"
+}
