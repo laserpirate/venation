@@ -1,0 +1,288 @@
+{
+ "captures": [
+  {
+   "file": "01_rv.png",
+   "title": "1 \u00b7 ridges on the veins, three orders",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__02",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 10.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: ridges on veins",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Veins as ridge or valley: on off to on"
+   ]
+  },
+  {
+   "file": "02_bc.png",
+   "title": "2 \u00b7 berms on the veins, trapezoid, 100 % sides",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__02",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 8.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: berms on veins",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Veins as berm or channel: on off to on"
+   ]
+  },
+  {
+   "file": "03_pb.png",
+   "title": "3 \u00b7 basins in the cells, flat floors",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__02",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -3.0 to 2.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: basins in cells",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Cells as plateau or basin: on off to on; Plateau or basin plateau (raise) to basin (lower)"
+   ]
+  },
+  {
+   "file": "04_hd.png",
+   "title": "4 \u00b7 hills on the cell centroids",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__02",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 6.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: hills on cell centroids",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Plateau or basin plateau (raise) to basin (lower); Points as hill or depression: on off to on"
+   ]
+  },
+  {
+   "file": "05_combined.png",
+   "title": "5 \u00b7 berms on the primary veins (highest) with basins in the cells",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__02",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -2.0 to 8.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: berms on veins \u00b7 basins in cells",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Veins as berm or channel: on off to on; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Overlap with the surface below blend to highest; Cells as plateau or basin: on off to on; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4"
+   ]
+  },
+  {
+   "file": "07_st02.png",
+   "title": "7 \u00b7 stream network, threshold 0.05 of the greatest accumulation, open veins as valleys on an even slope (blend 0.35)",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -5.2 to 7.7 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "ground: synthetic: even slope \u00b7 ground relief 18 mm \u00b7 blend 0.35",
+    "fill rules: valleys on veins",
+    "drawing aids: stream network at 0.05",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Fill pattern venation, closed to venation, open; Veins as ridge or valley: on off to on; Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream network: on off to on; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Ground flat tile to synthetic: even slope; Ground blend (0 pattern, 1 ground only) 0 to 0.35"
+   ]
+  },
+  {
+   "file": "08_st10.png",
+   "title": "8 \u00b7 stream network, threshold 0.15",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -5.2 to 7.7 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "ground: synthetic: even slope \u00b7 ground relief 18 mm \u00b7 blend 0.35",
+    "fill rules: valleys on veins",
+    "drawing aids: stream network at 0.15",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Fill pattern venation, closed to venation, open; Veins as ridge or valley: on off to on; Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream network: on off to on; Stream threshold (share of the greatest accumulation) 0.03 to 0.15; Ground flat tile to synthetic: even slope; Ground blend (0 pattern, 1 ground only) 0 to 0.35"
+   ]
+  },
+  {
+   "file": "09_ws.png",
+   "title": "9 \u00b7 watersheds per outlet, the eight largest",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -5.2 to 7.7 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "ground: synthetic: even slope \u00b7 ground relief 18 mm \u00b7 blend 0.35",
+    "fill rules: valleys on veins",
+    "drawing aids: stream network at 0.05 \u00b7 watersheds",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Fill pattern venation, closed to venation, open; Veins as ridge or valley: on off to on; Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream network: on off to on; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Watersheds coloured per outlet: on off to on; Ground flat tile to synthetic: even slope; Ground blend (0 pattern, 1 ground only) 0 to 0.35"
+   ]
+  },
+  {
+   "file": "10_cv.png",
+   "title": "10 \u00b7 curvature: landform classes",
+   "page_caption": [
+    "vena-land-berm--ovate-VS02-04__01",
+    "berm \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "drawing aids: curvature, landform classes",
+    "changed against the stored study: Fill pattern venation, closed to venation, open; Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Curvature: on off to on; Stream threshold (share of the greatest accumulation) 0.03 to 0.05"
+   ]
+  },
+  {
+   "file": "11_tw.png",
+   "title": "11 \u00b7 wetness index",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -5.2 to 7.7 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "ground: synthetic: even slope \u00b7 ground relief 18 mm \u00b7 blend 0.35",
+    "fill rules: valleys on veins",
+    "drawing aids: wetness index",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Fill pattern venation, closed to venation, open; Veins as ridge or valley: on off to on; Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Wetness index: on off to on; Ground flat tile to synthetic: even slope; Ground blend (0 pattern, 1 ground only) 0 to 0.35"
+   ]
+  },
+  {
+   "file": "12_sun.png",
+   "title": "12 \u00b7 sun and shade, sun from 315 deg at 25 deg",
+   "page_caption": [
+    "vena-land-berm--ovate-VS02-04__01",
+    "berm \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "drawing aids: sun from 315 deg at 25 deg",
+    "changed against the stored study: Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Sun and shade: on off to on; Sun altitude (deg) 30 to 25"
+   ]
+  },
+  {
+   "file": "13_ex.png",
+   "title": "13 \u00b7 extrema: top and bottom 10 % of the range",
+   "page_caption": [
+    "vena-land-berm--ovate-VS02-04__01",
+    "berm \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "drawing aids: extrema",
+    "changed against the stored study: Ridge or valley ridge (raise) to valley (lower); Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Extrema: on off to on; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Sun altitude (deg) 30 to 25"
+   ]
+  },
+  {
+   "file": "14_ve1.png",
+   "title": "14 \u00b7 3D, vertical exaggeration 1",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -2.0 to 12.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 1x in the 3D view and the section, heights true",
+    "fill rules: berms on veins \u00b7 basins in cells",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Ridge or valley ridge (raise) to valley (lower); Veins as berm or channel: on off to on; Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Cells as plateau or basin: on off to on; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Sun altitude (deg) 30 to 25"
+   ]
+  },
+  {
+   "file": "15_ve3.png",
+   "title": "15 \u00b7 3D, vertical exaggeration 3 (same heights)",
+   "page_caption": [
+    "vena-land-rules--ovate-VS02-04__01",
+    "rules only \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief -2.0 to 12.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale set \u00b7 vertical exaggeration 3x in the 3D view and the section, heights true",
+    "fill rules: berms on veins \u00b7 basins in cells",
+    "changed against the stored study: VS08 fill as relief (typology) edges as ridges (berm) to none: the fill rules only; Vertical exaggeration of the 3D view and the section 1 to 3; Ridge or valley ridge (raise) to valley (lower); Veins as berm or channel: on off to on; Top width (berm) or bottom width (channel), primary (mm) 4 to 3; Height or depth, primary (mm) 6 to 10; Height or depth, secondary (mm) 4 to 0; Height or depth, finer (mm) 2 to 0; Side slope, primary (percent) 100 to 40; Falloff 0 linear to 5 concentrated; Overlap with the surface below blend to highest; Cells as plateau or basin: on off to on; Plateau or basin plateau (raise) to basin (lower); Height or depth, largest cell (mm) 5 to 4; Stream threshold (share of the greatest accumulation) 0.03 to 0.05; Sun altitude (deg) 30 to 25"
+   ]
+  }
+ ],
+ "checks": {
+  "vs08_first_relief": [
+   2,
+   20
+  ],
+  "flat_streams": {
+   "cells": 0,
+   "sources": 0,
+   "outlets": 0,
+   "watersheds": 0
+  },
+  "divided_streams": {
+   "cells": 213,
+   "sources": 36,
+   "outlets": 32,
+   "order": 2,
+   "watersheds": 32
+  },
+  "rules": null,
+  "falloff_profiles_peak": [
+   12,
+   12,
+   12,
+   12,
+   12,
+   12
+  ],
+  "streams_0.05": {
+   "cells": 10635,
+   "order": 2,
+   "sources": 154,
+   "outlets": 313
+  },
+  "streams_0.15": {
+   "cells": 763,
+   "order": 2,
+   "sources": 19,
+   "outlets": 15
+  },
+  "watersheds": [
+   509.6,
+   440.8,
+   423.1,
+   256.7,
+   236.1,
+   223.8,
+   211,
+   206.1
+  ],
+  "curv_counts": [
+   7384,
+   222,
+   5490,
+   785,
+   35,
+   829,
+   5711,
+   386,
+   6231,
+   37443
+  ],
+  "sun_shadow_pct": 29.534912109375,
+  "ve3_readout_relief": [
+   -2,
+   12
+  ],
+  "zip_files": [
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_base.asc",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_surface.asc",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_pattern.dxf",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_veins_1.csv",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_veins_2.csv",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_veins_3.csv",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_cells.csv",
+   "vena-land-rules--ovate-VS02-04__01_s07_t100mm_r20mm_v01_points.csv",
+   "README_grasshopper.txt"
+  ],
+  "dxf_counts": {
+   "veins_1": 20,
+   "veins_2": 63,
+   "veins_3": 235,
+   "cells": 94,
+   "points": 64
+  },
+  "dxf_vertices": 12066,
+  "page_counts": {
+   "veins_1": 20,
+   "veins_2": 63,
+   "veins_3": 235,
+   "cells": 94,
+   "points": 64
+  },
+  "asc_surface": {
+   "ncols": 256,
+   "cellsize": 0.390625,
+   "values": 65536,
+   "max_diff_mm": 5e-05
+  },
+  "asc_base": {
+   "ncols": 256,
+   "cellsize": 0.390625,
+   "values": 65536,
+   "max_diff_mm": 0.0
+  }
+ },
+ "controls": 154,
+ "errors": [],
+ "all_ok": true
+}

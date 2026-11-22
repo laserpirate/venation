@@ -557,6 +557,8 @@ vena-studies/contacts/VS11_contact_vena-samples-v01_1915.png
 vena-studies/contacts/VS11_contact_vena-samples-v01_1915_check.json
 vena-studies/contacts/VS12_contact_site-layout-v01_0157.png
 vena-studies/contacts/VS12_contact_site-layout-v01_0157_check.json
+vena-studies/contacts/VS13_contact_site-land-v03_0212.png
+vena-studies/contacts/VS13_contact_site-land-v03_0212_check.json
 vena-studies/contacts/contact_v02_0838.png
 vena-studies/export_svg/VS02-10_closed_blob_s07_120mm_v03.json
 vena-studies/export_svg/VS02-10_closed_blob_s07_120mm_v03.svg
@@ -642,6 +644,7 @@ vena-studies/src/check_galleries_v01.py
 vena-studies/src/check_lamp_v01.py
 vena-studies/src/check_land_v01.py
 vena-studies/src/check_land_v02.py
+vena-studies/src/check_land_v03.py
 vena-studies/src/check_layout_v01.py
 vena-studies/src/check_shell_v05.py
 vena-studies/src/check_v03.py
@@ -659,6 +662,7 @@ vena-studies/src/land_page_v02.src.html
 vena-studies/src/land_page_v03.src.html
 vena-studies/src/land_v01.html
 vena-studies/src/land_v02.html
+vena-studies/src/land_v03_rules.src.js
 vena-studies/src/make_land_page_v02.py
 vena-studies/src/print_readme_v01.py
 vena-studies/src/privacy_scan_v01.py
