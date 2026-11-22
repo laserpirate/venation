@@ -1,0 +1,139 @@
+{
+ "captures": [
+  {
+   "file": "01_a02.png",
+   "caption": "1 \u00b7 vena-lamp-egg--cells-VS04-12__02 \u00b7 preview (stand-in) beside the lit render of the built lamp \u00b7 cells, estimate 670"
+  },
+  {
+   "file": "02_b02.png",
+   "caption": "2 \u00b7 vena-lamp-egg--wing-wrap3-VS03-04__01 \u00b7 preview (stand-in) beside the lit render of the built lamp \u00b7 cells, estimate 1825"
+  },
+  {
+   "file": "03_c08.png",
+   "caption": "3 \u00b7 vena-lamp-cyl--cells-wide-VS04-12__01 \u00b7 preview (stand-in) beside the lit render of the built lamp \u00b7 cells, estimate 604"
+  },
+  {
+   "file": "04_c01_off.png",
+   "caption": "4 \u00b7 vena-lamp-egg--wing-wrap6-VS03-04__02 \u00b7 oblique rim, light off: ribs raised, windows thinner"
+  },
+  {
+   "file": "05_changed.png",
+   "caption": "5 \u00b7 vena-lamp-egg--cells-winopen-VS04-12__03 \u00b7 from a02: height 229 mm, density 3x, window below and open above 90 mm, tear 20 mm \u00b7 changed values marked, warnings in the readouts"
+  },
+  {
+   "file": "06_wrap.png",
+   "caption": "6 \u00b7 vena-lamp-cyl--leaf-wrap8-wide-VS02-04__01 \u00b7 from b06: leaf wrap, 8 panels, wide cylinder 110 mm"
+  }
+ ],
+ "lamps": 27,
+ "load_exact": 27,
+ "load_bad": [],
+ "load_ms_max": 1560,
+ "with_render": 26,
+ "changed_spec": {
+  "id": "vena-lamp-egg--cells-winopen-VS04-12__03",
+  "tech": "T1T2",
+  "form": {
+   "type": "egg",
+   "base_in": 2,
+   "H": 229,
+   "W": 95
+  },
+  "pattern": {
+   "kind": "surface",
+   "cell_spacing": [
+    4.5,
+    2.54
+   ],
+   "cell_w": [
+    1.9,
+    1.2
+   ],
+   "tear": 20
+  },
+  "seed": 23,
+  "note": "made on the Lamp page from vena-lamp-egg--cells-VS04-12__02: H 190 to 229, dens 1 to 3, tear 14 to 20, tech window: thin skin in every cell to window below, open above, split 73 to 90",
+  "window_mm": 0.85,
+  "split_z": 90,
+  "ver": "v01"
+ },
+ "changed_list": [
+  {
+   "id": "H",
+   "label": "Height (mm), 6 to 9 in",
+   "from": "190",
+   "to": "229"
+  },
+  {
+   "id": "dens",
+   "label": "Density, times the loaded lamp",
+   "from": "1",
+   "to": "3"
+  },
+  {
+   "id": "tear",
+   "label": "Tear depth (mm)",
+   "from": "14",
+   "to": "20"
+  },
+  {
+   "id": "tech",
+   "label": "Technique",
+   "from": "window: thin skin in every cell",
+   "to": "window below, open above"
+  },
+  {
+   "id": "split",
+   "label": "Change height (mm)",
+   "from": "73",
+   "to": "90"
+  }
+ ],
+ "chat_text": "vena-lamp-egg--cells-winopen-VS04-12__03 \u00b7 started from vena-lamp-egg--cells-VS04-12__02\nchanged against the built lamp: Height (mm), 6 to 9 in 190 to 229; Density, times the loaded lamp 1 to 3; Tear depth (mm) 14 to 20; Technique window: thin skin in every cell to window below, open above; Change height (mm) 73 to 90\nwarnings: least window or hole, estimate: 45 cells under the 1.5 mm the builder allows for a window; it closes them as rib | holes above the change height: 223 cells under 2 mm would stay closed above 90 mm\nnote: taller, denser, open above 90 mm",
+ "est_changed": {
+  "cells": 2458,
+  "least": 0.4620515144697501,
+  "under": 45,
+  "warnings": [
+   "least window or hole, estimate: 45 cells under the 1.5 mm the builder allows for a window; it closes them as rib",
+   "holes above the change height: 223 cells under 2 mm would stay closed above 90 mm"
+  ]
+ },
+ "preview_png_bytes": 209381,
+ "wrap_spec_id": "vena-lamp-cyl--leaf-wrap8-wide-VS02-04__01",
+ "warn_oblique_surface": [
+  "rim: lamp_build_v03.py builds the oblique rim on wraps only; on this pattern it stops with an error"
+ ],
+ "warn_over": [
+  "least window, estimate: 12 cells under the 1.5 mm the builder allows for a window; it closes them as rib"
+ ],
+ "controls": [
+  "row_form",
+  "row_base",
+  "row_H",
+  "row_W",
+  "row_pat",
+  "row_dens",
+  "row_count",
+  "row_seed",
+  "row_rim",
+  "row_tear",
+  "row_cut",
+  "row_tech",
+  "row_split",
+  "row_light",
+  ""
+ ],
+ "page_errors": [],
+ "storage_calls": [],
+ "width_400": [
+  400,
+  400
+ ],
+ "width_1400": [
+  1400,
+  1400
+ ],
+ "sheet": "VS10_contact_site-lamp-v01b_1900.png",
+ "built": "2026-11-21 19:01"
+}

@@ -1,0 +1,1230 @@
+{
+ "captures": [
+  {
+   "file": "01_berm.png",
+   "caption": "1 \u00b7 berm on ovate-VS02-04 \u00b7 relief 2.0 to 20.0 mm",
+   "page_caption": [
+    "vena-land-berm--ovate-VS02-04__02",
+    "berm \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "no values changed against the stored study"
+   ]
+  },
+  {
+   "file": "02_wave.png",
+   "caption": "2 \u00b7 waveform mounds on ovate-VS02-04 \u00b7 relief 2.0 to 11.3 mm",
+   "page_caption": [
+    "vena-land-wave--ovate-VS02-04__02",
+    "waveform mounds \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 11.3 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "no values changed against the stored study"
+   ]
+  },
+  {
+   "file": "03_pond.png",
+   "caption": "3 \u00b7 pond cells on ovate-VS02-04 \u00b7 relief 9.7 to 19.0 mm",
+   "page_caption": [
+    "vena-land-pond--ovate-VS02-04__02",
+    "pond cells \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 9.7 to 19.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "no values changed against the stored study"
+   ]
+  },
+  {
+   "file": "04_terr.png",
+   "caption": "4 \u00b7 terraces on ovate-VS02-04 \u00b7 relief 2.0 to 20.0 mm",
+   "page_caption": [
+    "vena-land-terr--ovate-VS02-04__02",
+    "terraces \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "no values changed against the stored study"
+   ]
+  },
+  {
+   "file": "05_bank_water.png",
+   "caption": "5 \u00b7 berm on the river bank ground, blend 0.55, water level 9 mm \u00b7 wet 4604 mm2 \u00b7 stored 16154 mm3",
+   "page_caption": [
+    "vena-land-berm--ovate-VS02-04__02",
+    "berm \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 18.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "ground: synthetic: river bank with a bench \u00b7 ground relief 24 mm \u00b7 blend 0.55",
+    "water level 9.0 mm above the tile floor",
+    "changed against the stored study: Ground flat tile to synthetic: river bank with a bench; Ground relief on the tile (mm) 18 to 24; Ground blend (0 pattern, 1 ground only) 0 to 0.55; Water level (mm above the tile floor) 0 to 9"
+   ]
+  },
+  {
+   "file": "06_rain.png",
+   "caption": "6 \u00b7 rain on pond cells with spill notches \u00b7 129 closed basins (165 without notches) \u00b7 457 flow segments",
+   "page_caption": [
+    "vena-land-pond--ovate-VS02-04__02",
+    "pond cells \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 9.7 to 19.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "changed against the stored study: Spill notch on each dike off to on; Rain: flow lines and closed basins off to on"
+   ]
+  },
+  {
+   "file": "07_section.png",
+   "caption": "7 \u00b7 section A to B dragged across terraces, water level 8 mm drawn on the profile, exaggeration stated",
+   "page_caption": [
+    "vena-land-terr--ovate-VS02-04__02",
+    "terraces \u00b7 ovate-VS02-04",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 20.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "water level 8.0 mm above the tile floor",
+    "changed against the stored study: Water level (mm above the tile floor) 0 to 8"
+   ]
+  },
+  {
+   "file": "08_export.png",
+   "caption": "8 \u00b7 export opened: contour SVG in layers, with caption and key (terraces, water line, flow lines, section line)",
+   "page_caption": null
+  },
+  {
+   "file": "09a_cells_40.png",
+   "caption": "9a \u00b7 cell count 40 (least) on waveform mounds, cells-VS02-16 \u00b7 40 mounds \u00b7 relief 2.0 to 19.0 mm",
+   "page_caption": [
+    "vena-land-wave--cells-VS02-16__02",
+    "waveform mounds \u00b7 cells-VS02-16",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 19.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "changed against the stored study: Cell count 420 to 40"
+   ]
+  },
+  {
+   "file": "09b_cells_2000.png",
+   "caption": "9b \u00b7 cell count 2000 (greatest) on waveform mounds, cells-VS02-16 \u00b7 1427 mounds \u00b7 relief 2.0 to 8.2 mm",
+   "page_caption": [
+    "vena-land-wave--cells-VS02-16__02",
+    "waveform mounds \u00b7 cells-VS02-16",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 8.2 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "pattern study: no scale, no vertical exaggeration set",
+    "changed against the stored study: Cell count 420 to 2000"
+   ]
+  },
+  {
+   "file": "10_gain_ve.png",
+   "caption": "10 \u00b7 relief gain 1 to 0.5, vertical exaggeration 3x, scale 1:500 on berm, blob-VS02-10 \u00b7 caption and ground readouts visible",
+   "page_caption": [
+    "vena-land-berm--blob-VS02-10__02",
+    "berm \u00b7 blob-VS02-10",
+    "100 x 100 mm tile \u00b7 relief 2.0 to 11.0 mm (derived from the heightfield) \u00b7 1 mm contours, index every 5",
+    "scale 1:500 \u00b7 tile 50.0 m (164 ft) on a side \u00b7 vertical exaggeration 3x",
+    "changed against the stored study: Relief gain (fill relief) 1 to 0.5; Vertical exaggeration (0 = not set) 0 to 3; Scale 1:N (0 = not set) 0 to 500"
+   ]
+  },
+  {
+   "file": "11_six_fills.png",
+   "caption": "11 \u00b7 one form (square, rounded corners), six fills, edges as ridges: venation open and closed, xylem, Voronoi cells, radiolaria, Delaunay",
+   "page_caption": null,
+   "fit": "contain"
+  },
+  {
+   "file": "12_four_profiles.png",
+   "caption": "12 \u00b7 four landform profiles, each with one fill: berm, mound, terrace, pond (relief gain 0.3, fall-off 0.3)",
+   "page_caption": null,
+   "fit": "contain"
+  },
+  {
+   "file": "13_slope_map.png",
+   "caption": "13 \u00b7 slope map in three bands (5 and 33 percent) on a mound with xylem ridges, scale 1:200: bands 50.5, 25.7, 23.8 percent of the tile \u00b7 two spot elevations",
+   "page_caption": null,
+   "fit": "contain"
+  },
+  {
+   "file": "14_balance.png",
+   "caption": "14 \u00b7 cut and fill against the ground before and after Balance: net 22906 to -32 mm3, form level shifted -5.00 mm",
+   "page_caption": null,
+   "fit": "contain"
+  }
+ ],
+ "fonts": true,
+ "water_bank": [
+  4604.18701171875,
+  16154.058188658382
+ ],
+ "rain_pond_notch": {
+  "basins": 129,
+  "all": 180,
+  "segs": 457,
+  "notches": 163,
+  "top": [
+   [
+    17,
+    21.820068359375,
+    71.16578388377093,
+    true
+   ],
+   [
+    17,
+    16.78466796875,
+    43.36673067882657,
+    true
+   ],
+   [
+    17,
+    16.021728515625,
+    42.628775408957154,
+    true
+   ]
+  ]
+ },
+ "rain_pond_no_notch": {
+  "basins": 165,
+  "all": 232
+ },
+ "stem": "vena-land-terr--ovate-VS02-04__02_s07_t100mm_r20mm_v01",
+ "png16": {
+  "mode": "I;16",
+  "size": [
+   256,
+   256
+  ],
+  "reload_min": 2.0,
+  "reload_max": 20.0,
+  "page_min": 2,
+  "page_max": 20,
+  "centre_reload": 20.0,
+  "centre_page": 20,
+  "bytes": 2492
+ },
+ "stl": {
+  "bytes": 6655584,
+  "tris": 133110,
+  "watertight": true,
+  "winding": true,
+  "volume_mm3": 90484.6,
+  "extents": [
+   100.0,
+   100.0,
+   23.0
+  ],
+  "bodies": 1
+ },
+ "svg_contours": {
+  "width": "210mm",
+  "height": "236.8mm",
+  "layers": [
+   "tile",
+   "contours-intermediate",
+   "contours-index",
+   "veins",
+   "cells",
+   "water-line",
+   "flow-lines",
+   "spill-points",
+   "spot-elevations",
+   "section-line",
+   "caption",
+   "key"
+  ],
+  "counts": {
+   "tile": 1,
+   "contours-intermediate": 262,
+   "contours-index": 13,
+   "veins": 5262,
+   "cells": 94,
+   "water-line": 1,
+   "flow-lines": 99,
+   "spill-points": 2,
+   "spot-elevations": 0,
+   "section-line": 1,
+   "caption": 8,
+   "key": 10
+  },
+  "texts": 20,
+  "least_font_pt": 12.0
+ },
+ "svg_section": {
+  "width": "210mm",
+  "height": "91.9mm",
+  "layers": [
+   "floor",
+   "water-level",
+   "profile",
+   "caption"
+  ],
+  "counts": {
+   "floor": 1,
+   "water-level": 1,
+   "profile": 1,
+   "caption": 6
+  },
+  "texts": 8,
+  "least_font_pt": 12.0
+ },
+ "file_ground": {
+  "png_kind": "PNG 16 bit",
+  "png_size": [
+   256,
+   256
+  ],
+  "png_max_abs_diff_mm": 0.00015259021896696368,
+  "asc": [
+   5,
+   4,
+   25,
+   10,
+   21
+  ],
+  "state": "Esri ASCII grid \u00b7 5 x 4 samples \u00b7 centre square 4 used \u00b7 width and height range read from the grid",
+  "ground": "file",
+  "fw": "100",
+  "zr": [
+   "10",
+   "21"
+  ]
+ },
+ "changed_gain_ve": [
+  {
+   "id": "gain",
+   "label": "Relief gain (fill relief)",
+   "from": "1",
+   "to": "0.5"
+  },
+  {
+   "id": "ve",
+   "label": "Vertical exaggeration (0 = not set)",
+   "from": "0",
+   "to": "3"
+  },
+  {
+   "id": "scaleN",
+   "label": "Scale 1:N (0 = not set)",
+   "from": "0",
+   "to": "500"
+  }
+ ],
+ "chat_text": "vena-land-berm--blob-VS02-10__02 \u00b7 berm \u00b7 source study VS02-10\nchanged against the stored study: Relief gain (fill relief) 1 to 0.5; Vertical exaggeration (0 = not set) 0 to 3; Scale 1:N (0 = not set) 0 to 500\nrelief 2.0 to 11.0 mm \u00b7 scale 1:500 \u00b7 tile 50.0 m (164 ft) on a side \u00b7 vertical exaggeration 3x",
+ "readout_rows": [
+  [
+   "readout",
+   "on the tile",
+   "on the ground",
+   "source"
+  ],
+  [
+   "tile",
+   "100 x 100 mm",
+   "50.0 m (164 ft) on a side",
+   "controls: tile size, scale"
+  ],
+  [
+   "grid",
+   "256 x 256 cells \u00b7 0.391 mm",
+   "0.20 m (0.64 ft)",
+   "derived: tile size over 256"
+  ],
+  [
+   "relief",
+   "2.0 to 11.0 mm",
+   "1.50 m (4.92 ft) range",
+   "derived: least and greatest of the heightfield"
+  ],
+  [
+   "contour interval",
+   "1 mm",
+   "0.17 m (0.55 ft)",
+   "control: contour interval"
+  ],
+  [
+   "pattern",
+   "vein segments 6005 \u00b7 cells 109",
+   "",
+   "derived: the pattern as grown"
+  ],
+  [
+   "slope, median",
+   "0 % (level)",
+   "0 % (level)",
+   "derived: heightfield gradient"
+  ],
+  [
+   "slope, 99th percentile",
+   "423 % (1:0.2)",
+   "141 % (1:0.7)",
+   "derived: heightfield gradient"
+  ],
+  [
+   "form",
+   "the study outline \u00b7 93.8 x 71.9 mm across and along its axis \u00b7 4,292 mm2",
+   "1,073 m2 (11,550 sq ft)",
+   "derived: the plan shape on the grid"
+  ],
+  [
+   "smoothing",
+   "largest change 3.89 mm",
+   "0.65 m (2.13 ft)",
+   "derived: 1 passes of a 3 x 3 mean on the final surface"
+  ],
+  [
+   "cut against the ground",
+   "0.00 mm3",
+   "0.00 m3 (0.00 cu ft)",
+   "derived: surface under the chosen ground, summed"
+  ],
+  [
+   "fill against the ground",
+   "16,263 mm3",
+   "678 m3 (23,930 cu ft)",
+   "derived: surface over the chosen ground, summed"
+  ],
+  [
+   "net (fill less cut)",
+   "16,263 mm3",
+   "678 m3 (23,930 cu ft)",
+   "derived; the Balance button shifts the form level until this is zero"
+  ],
+  [
+   "steepest slope",
+   "773 % (1:0.1) on the tile at 24.4, 58.0 mm",
+   "258 % (1:0.4)",
+   "derived: heightfield gradient"
+  ],
+  [
+   "pattern fit",
+   "1 lab unit = 0.1246 mm \u00b7 turned 0 deg",
+   "",
+   "derived: outline fitted to the pattern size control"
+  ],
+  [
+   "features under 2 mm",
+   "0.0 % of the tile",
+   "",
+   "derived: opening of the raised area by 1 mm"
+  ]
+ ],
+ "marked_rows": [
+  "row_gain: stored 1",
+  "row_ve: stored 0",
+  "row_scaleN: stored 0"
+ ],
+ "fills": {
+  "open": [
+   6134,
+   2,
+   10,
+   "vena-land-berm--disk-VS02-04__01"
+  ],
+  "closed": [
+   6192,
+   2,
+   10,
+   "vena-land-berm--disk-VS02-04__01"
+  ],
+  "xylem": [
+   16655,
+   2,
+   10,
+   "vena-land-berm--xylem-VS02-04__01"
+  ],
+  "cells": [
+   2631,
+   2,
+   7.864117622375488,
+   "vena-land-berm--cells-VS02-04__01"
+  ],
+  "radiolaria": [
+   2628,
+   2,
+   7.538378715515137,
+   "vena-land-berm--radiolaria-VS02-04__01"
+  ],
+  "delaunay": [
+   3647,
+   2,
+   7.864117622375488,
+   "vena-land-berm--delaunay-VS02-04__01"
+  ]
+ },
+ "profiles": {
+  "berm": {
+   "relief": [
+    6,
+    20.200000762939453
+   ],
+   "pinfo": {
+    "ext": [
+     46.387937520850514,
+     86.44799838671446
+    ]
+   },
+   "cut": 0,
+   "fill": 33631.06331024028,
+   "id": "vena-land-berm--xylem-VS02-04__01"
+  },
+  "mound": {
+   "relief": [
+    6,
+    20.433349609375
+   ],
+   "pinfo": {
+    "ext": [
+     79.6875,
+     85.9375
+    ]
+   },
+   "cut": 0,
+   "fill": 40413.12635112263,
+   "id": "vena-land-wave--cells-VS02-04__01"
+  },
+  "terrace": {
+   "relief": [
+    6,
+    19.788410186767578
+   ],
+   "pinfo": {
+    "ext": [
+     79.6875,
+     85.9375
+    ],
+    "fall": 10,
+    "run": 48
+   },
+   "cut": 0,
+   "fill": 43353.19978723419,
+   "id": "vena-land-berm--delaunay-VS02-04__01"
+  },
+  "pond": {
+   "relief": [
+    0.1132446676492691,
+    6
+   ],
+   "pinfo": {
+    "ext": [
+     79.6875,
+     79.6875
+    ],
+    "depth": 8,
+    "full": 4.5
+   },
+   "cut": 11618.20949250341,
+   "fill": 0,
+   "id": "vena-land-pond--radiolaria-VS02-04__01"
+  }
+ },
+ "slope_map": {
+  "bands_pct": [
+   50.5096435546875,
+   25.73089599609375,
+   23.75946044921875
+  ],
+  "sum": 100,
+  "steepest": 1.7089486466194836,
+  "smoothing_largest_change": 0.950716495513916,
+  "grade": {
+   "avg": 0,
+   "st": 1.4898984831571551
+  },
+  "key": "slope to 5 % (1:20.0)5 to 33 % (to 1:3.0)over 33 %"
+ },
+ "balance": {
+  "before": {
+   "cut": 0,
+   "fill": 22905.597077406128,
+   "net": 22905.597077406128,
+   "shift": 0
+  },
+  "after": {
+   "cut": 3625.848874404614,
+   "fill": 3593.7924813333666,
+   "net": -32.056393071247385,
+   "shift": -5,
+   "state": "balance: form level shifted by -5.00 mm (1.00 m (3.28 ft) down); net now -32.1 mm3 = -0.26 m3 (-9.06 cu ft) (the slider steps by 0.05 mm)"
+  },
+  "result": {
+   "from": 0,
+   "to": -5,
+   "net": -32.056393071247385
+  }
+ },
+ "spot_svg_layer": true,
+ "changed_after_reset": 0,
+ "live": {
+  "zmax_before": 20,
+  "zmax_after_input": 14.600000381469727,
+  "segs_before": 5262,
+  "segs_after_input": 5262,
+  "state_on_release": "regrowing",
+  "segs_after_release": 4744,
+  "state_after": ""
+ },
+ "controls": [
+  [
+   "top",
+   "typ",
+   "Fill as relief (typology)",
+   true,
+   null
+  ],
+  [
+   "top",
+   "ncell",
+   "Cell count",
+   true,
+   true
+  ],
+  [
+   "top",
+   "gain",
+   "Relief gain (fill relief)",
+   true,
+   true
+  ],
+  [
+   "top",
+   "ve",
+   "Vertical exaggeration (0 = not set)",
+   true,
+   true
+  ],
+  [
+   "Fill pattern",
+   "src",
+   "Stored study by ID",
+   true,
+   null
+  ],
+  [
+   "Fill pattern",
+   "mode",
+   "Fill pattern",
+   true,
+   null
+  ],
+  [
+   "Fill pattern",
+   "shape",
+   "Outline the pattern grows in",
+   true,
+   null
+  ],
+  [
+   "Fill pattern",
+   "seed",
+   "Seed",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "veinset",
+   "Vein set (wings)",
+   true,
+   null
+  ],
+  [
+   "Pattern, more from the Lab",
+   "wingpass",
+   "Wing rule",
+   true,
+   null
+  ],
+  [
+   "Pattern, more from the Lab",
+   "nde",
+   "Dead ends",
+   true,
+   null
+  ],
+  [
+   "Pattern, more from the Lab",
+   "preset",
+   "Fabrication preset of the study",
+   true,
+   null
+  ],
+  [
+   "Pattern, more from the Lab",
+   "iters",
+   "Iterations",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "ana",
+   "Anastomosis radius",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "costb",
+   "Costal bias",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "tipb",
+   "Tip bias",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "costal",
+   "Costal density",
+   true,
+   true
+  ],
+  [
+   "Pattern, more from the Lab",
+   "cw",
+   "Cell wall width",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "grad",
+   "Cell gradient across the tile",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "lloyd",
+   "Relaxation (Lloyd passes)",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "rround",
+   "Radiolaria: rounding passes (0 = plain weighted cells)",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "dprune",
+   "Delaunay: drop edges over n x the median (0 = off)",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "nsrc",
+   "Vein density: sources",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "birth",
+   "Birth distance",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "kill",
+   "Kill distance",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "step",
+   "Step",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "mur",
+   "Murray exponent",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "tip",
+   "Least vein width (px)",
+   true,
+   true
+  ],
+  [
+   "Cells and veins",
+   "maxw",
+   "Greatest vein width (px)",
+   true,
+   true
+  ],
+  [
+   "Relief and contours",
+   "lo",
+   "Relief, lowest (mm)",
+   true,
+   true
+  ],
+  [
+   "Relief and contours",
+   "hi",
+   "Relief, highest (mm)",
+   true,
+   true
+  ],
+  [
+   "Relief and contours",
+   "cint",
+   "Contour interval (mm)",
+   true,
+   true
+  ],
+  [
+   "Relief and contours",
+   "cidx",
+   "Index contour every n",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "form",
+   "Plan shape",
+   true,
+   null
+  ],
+  [
+   "Form",
+   "fw",
+   "Width (percent of the tile)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "fl",
+   "Length (percent of the tile)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "frad",
+   "Corner radius (percent of the short side)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "frot",
+   "Rotation (deg): the form and the profile axis",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "prof",
+   "Landform profile",
+   true,
+   null
+  ],
+  [
+   "Form",
+   "shift",
+   "Form level shift (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "qL",
+   "Berm length (percent of the form length)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "qcw",
+   "Berm crest width (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "qh",
+   "Berm height (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "qs1",
+   "Berm side slope, side A, 1:n",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "qs2",
+   "Berm side slope, side B, 1:n",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "mh",
+   "Mound height (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "msharp",
+   "Dome sharpness",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "mflat",
+   "Flat top share",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "zn",
+   "Terrace steps",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "ztread",
+   "Terrace tread (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "zriser",
+   "Terrace riser (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "dd",
+   "Pond depth (mm)",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "dbank",
+   "Pond bank slope, 1:n",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "dbot",
+   "Pond bottom share",
+   true,
+   true
+  ],
+  [
+   "Form",
+   "dfree",
+   "Pond freeboard (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "ew",
+   "Edge width, times the rule",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "fall",
+   "Fall-off toward the form edge (share of its depth)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "follow",
+   "Fill follows the profile slope (off: cells stay level)",
+   true,
+   null
+  ],
+  [
+   "Fill relief",
+   "bhmin",
+   "Ridge height, thinnest vein (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "bhmax",
+   "Ridge height, widest vein (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "bexp",
+   "Height from Murray width, exponent",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "bslope",
+   "Ridge side slope, 1 down per n out",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "bcrest",
+   "Crest width, widest vein (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "wk",
+   "Mound height per mm of cell half width",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "wmax",
+   "Mound height, greatest (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "wsw",
+   "Swale width on the veins (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "wsd",
+   "Swale depth (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "pk",
+   "Basin depth per mm of cell half width",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "pmax",
+   "Basin depth, greatest (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "pdike",
+   "Dike height above the floor (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "pcrest",
+   "Dike crest width (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "pnotch",
+   "Spill notch on each dike",
+   true,
+   null
+  ],
+  [
+   "Fill relief",
+   "pnl",
+   "Notch level below the crest (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "ttread",
+   "Tread (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "triser",
+   "Riser (mm)",
+   true,
+   true
+  ],
+  [
+   "Fill relief",
+   "tord",
+   "Vein order the steps follow",
+   true,
+   null
+  ],
+  [
+   "Ground",
+   "ground",
+   "Ground",
+   true,
+   null
+  ],
+  [
+   "Ground",
+   "grel",
+   "Ground relief on the tile (mm)",
+   true,
+   true
+  ],
+  [
+   "Ground",
+   "blend",
+   "Ground blend (0 pattern, 1 ground only)",
+   true,
+   true
+  ],
+  [
+   "Fill pattern",
+   "fit",
+   "Pattern size, percent of the form (study outline: of the tile)",
+   true,
+   true
+  ],
+  [
+   "Scale",
+   "tile",
+   "Tile size (mm)",
+   true,
+   true
+  ],
+  [
+   "Scale",
+   "scaleN",
+   "Scale 1:N (0 = not set)",
+   true,
+   true
+  ],
+  [
+   "Grading",
+   "map",
+   "Map on the surface",
+   true,
+   null
+  ],
+  [
+   "Grading",
+   "s1",
+   "Slope threshold 1 (percent)",
+   true,
+   true
+  ],
+  [
+   "Grading",
+   "s2",
+   "Slope threshold 2 (percent)",
+   true,
+   true
+  ],
+  [
+   "Grading",
+   "bandh",
+   "Elevation band height (mm on the tile)",
+   true,
+   true
+  ],
+  [
+   "Grading",
+   "smo",
+   "Smoothing passes on the final surface",
+   true,
+   true
+  ],
+  [
+   "Water",
+   "wl",
+   "Water level (mm above the tile floor)",
+   true,
+   true
+  ],
+  [
+   "Water",
+   "rain",
+   "Rain: flow lines and closed basins",
+   true,
+   null
+  ],
+  [
+   "Water",
+   "fthr",
+   "Flow line starts at n cells of catchment",
+   true,
+   true
+  ],
+  [
+   "Export",
+   "base",
+   "Base thickness for the STL (mm)",
+   true,
+   true
+  ]
+ ],
+ "groups": [
+  "Fill pattern",
+  "Cells and veins",
+  "Form",
+  "Fill relief",
+  "Relief and contours",
+  "Ground",
+  "Scale",
+  "Grading",
+  "Water",
+  "Export",
+  "Pattern, more from the Lab"
+ ],
+ "storage_calls": [],
+ "page_errors": [],
+ "width_400": [
+  400,
+  400
+ ],
+ "width_1400": [
+  1400,
+  1400
+ ],
+ "lab_link": [
+  "land.html",
+  "",
+  "hybrid",
+  "clubtail-fore",
+  "vena-land-berm--wing-lab__01",
+  0
+ ],
+ "sheet_plex": true,
+ "sheet": "VS09_contact_site-land-v02_1859.png",
+ "built": "2026-11-21 19:00"
+}
